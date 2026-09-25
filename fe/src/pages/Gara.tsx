@@ -30,9 +30,11 @@ import {
   type Pilota,
   type StatoAuto,
 } from '@/lib/gara'
+import { caricaIndice, chiaveAuto, lunghezzaDi, type Modello } from '@/lib/modelli'
 import { useToast } from '@/lib/toast'
 
 const Pista3D = lazy(() => import('@/components/gara/Pista3D'))
+const AnteprimaAuto = lazy(() => import('@/components/gara/AnteprimaAuto'))
 
 type Fase = 'scelta' | 'pronti' | 'gara' | 'fine'
 type Pilotato = { auto: Auto; motore: Motore; stato: StatoAuto; pilota: Pilota | null }
@@ -107,6 +109,12 @@ export default function Gara() {
   const [risultati, setRisultati] = useState<{ auto: Auto; tempo: number | null; reazione: number | null; tu: boolean }[] | null>(null)
   const [esito, setEsito] = useState<EsitoGara | null>(null)
   const [audioAttivo, setAudioAttivo] = useState(true)
+  const [modelli, setModelli] = useState<Record<string, Modello>>({})
+  const modelloDi = useCallback((a: Auto | null) => (a ? (modelli[chiaveAuto(a)] ?? null) : null), [modelli])
+
+  useEffect(() => {
+    caricaIndice().then(setModelli)
+  }, [])
 
   // ---------- dati ----------
 
@@ -204,7 +212,15 @@ export default function Gara() {
     }))
     const corsie = [1, 0, 2, 3]
     mondo.current = {
-      auto: tutte.map((a, i) => ({ x: 0, v: 0, nitro: false, colore: verniceDi(a.id).colore, corsia: corsie[i] })),
+      auto: tutte.map((a, i) => ({
+        x: 0,
+        v: 0,
+        nitro: false,
+        colore: verniceDi(a.id).colore,
+        corsia: corsie[i],
+        modello: modelloDi(a),
+        lunghezza: lunghezzaDi(a),
+      })),
       vmax: piloti.current[0].motore.vmax,
       fase: 'pronti',
     }
@@ -219,6 +235,14 @@ export default function Gara() {
     audio.current?.ferma()
     audio.current = audioAttivo ? new AudioMotore(piloti.current[0].motore.marce === 1) : null
     impostaFase('pronti')
+    // i modelli iniziano a scaricarsi subito, mentre il semaforo e' ancora giallo
+    // (import dinamico: three e drei restano fuori dal bundle principale)
+    import('@react-three/drei').then(({ useGLTF }) =>
+      tutte.forEach((a) => {
+        const m = modelloDi(a)
+        if (m) useGLTF.preload(`/modelli/${m.file}`, false, true)
+      }),
+    )
 
     // semaforo: tre gialle, poi il verde dopo un'attesa casuale (niente partenze a memoria)
     pulisciTimer()
@@ -240,7 +264,7 @@ export default function Gara() {
     const g = piloti.current[0]
     const lista = piloti.current.map((p, i) => ({
       auto: p.auto,
-      tempo: i === 0 && falsaPartenzaRif.current ? null : p.stato.arrivo,
+      tempo: p.stato.arrivo,
       reazione: i === 0 ? reazioneRif.current : (p.pilota?.reazione ?? null),
       tu: i === 0,
     }))
@@ -295,7 +319,7 @@ export default function Gara() {
     audio.current?.aggiorna(regime(g.motore, g.stato), g.stato.v / g.motore.vmax, g.stato.nitro > 0)
 
     // fine: il giocatore e' arrivato (o squalificato) e gli altri pure, o sono passati 60 s
-    const tuttiArrivati = ps.every((p, i) => p.stato.arrivo !== null || (i === 0 && falsaPartenzaRif.current))
+    const tuttiArrivati = ps.every((p) => p.stato.arrivo !== null)
     if (tm.fineIn < 0 && (tuttiArrivati || tm.t > 60 || (g.stato.arrivo !== null && tm.t > g.stato.arrivo + 4))) {
       tm.fineIn = tm.t + 1.2
     }
@@ -303,7 +327,7 @@ export default function Gara() {
       tm.fineIn = Infinity
       // chi non e' ancora arrivato finisce la corsa "in silenzio"
       let t = tm.t
-      while (ps.some((p, i) => p.stato.arrivo === null && !(i === 0 && (falsaPartenzaRif.current || !p.stato.partita))) && t < 90) {
+      while (ps.some((p, i) => p.stato.arrivo === null && !(i === 0 && !p.stato.partita)) && t < 90) {
         ps.forEach((p) => p.pilota && guidaPilota(p.motore, p.stato, p.pilota, t))
         t += DT
         ps.forEach((p) => passo(p.motore, p.stato, t))
@@ -342,7 +366,7 @@ export default function Gara() {
       }
       return
     }
-    if (f !== 'gara' || falsaPartenzaRif.current) return
+    if (f !== 'gara') return
     if (!g.stato.partita) {
       g.stato.partita = true
       reazioneRif.current = tempo.current.t
@@ -364,7 +388,7 @@ export default function Gara() {
 
   const premiNitro = useCallback(() => {
     const g = piloti.current[0]
-    if (faseRif.current === 'gara' && g && !falsaPartenzaRif.current && nitro(g.stato)) mostraGiudizio('NITRO!', '#22d3ee')
+    if (faseRif.current === 'gara' && g && nitro(g.stato)) mostraGiudizio('NITRO!', '#22d3ee')
   }, [])
 
   useEffect(() => {
@@ -424,7 +448,10 @@ export default function Gara() {
                 <div className="bg-ink-2 p-2.5">
                   <p className="truncate font-mono text-[9px] uppercase tracking-widest text-ember">{a.marca}</p>
                   <p className="truncate text-sm font-semibold">{a.modello}</p>
-                  <p className="font-mono text-[10px] text-fog">0-100 {a.prestazioni.zeroCento} s</p>
+                  <p className="flex items-center justify-between font-mono text-[10px] text-fog">
+                    <span>0-100 {a.prestazioni.zeroCento} s</span>
+                    {modelli[chiaveAuto(a)] && <span className="rounded bg-ember/20 px-1 text-ember">3D</span>}
+                  </p>
                 </div>
               </button>
             ))}
@@ -435,10 +462,21 @@ export default function Gara() {
         <div className="space-y-5">
           {scelta ? (
             <motion.div key={scelta.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="vetro bordo-luce overflow-hidden rounded-3xl">
-              <div className="relative h-52">
-                <FotoAuto auto={scelta} grande className="size-full" />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink-2 via-transparent" />
-                <div className="absolute bottom-4 left-5">
+              <div className="relative h-60">
+                {modelloDi(scelta) ? (
+                  <div className="size-full bg-[radial-gradient(ellipse_at_50%_80%,rgb(255_106_26/0.18),transparent_65%)]">
+                    <Suspense fallback={<FotoAuto auto={scelta} grande className="size-full" />}>
+                      <AnteprimaAuto modello={modelloDi(scelta)!} lunghezza={lunghezzaDi(scelta)} />
+                    </Suspense>
+                  </div>
+                ) : (
+                  <FotoAuto auto={scelta} grande className="size-full" />
+                )}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-2 via-transparent" />
+                <span className={`absolute right-4 top-4 rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-widest ${modelloDi(scelta) ? 'bg-ember text-ink' : 'bg-black/60 text-fog'}`}>
+                  {modelloDi(scelta) ? 'Modello 3D reale · trascina' : 'In gara: modello stilizzato'}
+                </span>
+                <div className="pointer-events-none absolute bottom-4 left-5">
                   <p className="font-mono text-xs uppercase tracking-[0.3em] text-ember">{scelta.marca}</p>
                   <p className="font-display text-3xl font-black">{scelta.modello}</p>
                   <p className="text-xs text-fog">{scelta.prestazioni.versione}</p>
@@ -678,7 +716,7 @@ export default function Gara() {
                   >
                     <div className="mb-5 text-center">
                       <GradientText colors={['#ff6a1a', '#ffb347', '#22d3ee']} className="font-display text-3xl font-black">
-                        {falsaPartenza ? 'Squalificato' : risultati[0].tu ? 'Vittoria!' : `${risultati.findIndex((r) => r.tu) + 1}° posto`}
+                        {falsaPartenza ? 'Falsa partenza' : risultati[0].tu ? 'Vittoria!' : `${risultati.findIndex((r) => r.tu) + 1}° posto`}
                       </GradientText>
                     </div>
                     <ol className="space-y-2">
@@ -697,6 +735,9 @@ export default function Gara() {
                             <span className="block truncate text-sm font-semibold">
                               {r.tu ? 'Tu · ' : ''}
                               {r.auto.marca} {r.auto.modello}
+                              {r.tu && falsaPartenza && (
+                                <span className="ml-2 rounded bg-danger/20 px-1.5 py-0.5 font-mono text-[9px] text-danger">FALSA PARTENZA</span>
+                              )}
                             </span>
                             <span className="font-mono text-[10px] text-fog">reazione {r.reazione != null ? r.reazione.toFixed(3) : '—'}</span>
                           </span>
@@ -712,8 +753,26 @@ export default function Gara() {
                           Sei {esito.posizione}° in classifica con questa auto.
                         </span>
                       )}
+                      {falsaPartenza && <span className="mt-1 block text-danger">Sei partito prima del verde: il tempo non vale per la classifica.</span>}
                       {!utente && !falsaPartenza && <span className="mt-1 block">Accedi per salvare il tempo in classifica.</span>}
                     </div>
+                    {risultati.some((r) => modelloDi(r.auto)) && (
+                      <p className="mt-3 font-mono text-[10px] leading-relaxed text-fog">
+                        Modelli 3D da Sketchfab:{' '}
+                        {risultati
+                          .map((r) => modelloDi(r.auto))
+                          .filter((m): m is Modello => !!m)
+                          .map((m, i) => (
+                            <span key={m.file}>
+                              {i > 0 && ' · '}
+                              <a href={m.fonte} target="_blank" rel="noopener noreferrer" className="hover:text-paper">
+                                {m.autore}
+                              </a>{' '}
+                              ({m.licenza.replace('CC Attribution', 'CC BY')})
+                            </span>
+                          ))}
+                      </p>
+                    )}
                     <div className="mt-5 flex gap-3">
                       <Pulsante className="flex-1" onClick={avviaGara} icona={<RotateCcw className="size-4" />}>
                         Rivincita

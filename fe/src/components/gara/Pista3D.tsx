@@ -1,9 +1,11 @@
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { RoundedBox, Sparkles } from '@react-three/drei'
 import { Bloom, ChromaticAberration, EffectComposer, Vignette } from '@react-three/postprocessing'
-import { useLayoutEffect, useMemo, useRef, type ReactNode, type RefObject } from 'react'
+import { Suspense, useLayoutEffect, useMemo, useRef, type ReactNode, type RefObject } from 'react'
 import * as THREE from 'three'
 import { DISTANZA } from '@/lib/gara'
+import type { Modello } from '@/lib/modelli'
+import ModelloReale from './ModelloReale'
 
 /**
  * Scena della drag race. Non contiene logica di gara: legge lo stato dal ref
@@ -11,7 +13,15 @@ import { DISTANZA } from '@/lib/gara'
  * Asse: le auto partono da z = 0 e corrono verso z = -402.
  */
 
-export type AutoInPista = { x: number; v: number; nitro: boolean; colore: string; corsia: number }
+export type AutoInPista = {
+  x: number
+  v: number
+  nitro: boolean
+  colore: string
+  corsia: number
+  modello: Modello | null
+  lunghezza: number
+}
 export type Mondo = {
   auto: AutoInPista[] // la prima e' il giocatore
   vmax: number
@@ -21,27 +31,13 @@ export type Mondo = {
 const LARGHEZZA_CORSIA = 4
 const xCorsia = (c: number) => (c - 1.5) * LARGHEZZA_CORSIA
 
-/** Auto stilizzata: carrozzeria a spigoli morbidi, abitacolo in vetro, fari e fiamme del nitro. */
-function Macchina({ indice, mondo }: { indice: number; mondo: RefObject<Mondo> }) {
-  const gruppo = useRef<THREE.Group>(null)
+/** Auto stilizzata: usata se l'auto non ha un modello reale (o mentre carica). */
+function Stilizzata({ colore, velocita }: { colore: string; velocita: () => number }) {
   const ruote = useRef<THREE.Group[]>([])
-  const fiamme = useRef<THREE.Group>(null)
-  const dati = mondo.current.auto[indice]
-
-  useFrame((stato) => {
-    const a = mondo.current.auto[indice]
-    if (!a || !gruppo.current) return
-    gruppo.current.position.set(xCorsia(a.corsia), 0, -a.x)
-    // leggero beccheggio in accelerazione
-    gruppo.current.rotation.x = THREE.MathUtils.lerp(gruppo.current.rotation.x, a.v > 1 ? 0.02 : 0, 0.1)
-    ruote.current.forEach((r) => (r.rotation.x -= a.v * 0.03))
-    if (fiamme.current) {
-      fiamme.current.visible = a.nitro
-      const s = 0.8 + Math.sin(stato.clock.elapsedTime * 60) * 0.25
-      fiamme.current.scale.set(1, 1, s)
-    }
+  useFrame(() => {
+    const v = velocita()
+    ruote.current.forEach((r) => (r.rotation.x -= v * 0.03))
   })
-
   const ruota = (x: number, z: number) => (
     <group key={`${x}${z}`} position={[x, 0.38, z]}>
       <group ref={(g) => { if (g && !ruote.current.includes(g)) ruote.current.push(g) }}>
@@ -56,21 +52,18 @@ function Macchina({ indice, mondo }: { indice: number; mondo: RefObject<Mondo> }
       </group>
     </group>
   )
-
   return (
-    <group ref={gruppo}>
+    <group>
       <RoundedBox args={[1.9, 0.6, 4.3]} radius={0.22} smoothness={4} position={[0, 0.62, 0]} castShadow>
-        <meshPhysicalMaterial color={dati.colore} metalness={0.6} roughness={0.25} clearcoat={1} clearcoatRoughness={0.05} />
+        <meshPhysicalMaterial color={colore} metalness={0.6} roughness={0.25} clearcoat={1} clearcoatRoughness={0.05} />
       </RoundedBox>
       <RoundedBox args={[1.5, 0.5, 2]} radius={0.2} smoothness={4} position={[0, 1.1, 0.25]}>
         <meshPhysicalMaterial color="#141b28" metalness={0.4} roughness={0.05} clearcoat={1} />
       </RoundedBox>
-      {/* alettone */}
       <mesh position={[0, 1.02, 1.95]}>
         <boxGeometry args={[1.7, 0.06, 0.35]} />
         <meshStandardMaterial color="#111" />
       </mesh>
-      {/* fanali posteriori: il bloom li trasforma in scie rosse */}
       <mesh position={[0, 0.72, 2.16]}>
         <boxGeometry args={[1.6, 0.08, 0.04]} />
         <meshStandardMaterial color="#ff2b2b" emissive="#ff1a1a" emissiveIntensity={6} toneMapped={false} />
@@ -81,8 +74,46 @@ function Macchina({ indice, mondo }: { indice: number; mondo: RefObject<Mondo> }
           <meshStandardMaterial color="#fff" emissive="#dff6ff" emissiveIntensity={5} toneMapped={false} />
         </mesh>
       ))}
-      {/* fiamme del nitro */}
-      <group ref={fiamme} position={[0, 0.45, 2.3]} visible={false}>
+      {ruota(-0.92, -1.4)}
+      {ruota(0.92, -1.4)}
+      {ruota(-0.92, 1.35)}
+      {ruota(0.92, 1.35)}
+    </group>
+  )
+}
+
+/** Un'auto in pista: modello Sketchfab reale se c'e', altrimenti quella stilizzata. */
+function Macchina({ indice, mondo }: { indice: number; mondo: RefObject<Mondo> }) {
+  const gruppo = useRef<THREE.Group>(null)
+  const fiamme = useRef<THREE.Group>(null)
+  const dati = mondo.current.auto[indice]
+  const velocita = () => mondo.current.auto[indice]?.v ?? 0
+
+  useFrame((stato) => {
+    const a = mondo.current.auto[indice]
+    if (!a || !gruppo.current) return
+    gruppo.current.position.set(xCorsia(a.corsia), 0, -a.x)
+    // leggero beccheggio in accelerazione
+    gruppo.current.rotation.x = THREE.MathUtils.lerp(gruppo.current.rotation.x, a.v > 1 ? 0.02 : 0, 0.1)
+    if (fiamme.current) {
+      fiamme.current.visible = a.nitro
+      const s = 0.8 + Math.sin(stato.clock.elapsedTime * 60) * 0.25
+      fiamme.current.scale.set(1, 1, s)
+    }
+  })
+
+  const stilizzata = <Stilizzata colore={dati.colore} velocita={velocita} />
+  return (
+    <group ref={gruppo}>
+      {dati.modello ? (
+        <Suspense fallback={stilizzata}>
+          <ModelloReale modello={dati.modello} lunghezza={dati.lunghezza} />
+        </Suspense>
+      ) : (
+        stilizzata
+      )}
+      {/* fiamme del nitro, attaccate al posteriore */}
+      <group ref={fiamme} position={[0, 0.45, dati.lunghezza / 2]} visible={false}>
         {[-0.45, 0.45].map((x) => (
           <mesh key={x} position={[x, 0, 0.45]} rotation={[Math.PI / 2, 0, 0]}>
             <coneGeometry args={[0.16, 1, 12]} />
@@ -90,10 +121,6 @@ function Macchina({ indice, mondo }: { indice: number; mondo: RefObject<Mondo> }
           </mesh>
         ))}
       </group>
-      {ruota(-0.92, -1.4)}
-      {ruota(0.92, -1.4)}
-      {ruota(-0.92, 1.35)}
-      {ruota(0.92, 1.35)}
     </group>
   )
 }

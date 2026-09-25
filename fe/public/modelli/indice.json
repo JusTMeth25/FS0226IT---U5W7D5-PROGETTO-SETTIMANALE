@@ -1,0 +1,357 @@
+{
+ "Alfa Romeo|Junior": {
+  "file": "alfa-romeo-junior.glb",
+  "nome": "2024 Alfa Romeo Junior",
+  "autore": "tonielpro520",
+  "licenza": "CC Attribution",
+  "fonte": "https://sketchfab.com/3d-models/2024-alfa-romeo-junior-9a7af50eb8bb4b3eba07b80133616856",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Alfa Romeo|Tonale": {
+  "file": "alfa-romeo-tonale.glb",
+  "nome": "2023 Alfa Romeo Tonale Veloce",
+  "autore": "tonielpro520",
+  "licenza": "CC Attribution",
+  "fonte": "https://sketchfab.com/3d-models/2023-alfa-romeo-tonale-veloce-19e572df8609438e83d1583cad9a20d4",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Alfa Romeo|Giulia": {
+  "file": "alfa-romeo-giulia.glb",
+  "nome": "2016 Alfa Romeo Giulia Quadrifoglio",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2016-alfa-romeo-giulia-quadrifoglio-8985b52ac8a84aaf90ccaa5669697001",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Alfa Romeo|Stelvio": {
+  "file": "alfa-romeo-stelvio.glb",
+  "nome": "2017 Alfa Romeo Stelvio Quadrifoglio",
+  "autore": "tonielpro520",
+  "licenza": "CC Attribution",
+  "fonte": "https://sketchfab.com/3d-models/2017-alfa-romeo-stelvio-quadrifoglio-b6e382aee4a44fb3b1222d7191470640",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Ferrari|296 GTB": {
+  "file": "ferrari-296-gtb.glb",
+  "nome": "2022 Ferrari 296 GTB",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2022-ferrari-296-gtb-269f4fd01b584dd38f7e512de60c4645",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Ferrari|296 GTS": {
+  "file": "ferrari-296-gts.glb",
+  "nome": "2023 Ferrari 296 GTS",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2023-ferrari-296-gts-9a596b9d09414adfad64fc1f5fd019f9",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Ferrari|Purosangue": {
+  "file": "ferrari-purosangue.glb",
+  "nome": "2023 Ferrari Purosangue",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2023-ferrari-purosangue-541dc84c37174356a7b0efd44904593d",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Ferrari|12Cilindri": {
+  "file": "ferrari-12cilindri.glb",
+  "nome": "2025 Ferrari 12Cilindri",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution",
+  "fonte": "https://sketchfab.com/3d-models/2025-ferrari-12cilindri-cb0b42a5bda844bd8ccd62451f1db427",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Lamborghini|Urus": {
+  "file": "lamborghini-urus.glb",
+  "nome": "2023 Lamborghini Urus Performante",
+  "autore": "Outlaw Games™",
+  "licenza": "CC Attribution-NonCommercial",
+  "fonte": "https://sketchfab.com/3d-models/2023-lamborghini-urus-performante-23dd7730fc244eba997cf60afa70177e",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Lamborghini|Temerario": {
+  "file": "lamborghini-temerario.glb",
+  "nome": "2025 Lamborghini Temerario",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2025-lamborghini-temerario-223504eacee54eaf9169cc60db1c0a70",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Lamborghini|Revuelto": {
+  "file": "lamborghini-revuelto.glb",
+  "nome": "Lamborghini Revuelto",
+  "autore": "Outlaw Games™",
+  "licenza": "CC Attribution-NonCommercial",
+  "fonte": "https://sketchfab.com/3d-models/lamborghini-revuelto-4258ff5b559c45f2a470344f0e04c8cd",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Porsche|Taycan": {
+  "file": "porsche-taycan.glb",
+  "nome": "2025 Porsche Taycan Turbo GT Weissach Package",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2025-porsche-taycan-turbo-gt-weissach-package-4e1abafe7cf5413587a421377624ba08",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Porsche|Cayenne": {
+  "file": "porsche-cayenne.glb",
+  "nome": "2022 Porsche Cayenne Turbo GT",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2022-porsche-cayenne-turbo-gt-74fbea5a4dfc4197839fdd2bf654369a",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Porsche|Panamera": {
+  "file": "porsche-panamera.glb",
+  "nome": "2021 Porsche Panamera Turbo S Sport Turismo",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2021-porsche-panamera-turbo-s-sport-turismo-f2269fdf74f64257a3a9b0872eb9b2d8",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Porsche|911 Carrera": {
+  "file": "porsche-911-carrera.glb",
+  "nome": "2022 Porsche 911 GT3 Touring (992)",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2022-porsche-911-gt3-touring-992-a76364a3d50c4d78912a28250cb57be5",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Porsche|911 GT3": {
+  "file": "porsche-911-gt3.glb",
+  "nome": "Porsche 911 GT3",
+  "autore": "Outlaw Games™",
+  "licenza": "CC Attribution-NonCommercial",
+  "fonte": "https://sketchfab.com/3d-models/porsche-911-gt3-593c83f3662a4a45a016f95dedd9f243",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "BMW|Serie 1": {
+  "file": "bmw-serie-1.glb",
+  "nome": "Bmw Serie 1 F40",
+  "autore": "Paradax001",
+  "licenza": "CC Attribution",
+  "fonte": "https://sketchfab.com/3d-models/bmw-serie-1-f40-585c5cf5189d4f8ca8405e5d2d20603d",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "BMW|M4 Competition": {
+  "file": "bmw-m4-competition.glb",
+  "nome": "2025 BMW M4 Competition",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2025-bmw-m4-competition-f8141ecd755547989c9209784b71ad43",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Mercedes-Benz|CLA": {
+  "file": "mercedes-benz-cla.glb",
+  "nome": "2026 Mercedes-Benz CLA Sedan EV",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2026-mercedes-benz-cla-sedan-ev-52c4a3cc5536425782e13bd8282f9d99",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Mercedes-Benz|Classe C": {
+  "file": "mercedes-benz-classe-c.glb",
+  "nome": "Mercedes-Benz C-Class Estate  Free",
+  "autore": "Sloftm_Carz",
+  "licenza": "CC Attribution",
+  "fonte": "https://sketchfab.com/3d-models/mercedes-benz-c-class-estate-free-b108b6f2e9654481af1c02801a98228e",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Mercedes-Benz|AMG G 63": {
+  "file": "mercedes-benz-amg-g-63.glb",
+  "nome": "2025 Mercedes-Benz G-Class AMG G 63",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2025-mercedes-benz-g-class-amg-g-63-f583b5bfc17346c08573dc4f1edebefe",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Mercedes-Benz|AMG GT 63": {
+  "file": "mercedes-benz-amg-gt-63.glb",
+  "nome": "Mercedes-Benz GT 63 AMG",
+  "autore": "Nieve5677",
+  "licenza": "CC Attribution",
+  "fonte": "https://sketchfab.com/3d-models/mercedes-benz-gt-63-amg-1bac25a7f21a4297ba2392dca814fd7e",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Audi|Q3": {
+  "file": "audi-q3.glb",
+  "nome": "2023 Audi Q3 40 TFSI",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2023-audi-q3-40-tfsi-97dccbc18cfb4f1e973fc75e278c6f66",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Audi|RS 6 Avant": {
+  "file": "audi-rs-6-avant.glb",
+  "nome": "2020 Audi RS6 Avant",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2020-audi-rs6-avant-980dbda2cbbb4bae8decaed2fa80aa0c",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Audi|RS e-tron GT": {
+  "file": "audi-rs-e-tron-gt.glb",
+  "nome": "2022 Audi RS e-tron GT",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2022-audi-rs-e-tron-gt-e5b032ec99bc44be9f31761c574fe4c2",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Volkswagen|ID.3": {
+  "file": "volkswagen-id3.glb",
+  "nome": "2021 Volkwagen ID.3",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution",
+  "fonte": "https://sketchfab.com/3d-models/2021-volkwagen-id3-cae9c426df874fa4b7f47ea2611f3824",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Renault|Captur": {
+  "file": "renault-captur.glb",
+  "nome": "2025 Renault Captur",
+  "autore": "tonielpro520",
+  "licenza": "CC Attribution",
+  "fonte": "https://sketchfab.com/3d-models/2025-renault-captur-3fe3f58932cf46bd8cfb4437187b287f",
+  "rotazione": 0,
+  "ignoraIngombro": []
+ },
+ "Alpine|A110": {
+  "file": "alpine-a110.glb",
+  "nome": "2022 Alpine A110",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2022-alpine-a110-00fc322c91f04f23acae09910620937f",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Peugeot|2008": {
+  "file": "peugeot-2008.glb",
+  "nome": "2020 Peugeot 2008",
+  "autore": "David_Holiday",
+  "licenza": "CC Attribution",
+  "fonte": "https://sketchfab.com/3d-models/2020-peugeot-2008-93efd164d3374295a8ac04c36e329429",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Peugeot|308": {
+  "file": "peugeot-308.glb",
+  "nome": "2022 | Peugeot 308",
+  "autore": "kevin (ケビン)",
+  "licenza": "CC Attribution",
+  "fonte": "https://sketchfab.com/3d-models/2022-peugeot-308-0d9c9c265bec42678bfc269c1a8cebc3",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Tesla|Model 3": {
+  "file": "tesla-model-3.glb",
+  "nome": "Tesla 2018 Model 3",
+  "autore": "Ameer Studio",
+  "licenza": "CC Attribution",
+  "fonte": "https://sketchfab.com/3d-models/tesla-2018-model-3-5ef9b845aaf44203b6d04e2c677e444f",
+  "rotazione": 180,
+  "ignoraIngombro": [
+   "dvorright_dvorright0_0",
+   "movsteer_10_movsteer_101_0",
+   "movsteer_10_movsteer_100_0"
+  ]
+ },
+ "Tesla|Model Y": {
+  "file": "tesla-model-y.glb",
+  "nome": "2025 Tesla Model Y",
+  "autore": "BloxBloger",
+  "licenza": "CC Attribution-NonCommercial",
+  "fonte": "https://sketchfab.com/3d-models/2025-tesla-model-y-619601e7800d418da5922c4fa7833f74",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Tesla|Model S": {
+  "file": "tesla-model-s.glb",
+  "nome": "TESLA MODEL S 90D ALL-WHEEL DRIVE",
+  "autore": "pancakesbassoondonut",
+  "licenza": "CC Attribution",
+  "fonte": "https://sketchfab.com/3d-models/tesla-model-s-90d-all-wheel-drive-cad404f3c3b341b7a7bd954d4f2770b2",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Honda|Civic Type R": {
+  "file": "honda-civic-type-r.glb",
+  "nome": "2023 Honda Civic Type R",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2023-honda-civic-type-r-8c9484184a2b4254aafd67418b8c18db",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "McLaren|Artura": {
+  "file": "mclaren-artura.glb",
+  "nome": "2023 McLaren Artura",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution",
+  "fonte": "https://sketchfab.com/3d-models/2023-mclaren-artura-d393abd807f04d62b96b1bd82119b5d4",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "McLaren|750S": {
+  "file": "mclaren-750s.glb",
+  "nome": "Mc Laren 750s",
+  "autore": "MistHars",
+  "licenza": "CC Attribution",
+  "fonte": "https://sketchfab.com/3d-models/mc-laren-750s-c863bfed41894b39bce6e3f7f1b7bc91",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Aston Martin|DB12": {
+  "file": "aston-martin-db12.glb",
+  "nome": "2024 Aston Martin DB12",
+  "autore": "tonielpro520",
+  "licenza": "CC Attribution",
+  "fonte": "https://sketchfab.com/3d-models/2024-aston-martin-db12-f603d93210c04f2b8a8308afaa9da87d",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Hyundai|i20": {
+  "file": "hyundai-i20.glb",
+  "nome": "2022 Hyundai i20 N Line",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2022-hyundai-i20-n-line-ed61e7bd2fdb498aa97cb389b1440633",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ },
+ "Hyundai|Kona": {
+  "file": "hyundai-kona.glb",
+  "nome": "2025 Hyundai Kona N Line",
+  "autore": "Ddiaz Design",
+  "licenza": "CC Attribution-NonCommercial-ShareAlike",
+  "fonte": "https://sketchfab.com/3d-models/2025-hyundai-kona-n-line-26c27a6e061d4776b750e483b933df79",
+  "rotazione": 180,
+  "ignoraIngombro": []
+ }
+}

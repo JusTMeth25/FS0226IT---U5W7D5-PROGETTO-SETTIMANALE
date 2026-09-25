@@ -170,6 +170,57 @@ Per creare la password per le app di Gmail:
 - **Antitruffa**: il server ricalcola il tempo con guida perfetta (reazione zero, cambiate al limitatore, nitro nel momento migliore). Un tempo piu' basso di quel minimo (tolleranza 30 ms) viene rifiutato con 400.
 - In classifica compare solo il nome dell'utente, mai l'email. Eliminando l'account si cancellano anche i tempi.
 
+## Modelli 3D in gara
+
+39 auto usano in gara un modello 3D reale scaricato da Sketchfab con licenza Creative Commons; le altre usano un modello stilizzato.
+- Scaricati una volta con l'API di download di Sketchfab (token personale, mai nel repo).
+- Compressi con gltf-transform: texture 1024 px WebP, circa 150-250 mila vertici, meshopt. Da 5-127 MB a 1-4 MB l'uno (77 MB in tutto).
+- In `fe/public/modelli/`, con `indice.json`: file, crediti e correzioni (rotazione, pezzi da ignorare nel calcolo delle misure).
+- Esclusi modelli con licenza Standard, Editorial o NoDerivs: non permettono di ridistribuire il file compresso.
+- Molti modelli sono CC BY-NC: vanno bene per questo progetto didattico, non per un uso commerciale.
+
+| Auto | Modello | Autore | Licenza |
+|---|---|---|---|
+| Alfa Romeo Junior | [2024 Alfa Romeo Junior](https://sketchfab.com/3d-models/2024-alfa-romeo-junior-9a7af50eb8bb4b3eba07b80133616856) | tonielpro520 | CC BY |
+| Alfa Romeo Tonale | [2023 Alfa Romeo Tonale Veloce](https://sketchfab.com/3d-models/2023-alfa-romeo-tonale-veloce-19e572df8609438e83d1583cad9a20d4) | tonielpro520 | CC BY |
+| Alfa Romeo Giulia | [2016 Alfa Romeo Giulia Quadrifoglio](https://sketchfab.com/3d-models/2016-alfa-romeo-giulia-quadrifoglio-8985b52ac8a84aaf90ccaa5669697001) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| Alfa Romeo Stelvio | [2017 Alfa Romeo Stelvio Quadrifoglio](https://sketchfab.com/3d-models/2017-alfa-romeo-stelvio-quadrifoglio-b6e382aee4a44fb3b1222d7191470640) | tonielpro520 | CC BY |
+| Ferrari 296 GTB | [2022 Ferrari 296 GTB](https://sketchfab.com/3d-models/2022-ferrari-296-gtb-269f4fd01b584dd38f7e512de60c4645) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| Ferrari 296 GTS | [2023 Ferrari 296 GTS](https://sketchfab.com/3d-models/2023-ferrari-296-gts-9a596b9d09414adfad64fc1f5fd019f9) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| Ferrari Purosangue | [2023 Ferrari Purosangue](https://sketchfab.com/3d-models/2023-ferrari-purosangue-541dc84c37174356a7b0efd44904593d) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| Ferrari 12Cilindri | [2025 Ferrari 12Cilindri](https://sketchfab.com/3d-models/2025-ferrari-12cilindri-cb0b42a5bda844bd8ccd62451f1db427) | Ddiaz Design | CC BY |
+| Lamborghini Urus | [2023 Lamborghini Urus Performante](https://sketchfab.com/3d-models/2023-lamborghini-urus-performante-23dd7730fc244eba997cf60afa70177e) | Outlaw Games™ | CC BY-NonCommercial |
+| Lamborghini Temerario | [2025 Lamborghini Temerario](https://sketchfab.com/3d-models/2025-lamborghini-temerario-223504eacee54eaf9169cc60db1c0a70) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| Lamborghini Revuelto | [Lamborghini Revuelto](https://sketchfab.com/3d-models/lamborghini-revuelto-4258ff5b559c45f2a470344f0e04c8cd) | Outlaw Games™ | CC BY-NonCommercial |
+| Porsche Taycan | [2025 Porsche Taycan Turbo GT Weissach Package](https://sketchfab.com/3d-models/2025-porsche-taycan-turbo-gt-weissach-package-4e1abafe7cf5413587a421377624ba08) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| Porsche Cayenne | [2022 Porsche Cayenne Turbo GT](https://sketchfab.com/3d-models/2022-porsche-cayenne-turbo-gt-74fbea5a4dfc4197839fdd2bf654369a) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| Porsche Panamera | [2021 Porsche Panamera Turbo S Sport Turismo](https://sketchfab.com/3d-models/2021-porsche-panamera-turbo-s-sport-turismo-f2269fdf74f64257a3a9b0872eb9b2d8) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| Porsche 911 Carrera | [2022 Porsche 911 GT3 Touring (992)](https://sketchfab.com/3d-models/2022-porsche-911-gt3-touring-992-a76364a3d50c4d78912a28250cb57be5) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| Porsche 911 GT3 | [Porsche 911 GT3](https://sketchfab.com/3d-models/porsche-911-gt3-593c83f3662a4a45a016f95dedd9f243) | Outlaw Games™ | CC BY-NonCommercial |
+| BMW Serie 1 | [Bmw Serie 1 F40](https://sketchfab.com/3d-models/bmw-serie-1-f40-585c5cf5189d4f8ca8405e5d2d20603d) | Paradax001 | CC BY |
+| BMW M4 Competition | [2025 BMW M4 Competition](https://sketchfab.com/3d-models/2025-bmw-m4-competition-f8141ecd755547989c9209784b71ad43) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| Mercedes-Benz CLA | [2026 Mercedes-Benz CLA Sedan EV](https://sketchfab.com/3d-models/2026-mercedes-benz-cla-sedan-ev-52c4a3cc5536425782e13bd8282f9d99) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| Mercedes-Benz Classe C | [Mercedes-Benz C-Class Estate  Free](https://sketchfab.com/3d-models/mercedes-benz-c-class-estate-free-b108b6f2e9654481af1c02801a98228e) | Sloftm_Carz | CC BY |
+| Mercedes-Benz AMG G 63 | [2025 Mercedes-Benz G-Class AMG G 63](https://sketchfab.com/3d-models/2025-mercedes-benz-g-class-amg-g-63-f583b5bfc17346c08573dc4f1edebefe) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| Mercedes-Benz AMG GT 63 | [Mercedes-Benz GT 63 AMG](https://sketchfab.com/3d-models/mercedes-benz-gt-63-amg-1bac25a7f21a4297ba2392dca814fd7e) | Nieve5677 | CC BY |
+| Audi Q3 | [2023 Audi Q3 40 TFSI](https://sketchfab.com/3d-models/2023-audi-q3-40-tfsi-97dccbc18cfb4f1e973fc75e278c6f66) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| Audi RS 6 Avant | [2020 Audi RS6 Avant](https://sketchfab.com/3d-models/2020-audi-rs6-avant-980dbda2cbbb4bae8decaed2fa80aa0c) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| Audi RS e-tron GT | [2022 Audi RS e-tron GT](https://sketchfab.com/3d-models/2022-audi-rs-e-tron-gt-e5b032ec99bc44be9f31761c574fe4c2) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| Volkswagen ID.3 | [2021 Volkwagen ID.3](https://sketchfab.com/3d-models/2021-volkwagen-id3-cae9c426df874fa4b7f47ea2611f3824) | Ddiaz Design | CC BY |
+| Renault Captur | [2025 Renault Captur](https://sketchfab.com/3d-models/2025-renault-captur-3fe3f58932cf46bd8cfb4437187b287f) | tonielpro520 | CC BY |
+| Alpine A110 | [2022 Alpine A110](https://sketchfab.com/3d-models/2022-alpine-a110-00fc322c91f04f23acae09910620937f) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| Peugeot 2008 | [2020 Peugeot 2008](https://sketchfab.com/3d-models/2020-peugeot-2008-93efd164d3374295a8ac04c36e329429) | David_Holiday | CC BY |
+| Peugeot 308 | [2022 | Peugeot 308](https://sketchfab.com/3d-models/2022-peugeot-308-0d9c9c265bec42678bfc269c1a8cebc3) | kevin (ケビン) | CC BY |
+| Tesla Model 3 | [Tesla 2018 Model 3](https://sketchfab.com/3d-models/tesla-2018-model-3-5ef9b845aaf44203b6d04e2c677e444f) | Ameer Studio | CC BY |
+| Tesla Model Y | [2025 Tesla Model Y](https://sketchfab.com/3d-models/2025-tesla-model-y-619601e7800d418da5922c4fa7833f74) | BloxBloger | CC BY-NonCommercial |
+| Tesla Model S | [TESLA MODEL S 90D ALL-WHEEL DRIVE](https://sketchfab.com/3d-models/tesla-model-s-90d-all-wheel-drive-cad404f3c3b341b7a7bd954d4f2770b2) | pancakesbassoondonut | CC BY |
+| Honda Civic Type R | [2023 Honda Civic Type R](https://sketchfab.com/3d-models/2023-honda-civic-type-r-8c9484184a2b4254aafd67418b8c18db) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| McLaren Artura | [2023 McLaren Artura](https://sketchfab.com/3d-models/2023-mclaren-artura-d393abd807f04d62b96b1bd82119b5d4) | Ddiaz Design | CC BY |
+| McLaren 750S | [Mc Laren 750s](https://sketchfab.com/3d-models/mc-laren-750s-c863bfed41894b39bce6e3f7f1b7bc91) | MistHars | CC BY |
+| Aston Martin DB12 | [2024 Aston Martin DB12](https://sketchfab.com/3d-models/2024-aston-martin-db12-f603d93210c04f2b8a8308afaa9da87d) | tonielpro520 | CC BY |
+| Hyundai i20 | [2022 Hyundai i20 N Line](https://sketchfab.com/3d-models/2022-hyundai-i20-n-line-ed61e7bd2fdb498aa97cb389b1440633) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+| Hyundai Kona | [2025 Hyundai Kona N Line](https://sketchfab.com/3d-models/2025-hyundai-kona-n-line-26c27a6e061d4776b750e483b933df79) | Ddiaz Design | CC BY-NonCommercial-ShareAlike |
+
 ## Struttura
 
 ```
