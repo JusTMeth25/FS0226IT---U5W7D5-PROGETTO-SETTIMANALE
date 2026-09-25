@@ -2,12 +2,12 @@ import { AnimatePresence, motion } from 'motion/react'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
 import { BellRing, CheckCheck, HeartCrack, HeartOff, Trash2 } from 'lucide-react'
-import Sagoma from '@/components/Sagoma'
+import { FotoAuto } from '@/components/FotoAuto'
 import SogliaForm from '@/components/SogliaForm'
 import SpotlightCard from '@/components/bits/SpotlightCard'
 import { Errore, Intestazione, Pulsante, Scheletro, Vuoto } from '@/components/ui'
 import { api, type Avviso, type Preferito } from '@/lib/api'
-import { euro, sagomaDi, verniceDi } from '@/lib/formato'
+import { euro } from '@/lib/formato'
 import { useToast } from '@/lib/toast'
 
 /** Ogni preferito ha il suo avviso: si fissa la soglia direttamente da qui. */
@@ -93,7 +93,6 @@ export default function Preferiti() {
         <AnimatePresence>
           {preferiti?.map((p, i) => {
             const avviso = avvisoDi(p.auto.id)
-            const v = verniceDi(p.auto.id)
             return (
               <motion.div
                 key={p.id}
@@ -105,8 +104,8 @@ export default function Preferiti() {
                 <SpotlightCard className="h-full p-6" spotlightColor="rgba(255, 106, 26, 0.14)">
                   <div className="flex gap-5">
                     <Link to={`/auto/${p.auto.id}`} className="group w-36 shrink-0">
-                      <div className="rounded-2xl p-2" style={{ background: `radial-gradient(circle at 50% 80%, ${v.colore}44, transparent 70%)` }}>
-                        <Sagoma colore={v.colore} tipo={sagomaDi(p.auto.id)} className="w-full transition-transform duration-500 group-hover:translate-x-2" />
+                      <div className="h-24 overflow-hidden rounded-2xl">
+                        <FotoAuto auto={p.auto} className="size-full transition-transform duration-500 group-hover:scale-110" />
                       </div>
                     </Link>
                     <div className="min-w-0 flex-1">

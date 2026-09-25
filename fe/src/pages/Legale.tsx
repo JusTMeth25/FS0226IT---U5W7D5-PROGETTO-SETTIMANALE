@@ -103,6 +103,14 @@ export function Privacy() {
             <strong>Google (Gmail)</strong> consegna le mail di avviso: per spedirle riceve il tuo indirizzo, il tuo nome e il contenuto della
             mail.
           </li>
+          <li>
+            <strong>Wikimedia Foundation</strong> (wikimedia.org) ospita le foto delle auto. Per mostrartele il browser le scarica da
+            loro, che vedono quindi il tuo indirizzo IP. Non inviamo il riferimento alla pagina (referrer) e non ci sono cookie.
+          </li>
+          <li>
+            <strong>Sketchfab</strong> (Epic Games) ospita i modelli 3D. Il visualizzatore si carica solo se premi «Carica il 3D»: da quel
+            momento il browser si collega ai loro server, secondo la loro privacy policy. Lo apriamo con l'opzione «do not track».
+          </li>
         </ul>
         <p>Non vendiamo e non cediamo i dati a nessun altro. Non usiamo strumenti di analisi, pubblicita' o profilazione.</p>
       </>,
@@ -156,7 +164,7 @@ export function Cookie() {
     [
       'In breve',
       <p>
-        Vetrina <strong>non usa cookie</strong>: ne' tecnici, ne' di analisi, ne' di profilazione. Per questo non ti chiediamo alcun consenso
+        Vetrina <strong>non usa cookie propri</strong>: ne' tecnici, ne' di analisi, ne' di profilazione. L'unico contenuto esterno che potrebbe usarne (il visualizzatore 3D) parte solo con un tuo clic, quindi non ti chiediamo alcun consenso
         all'ingresso. C'e' pero' un dato che salviamo nel tuo browser quando accedi, ed e' giusto che tu lo sappia.
       </p>,
     ],
@@ -188,10 +196,23 @@ export function Cookie() {
     ],
     [
       'Terze parti',
-      <p>
-        Nessuna. Font, animazioni e grafica 3D sono serviti dal nostro sito: il browser non contatta Google Fonts, CDN esterne, social network
-        o servizi di statistica.
-      </p>,
+      <>
+        <p>
+          Font, animazioni e la grafica del tunnel in home sono serviti dal nostro sito: niente Google Fonts, social network o servizi di
+          statistica.
+        </p>
+        <ul>
+          <li>
+            <strong>Foto delle auto</strong>: arrivano da Wikimedia Commons (wikimedia.org), senza referrer. Wikimedia non imposta
+            cookie per le immagini.
+          </li>
+          <li>
+            <strong>Modelli 3D</strong>: il visualizzatore di Sketchfab e' un contenuto esterno che puo' usare cookie propri. Per questo non
+            parte da solo: si carica solo dopo il tuo clic su «Carica il 3D», e la scelta non viene salvata. Alla pagina successiva te lo
+            chiediamo di nuovo.
+          </li>
+        </ul>
+      </>,
     ],
     [
       'Come cancellarlo',
@@ -203,7 +224,7 @@ export function Cookie() {
   ]
   return (
     <div className="mx-auto max-w-4xl px-5 pt-32">
-      <Intestazione sopra={`Aggiornata il ${AGGIORNATA}`} titolo="Cookie Policy" sotto="Zero cookie. Un solo dato nel browser, e ti diciamo quale." />
+      <Intestazione sopra={`Aggiornata il ${AGGIORNATA}`} titolo="Cookie Policy" sotto="Zero cookie nostri. Un solo dato nel browser, e ti diciamo quale." />
       {sezioni.map(([t, c], i) => (
         <Sezione key={t} titolo={t} i={i}>
           {c}

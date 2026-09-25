@@ -17,7 +17,7 @@ Se il nuovo prezzo scende sotto la soglia di un utente, a quell'utente parte una
 |---|---|---|---|
 | pubblico | POST | `/api/auth/registrazione` | `{email, nome, password}`: crea un utente con ruolo USER e restituisce il token |
 | pubblico | POST | `/api/auth/login` | `{email, password}`: restituisce il token |
-| pubblico | GET | `/api/auto?q=&sort=&dir=&page=&size=` | catalogo delle auto pubblicate |
+| pubblico | GET | `/api/auto?q=&carrozzeria=&sort=&dir=&page=&size=` | catalogo delle auto pubblicate |
 | pubblico | GET | `/api/auto/{id}` | dettaglio (404 se l'auto è una bozza) |
 | pubblico | POST | `/api/avvisi/disattiva` | `{token}` dal link della mail: cancella l'avviso |
 | pubblico | GET | `/actuator/health`, `/api/stato` | health check, stato del DB |
@@ -130,9 +130,9 @@ Per creare la password per le app di Gmail:
 
 | Pagina | Percorso | Accesso |
 |---|---|---|
-| Home con showroom 3D (vernice a scelta, trascina per ruotare) | `/` | tutti |
-| Catalogo con ricerca, ordinamento e paginazione nell'URL | `/catalogo` | tutti |
-| Dettaglio con auto 3D, preferito e soglia di prezzo | `/auto/:id` | tutti (azioni da utente) |
+| Home con tunnel di luci 3D e vetrina di supercar | `/` | tutti |
+| Catalogo con ricerca, filtro carrozzeria, ordinamento e paginazione nell'URL | `/catalogo` | tutti |
+| Dettaglio con foto reale, modello 3D Sketchfab, preferito e soglia | `/auto/:id` | tutti (azioni da utente) |
 | Accedi / Registrati | `/accedi` | ospiti |
 | Preferiti con soglia per ogni auto | `/preferiti` | utente |
 | Avvisi con stato "in attesa / mail inviata" | `/avvisi` | utente |
@@ -141,8 +141,13 @@ Per creare la password per le app di Gmail:
 | Disattivazione dal link della mail | `/avvisi/disattiva?token=` | tutti |
 | Privacy Policy / Cookie Policy (link nel footer di ogni pagina) | `/privacy`, `/cookie` | tutti |
 
-- L'auto 3D è procedurale: il profilo laterale viene estruso e poi scolpito, quindi non c'è nessun modello da scaricare. Le luci sono `Lightformer`, senza HDR esterni. Il bloom illumina i fari.
-- Three.js si carica solo su home e dettaglio (`React.lazy`).
+- **Catalogo reale**: 76 modelli venduti in Italia, importati all'avvio da `be/src/main/resources/catalogo/auto.json` (`CatalogoSeeder`).
+  - Prezzi: listino italiano "da", verificato a settembre 2026 su Quattroruote e sui listini ufficiali.
+  - Foto: Wikimedia Commons, con autore e licenza Creative Commons mostrati sotto ogni foto.
+  - Modelli 3D: visualizzatore Sketchfab, caricato solo dopo un clic (servizio esterno, citato nella Privacy Policy).
+  - Un riavvio aggiorna foto e 3D ma non tocca i prezzi: li gestisce l'admin, e cambiarli farebbe scattare gli avvisi.
+- La home ha un tunnel di luci in Three.js (R3F + bloom), con effetto turbo al passaggio sul pulsante.
+- Three.js si carica solo in home (`React.lazy`).
 - I componenti React Bits (SplitText, Aurora, ClickSpark, SpotlightCard, CountUp, ShinyText, Magnet, GradientText) si trovano in `fe/src/components/bits`.
 - I font sono self-hosted con `@fontsource`: il browser non contatta terze parti.
 - Ogni `fetch` passa da `fe/src/lib/api.ts`.
@@ -164,6 +169,6 @@ be/src/main/java/it/epicode/base/
   avviso/     avvisi, PrezzoScesoEvent, AvvisoMailListener, MailAvvisi
 fe/src/
   lib/          api.ts (tutte le fetch), auth.tsx, toast.tsx, formato.ts
-  components/   Layout, AutoCard, Sagoma (SVG), SogliaForm, ui, three/ (Showroom, Auto3D), bits/ (React Bits)
+  components/   Layout, AutoCard, FotoAuto, Viewer3D, Sagoma (SVG di riserva), SogliaForm, ui, three/Tunnel, bits/ (React Bits)
   pages/        Home, Catalogo, AutoDettaglio, Accedi, Preferiti, Avvisi, Profilo, Admin, Disattiva, Legale, NonTrovata
 ```

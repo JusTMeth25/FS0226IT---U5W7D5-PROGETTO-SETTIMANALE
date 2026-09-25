@@ -1,5 +1,6 @@
 package it.epicode.base.auto.dto;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.Max;
@@ -20,5 +21,8 @@ public record ModificaAutoDto(
 		@NotNull @Min(1900) @Max(2100) Integer anno,
 		@Size(max = 5000) String descrizione,
 		@DecimalMin("0.00") @Digits(integer = 10, fraction = 2) BigDecimal prezzoAcquisto,
-		boolean pubblicata) {
+		boolean pubblicata,
+		@Size(max = 30) String carrozzeria,
+		@Size(max = 20) String alimentazione,
+		@Valid MediaDto media) {
 }

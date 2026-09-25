@@ -15,6 +15,16 @@ export type Utente = { id: number; email: string; nome: string; ruolo: Ruolo }
 
 export type Accesso = { token: string; utente: Utente }
 
+export type Media = {
+  fotoUrl: string | null
+  fotoAutore: string | null
+  fotoLicenza: string | null
+  fotoFonte: string | null
+  modello3dUid: string | null
+  modello3dAutore: string | null
+  modello3dFonte: string | null
+}
+
 export type Auto = {
   id: number
   marca: string
@@ -22,6 +32,9 @@ export type Auto = {
   anno: number
   descrizione: string | null
   prezzo: number
+  carrozzeria: string | null
+  alimentazione: string | null
+  media: Media
 }
 
 export type AutoAdmin = Auto & {
@@ -50,12 +63,19 @@ export type DatiAuto = {
   descrizione: string | null
   prezzoAcquisto: number | null
   pubblicata: boolean
+  carrozzeria: string | null
+  alimentazione: string | null
+  media: Media
 }
 
 export type Ordinamento = 'recenti' | 'prezzo' | 'anno' | 'marca' | 'modello'
 
+// Stessi valori ammessi dal backend (enum Carrozzeria).
+export type Carrozzeria = 'citycar' | 'berlina' | 'suv' | 'coupe' | 'cabrio' | 'station_wagon'
+
 export type Ricerca = {
   q?: string
+  carrozzeria?: Carrozzeria
   sort?: Ordinamento
   dir?: 'asc' | 'desc'
   page?: number
@@ -141,6 +161,7 @@ const json = (corpo: unknown) => JSON.stringify(corpo)
 function query(r: Ricerca): string {
   const p = new URLSearchParams()
   if (r.q?.trim()) p.set('q', r.q.trim())
+  if (r.carrozzeria) p.set('carrozzeria', r.carrozzeria)
   if (r.sort) p.set('sort', r.sort)
   if (r.dir) p.set('dir', r.dir)
   if (r.page !== undefined) p.set('page', String(r.page))

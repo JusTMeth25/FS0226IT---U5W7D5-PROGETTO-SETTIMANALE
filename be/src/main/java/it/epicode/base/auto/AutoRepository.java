@@ -21,8 +21,10 @@ public interface AutoRepository extends JpaRepository<Auto, Long> {
 			SELECT a FROM Auto a
 			WHERE a.pubblicata = true
 			  AND (LOWER(a.marca) LIKE :testo ESCAPE '!' OR LOWER(a.modello) LIKE :testo ESCAPE '!')
+			  AND (:carrozzeria = '' OR a.carrozzeria = :carrozzeria)
 			""")
-	Page<Auto> cercaPubblicate(@Param("testo") String testo, Pageable pageable);
+	Page<Auto> cercaPubblicate(@Param("testo") String testo, @Param("carrozzeria") String carrozzeria,
+							   Pageable pageable);
 
 	/** Stessa ricerca per l'amministratore, bozze comprese. */
 	@Query("""
@@ -32,6 +34,8 @@ public interface AutoRepository extends JpaRepository<Auto, Long> {
 	Page<Auto> cercaTutte(@Param("testo") String testo, Pageable pageable);
 
 	Optional<Auto> findByIdAndPubblicataTrue(Long id);
+
+	Optional<Auto> findFirstByMarcaIgnoreCaseAndModelloIgnoreCase(String marca, String modello);
 
 	/**
 	 * Lettura con lock di riga per il cambio di prezzo: due modifiche parallele

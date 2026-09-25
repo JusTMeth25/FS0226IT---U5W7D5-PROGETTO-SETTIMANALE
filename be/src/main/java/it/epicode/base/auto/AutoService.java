@@ -41,9 +41,12 @@ public class AutoService {
 	// ---------- Catalogo pubblico ----------
 
 	@Transactional(readOnly = true)
-	public PaginaDto<AutoPubblicaDto> catalogo(String q, String sort, String dir, int pagina, int dimensione) {
+	public PaginaDto<AutoPubblicaDto> catalogo(String q, String carrozzeria, String sort, String dir, int pagina,
+											   int dimensione) {
 		Pageable richiesta = pagina(sort, dir, pagina, dimensione);
-		return PaginaDto.da(autoRepository.cercaPubblicate(modelloRicerca(q), richiesta), AutoPubblicaDto::da);
+		return PaginaDto.da(
+				autoRepository.cercaPubblicate(modelloRicerca(q), Carrozzeria.filtro(carrozzeria), richiesta),
+				AutoPubblicaDto::da);
 	}
 
 	/** Una bozza risponde 404 come un'auto che non esiste. */
@@ -71,6 +74,8 @@ public class AutoService {
 	public AutoAdminDto crea(NuovaAutoDto dto) {
 		Auto auto = new Auto(dto.marca().trim(), dto.modello().trim(), dto.anno(), testoOpzionale(dto.descrizione()),
 				dto.prezzo(), dto.prezzoAcquisto(), dto.pubblicata());
+		auto.aggiornaScheda(testoOpzionale(dto.carrozzeria()), testoOpzionale(dto.alimentazione()),
+				dto.media() == null ? null : dto.media().versoEntita());
 		return AutoAdminDto.da(autoRepository.save(auto));
 	}
 
@@ -79,6 +84,8 @@ public class AutoService {
 		Auto auto = trova(id);
 		auto.aggiorna(dto.marca().trim(), dto.modello().trim(), dto.anno(), testoOpzionale(dto.descrizione()),
 				dto.prezzoAcquisto(), dto.pubblicata());
+		auto.aggiornaScheda(testoOpzionale(dto.carrozzeria()), testoOpzionale(dto.alimentazione()),
+				dto.media() == null ? null : dto.media().versoEntita());
 		return AutoAdminDto.da(auto);
 	}
 

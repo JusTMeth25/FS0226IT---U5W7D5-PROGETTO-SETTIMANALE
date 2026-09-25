@@ -3,10 +3,10 @@ import { useCallback, useEffect, useState, type FormEvent } from 'react'
 import { Link } from 'react-router'
 import { Check, Eye, EyeOff, Pencil, Plus, Search, Tag, Trash2, TrendingDown, TrendingUp, X } from 'lucide-react'
 import CountUp from '@/components/bits/CountUp'
-import Sagoma from '@/components/Sagoma'
 import { Campo, Errore, Intestazione, Modale, Pulsante, Scheletro } from '@/components/ui'
-import { api, ApiError, type AutoAdmin, type DatiAuto, type Pagina } from '@/lib/api'
-import { euro, sagomaDi, verniceDi } from '@/lib/formato'
+import { api, ApiError, type AutoAdmin, type DatiAuto, type Media, type Pagina } from '@/lib/api'
+import { euro } from '@/lib/formato'
+import { FotoAuto } from '@/components/FotoAuto'
 import { useToast } from '@/lib/toast'
 
 // ---------- Form auto (crea / modifica) ----------
@@ -19,6 +19,21 @@ type Bozza = {
   prezzo: string
   prezzoAcquisto: string
   pubblicata: boolean
+  carrozzeria: string
+  alimentazione: string
+  media: Media
+}
+
+const CARROZZERIE = ['Citycar', 'Berlina', 'SUV', 'Coupé', 'Cabrio', 'Station wagon']
+const ALIMENTAZIONI = ['Benzina', 'Diesel', 'Ibrida', 'Plug-in', 'Elettrica', 'GPL']
+const MEDIA_VUOTI: Media = {
+  fotoUrl: null,
+  fotoAutore: null,
+  fotoLicenza: null,
+  fotoFonte: null,
+  modello3dUid: null,
+  modello3dAutore: null,
+  modello3dFonte: null,
 }
 
 const VUOTA: Bozza = {
@@ -29,6 +44,9 @@ const VUOTA: Bozza = {
   prezzo: '',
   prezzoAcquisto: '',
   pubblicata: false,
+  carrozzeria: '',
+  alimentazione: '',
+  media: MEDIA_VUOTI,
 }
 
 function daAuto(a: AutoAdmin): Bozza {
@@ -40,6 +58,9 @@ function daAuto(a: AutoAdmin): Bozza {
     prezzo: String(a.prezzo),
     prezzoAcquisto: a.prezzoAcquisto == null ? '' : String(a.prezzoAcquisto),
     pubblicata: a.pubblicata,
+    carrozzeria: a.carrozzeria ?? '',
+    alimentazione: a.alimentazione ?? '',
+    media: a.media ?? MEDIA_VUOTI,
   }
 }
 
@@ -49,6 +70,7 @@ function FormAuto({ auto, fatto }: { auto: AutoAdmin | null; fatto: (a: AutoAdmi
   const [errore, setErrore] = useState<string | null>(null)
   const [campi, setCampi] = useState<Record<string, string>>({})
   const imposta = (k: keyof Bozza) => (v: string | boolean) => setB((x) => ({ ...x, [k]: v }))
+  const impostaMedia = (k: keyof Media) => (v: string) => setB((x) => ({ ...x, media: { ...x.media, [k]: v || null } }))
 
   async function invia(e: FormEvent) {
     e.preventDefault()
@@ -62,6 +84,9 @@ function FormAuto({ auto, fatto }: { auto: AutoAdmin | null; fatto: (a: AutoAdmi
       descrizione: b.descrizione.trim() || null,
       prezzoAcquisto: b.prezzoAcquisto === '' ? null : Number(b.prezzoAcquisto),
       pubblicata: b.pubblicata,
+      carrozzeria: b.carrozzeria || null,
+      alimentazione: b.alimentazione || null,
+      media: b.media,
     }
     try {
       // In modifica il prezzo di vendita non si manda: cambia solo dal suo pulsante.
@@ -105,6 +130,28 @@ function FormAuto({ auto, fatto }: { auto: AutoAdmin | null; fatto: (a: AutoAdmi
           />
         )}
       </div>
+      <div className="grid gap-4 sm:grid-cols-2">
+        {([
+          ['carrozzeria', 'Carrozzeria', CARROZZERIE],
+          ['alimentazione', 'Alimentazione', ALIMENTAZIONI],
+        ] as const).map(([k, etichetta, valori]) => (
+          <label key={k} className="block">
+            <span className="mb-1.5 block font-mono text-[11px] uppercase tracking-[0.2em] text-fog">{etichetta}</span>
+            <select
+              value={b[k]}
+              onChange={(e) => imposta(k)(e.target.value)}
+              className="w-full rounded-xl border border-line bg-ink/70 px-4 py-3 text-sm outline-none focus:border-ember"
+            >
+              <option value="">—</option>
+              {valori.map((v) => (
+                <option key={v} value={v}>
+                  {v}
+                </option>
+              ))}
+            </select>
+          </label>
+        ))}
+      </div>
       <label className="block">
         <span className="mb-1.5 block font-mono text-[11px] uppercase tracking-[0.2em] text-fog">Descrizione</span>
         <textarea
@@ -131,6 +178,29 @@ function FormAuto({ auto, fatto }: { auto: AutoAdmin | null; fatto: (a: AutoAdmi
           <motion.span layout className={`absolute top-1 size-4 rounded-full bg-ink ${b.pubblicata ? 'right-1' : 'left-1'}`} />
         </span>
       </button>
+
+      <details className="group rounded-2xl border border-line p-4">
+        <summary className="cursor-pointer text-sm font-semibold">Foto e modello 3D</summary>
+        <div className="mt-4 grid gap-4">
+          <Campo etichetta="URL foto (https)" value={b.media.fotoUrl ?? ''} onChange={(e) => impostaMedia('fotoUrl')(e.target.value)} errore={campi['media.fotoUrl']} />
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Campo etichetta="Autore foto" value={b.media.fotoAutore ?? ''} onChange={(e) => impostaMedia('fotoAutore')(e.target.value)} maxLength={200} />
+            <Campo etichetta="Licenza foto" value={b.media.fotoLicenza ?? ''} onChange={(e) => impostaMedia('fotoLicenza')(e.target.value)} maxLength={60} />
+          </div>
+          <Campo etichetta="Pagina della foto (https)" value={b.media.fotoFonte ?? ''} onChange={(e) => impostaMedia('fotoFonte')(e.target.value)} errore={campi['media.fotoFonte']} />
+          <Campo
+            etichetta="UID modello Sketchfab"
+            value={b.media.modello3dUid ?? ''}
+            onChange={(e) => impostaMedia('modello3dUid')(e.target.value.trim())}
+            errore={campi['media.modello3dUid']}
+            nota="32 caratteri esadecimali, dall'indirizzo del modello"
+          />
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Campo etichetta="Autore modello 3D" value={b.media.modello3dAutore ?? ''} onChange={(e) => impostaMedia('modello3dAutore')(e.target.value)} maxLength={100} />
+            <Campo etichetta="Link Sketchfab" value={b.media.modello3dFonte ?? ''} onChange={(e) => impostaMedia('modello3dFonte')(e.target.value)} errore={campi['media.modello3dFonte']} />
+          </div>
+        </div>
+      </details>
 
       {auto && (
         <p className="text-xs text-fog">Il prezzo di vendita si cambia dal pulsante con il cartellino: e' l'unico punto che fa scattare gli avvisi.</p>
@@ -302,7 +372,6 @@ export default function Admin() {
       <ul className="space-y-3">
         <AnimatePresence initial={false}>
           {lista.map((a, i) => {
-            const v = verniceDi(a.id)
             return (
               <motion.li
                 key={a.id}
@@ -312,8 +381,8 @@ export default function Admin() {
                 exit={{ opacity: 0, x: -80 }}
                 className="group flex flex-wrap items-center gap-4 rounded-2xl border border-line bg-ink-2 p-3 pr-4 transition hover:border-white/20"
               >
-                <div className="w-24 shrink-0 rounded-xl p-1" style={{ background: `radial-gradient(circle at 50% 80%, ${v.colore}44, transparent 70%)` }}>
-                  <Sagoma colore={v.colore} tipo={sagomaDi(a.id)} className="w-full" />
+                <div className="h-16 w-24 shrink-0 overflow-hidden rounded-xl">
+                  <FotoAuto auto={a} className="size-full" />
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="flex items-center gap-2">

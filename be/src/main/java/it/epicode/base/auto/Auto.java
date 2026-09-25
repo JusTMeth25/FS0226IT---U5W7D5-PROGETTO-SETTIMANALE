@@ -1,6 +1,7 @@
 package it.epicode.base.auto;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -45,6 +46,15 @@ public class Auto {
 	@Column(nullable = false)
 	private boolean pubblicata;
 
+	@Column(length = 30)
+	private String carrozzeria;
+
+	@Column(length = 20)
+	private String alimentazione;
+
+	@Embedded
+	private Media media = new Media();
+
 	@Column(name = "creata_il", nullable = false, updatable = false)
 	private Instant creataIl;
 
@@ -63,6 +73,13 @@ public class Auto {
 		this.prezzo = prezzo;
 		this.prezzoAcquisto = prezzoAcquisto;
 		this.pubblicata = pubblicata;
+	}
+
+	/** Carrozzeria, alimentazione, foto e modello 3D: dati descrittivi, non toccano il prezzo. */
+	public void aggiornaScheda(String carrozzeria, String alimentazione, Media media) {
+		this.carrozzeria = carrozzeria;
+		this.alimentazione = alimentazione;
+		this.media = media == null ? new Media() : media;
 	}
 
 	@PrePersist
@@ -121,6 +138,18 @@ public class Auto {
 
 	public boolean isPubblicata() {
 		return pubblicata;
+	}
+
+	public String getCarrozzeria() {
+		return carrozzeria;
+	}
+
+	public String getAlimentazione() {
+		return alimentazione;
+	}
+
+	public Media getMedia() {
+		return media == null ? new Media() : media;
 	}
 
 	public Instant getCreataIl() {

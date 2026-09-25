@@ -19,14 +19,15 @@ public class AutoController {
 		this.autoService = autoService;
 	}
 
-	/** Es. /api/auto?q=panda&sort=prezzo&dir=asc&page=0&size=12 */
+	/** Es. /api/auto?q=panda&carrozzeria=suv&sort=prezzo&dir=asc&page=0&size=12 */
 	@GetMapping
 	public PaginaDto<AutoPubblicaDto> catalogo(@RequestParam(required = false) String q,
+											   @RequestParam(required = false) String carrozzeria,
 											   @RequestParam(required = false) String sort,
 											   @RequestParam(required = false) String dir,
 											   @RequestParam(defaultValue = "0") int page,
 											   @RequestParam(defaultValue = "12") int size) {
-		return autoService.catalogo(q, sort, dir, page, size);
+		return autoService.catalogo(q, carrozzeria, sort, dir, page, size);
 	}
 
 	@GetMapping("/{id}")

@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router'
 import { ArrowDownWideNarrow, ArrowUpNarrowWide, ChevronLeft, ChevronRight, SearchX, Search } from 'lucide-react'
 import AutoCard from '@/components/AutoCard'
 import { Errore, Intestazione, Scheletro, Vuoto } from '@/components/ui'
-import { api, type Auto, type Ordinamento, type Pagina } from '@/lib/api'
+import { api, type Auto, type Carrozzeria, type Ordinamento, type Pagina } from '@/lib/api'
 
 // Stessi valori ammessi dal backend (OrdinamentoAuto): nient'altro esce da qui.
 const ORDINI: { valore: Ordinamento; testo: string }[] = [
@@ -15,7 +15,16 @@ const ORDINI: { valore: Ordinamento; testo: string }[] = [
   { valore: 'modello', testo: 'Modello' },
 ]
 
-const DIMENSIONE = 9
+const CARROZZERIE: { valore: Carrozzeria; testo: string }[] = [
+  { valore: 'citycar', testo: 'Citycar' },
+  { valore: 'berlina', testo: 'Berlina' },
+  { valore: 'suv', testo: 'SUV' },
+  { valore: 'coupe', testo: 'Coupé' },
+  { valore: 'cabrio', testo: 'Cabrio' },
+  { valore: 'station_wagon', testo: 'Station wagon' },
+]
+
+const DIMENSIONE = 12
 
 export default function Catalogo() {
   const [parametri, setParametri] = useSearchParams()
@@ -24,6 +33,8 @@ export default function Catalogo() {
   const sort: Ordinamento = ORDINI.some((o) => o.valore === sortGrezzo) ? (sortGrezzo as Ordinamento) : 'recenti'
   const dir = parametri.get('dir') === 'asc' ? 'asc' : parametri.get('dir') === 'desc' ? 'desc' : undefined
   const pagina = Math.max(0, Number(parametri.get('page')) || 0)
+  const carGrezza = parametri.get('carrozzeria')
+  const carrozzeria = CARROZZERIE.find((c) => c.valore === carGrezza)?.valore
 
   const [testo, setTesto] = useState(q)
   const [dati, setDati] = useState<Pagina<Auto> | null>(null)
@@ -43,13 +54,13 @@ export default function Catalogo() {
     setDati(null)
     setErrore(null)
     api
-      .catalogo({ q, sort, dir, page: pagina, size: DIMENSIONE })
+      .catalogo({ q, carrozzeria, sort, dir, page: pagina, size: DIMENSIONE })
       .then((d) => attivo && setDati(d))
       .catch((e) => attivo && setErrore(e.message))
     return () => {
       attivo = false
     }
-  }, [q, sort, dir, pagina])
+  }, [q, carrozzeria, sort, dir, pagina])
 
   function aggiorna(modifiche: Record<string, string | null>) {
     const nuovi = new URLSearchParams(parametri)
@@ -105,6 +116,23 @@ export default function Catalogo() {
         </div>
       </div>
 
+      <div className="-mt-6 mb-10 flex flex-wrap gap-2" role="group" aria-label="Filtra per carrozzeria">
+        {[{ valore: undefined, testo: 'Tutte' }, ...CARROZZERIE].map((c) => {
+          const attiva = carrozzeria === c.valore
+          return (
+            <motion.button
+              key={c.testo}
+              whileTap={{ scale: 0.92 }}
+              onClick={() => aggiorna({ carrozzeria: c.valore ?? null, page: null })}
+              aria-pressed={attiva}
+              className={`rounded-full border px-4 py-1.5 text-xs font-semibold transition ${attiva ? 'border-neon bg-neon/15 text-neon' : 'border-line text-fog hover:border-white/30 hover:text-paper'}`}
+            >
+              {c.testo}
+            </motion.button>
+          )
+        })}
+      </div>
+
       {errore && <Errore testo={errore} />}
 
       {!errore && dati === null && (
@@ -146,7 +174,11 @@ export default function Catalogo() {
               >
                 <ChevronLeft className="size-4" />
               </button>
-              {Array.from({ length: dati.pagineTotali }, (_, i) => (
+              {Array.from({ length: dati.pagineTotali }, (_, i) => i)
+                .filter((i) => i === 0 || i === dati.pagineTotali - 1 || Math.abs(i - pagina) <= 1)
+                .map((i, k, arr) => (
+                <span key={i} className="flex items-center gap-2">
+                {k > 0 && i - arr[k - 1] > 1 && <span className="text-fog">…</span>}
                 <button
                   key={i}
                   onClick={() => aggiorna({ page: i === 0 ? null : String(i) })}
@@ -155,6 +187,7 @@ export default function Catalogo() {
                 >
                   {i + 1}
                 </button>
+                </span>
               ))}
               <button
                 disabled={pagina >= dati.pagineTotali - 1}

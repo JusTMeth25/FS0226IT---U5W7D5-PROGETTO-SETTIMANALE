@@ -1,0 +1,1422 @@
+[
+ {
+  "marca": "Fiat",
+  "modello": "Pandina",
+  "anno": 2026,
+  "prezzo": 15950,
+  "carrozzeria": "Citycar",
+  "alimentazione": "Ibrida",
+  "descrizione": "L'erede della Panda di sempre: compatta, furba e mild hybrid, la citycar più venduta d'Italia.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/2024_Fiat_Pandina_IMG_0743.jpg/1280px-2024_Fiat_Pandina_IMG_0743.jpg",
+   "autore": "Alexander-93",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2024_Fiat_Pandina_IMG_0743.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Fiat",
+  "modello": "Grande Panda",
+  "anno": 2026,
+  "prezzo": 17900,
+  "carrozzeria": "Citycar",
+  "alimentazione": "Ibrida",
+  "descrizione": "Linee squadrate che citano la Panda del 1980, piattaforma nuova e versioni ibride o elettriche.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Fiat_Grande_Panda_Hybrid_2025_Front_1_%28cropped%29.jpg/1280px-Fiat_Grande_Panda_Hybrid_2025_Front_1_%28cropped%29.jpg",
+   "autore": "Mihnea Lazăr",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Fiat_Grande_Panda_Hybrid_2025_Front_1_(cropped).jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Fiat",
+  "modello": "Tipo",
+  "anno": 2026,
+  "prezzo": 18200,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Ibrida",
+  "descrizione": "Tanto spazio a un prezzo onesto: la compatta pratica per famiglie e per chi macina chilometri.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/2021_FIAT_Tipo_Easy_1.0_%28Front%29.jpg/1280px-2021_FIAT_Tipo_Easy_1.0_%28Front%29.jpg",
+   "autore": "DieselFordMondeo",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2021_FIAT_Tipo_Easy_1.0_(Front).jpg"
+  },
+  "modello3d": {
+   "uid": "f591ec941c2f471c92a7dbe9a3c0c2bd",
+   "autore": "SQUIR3D",
+   "fonte": "https://sketchfab.com/3d-models/none-f591ec941c2f471c92a7dbe9a3c0c2bd"
+  }
+ },
+ {
+  "marca": "Fiat",
+  "modello": "500e",
+  "anno": 2026,
+  "prezzo": 19900,
+  "carrozzeria": "Citycar",
+  "alimentazione": "Elettrica",
+  "descrizione": "L'icona torinese in versione elettrica: design inconfondibile e zero emissioni in città.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Fiat_500e_Black_in_Munich.jpg/1280px-Fiat_500e_Black_in_Munich.jpg",
+   "autore": "AuHaidhausen",
+   "licenza": "CC BY 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Fiat_500e_Black_in_Munich.jpg"
+  },
+  "modello3d": {
+   "uid": "94dd3a8ce4ad45c8819541a33cb400b2",
+   "autore": "tonielpro520",
+   "fonte": "https://sketchfab.com/3d-models/2021-fiat-e500-94dd3a8ce4ad45c8819541a33cb400b2"
+  }
+ },
+ {
+  "marca": "Fiat",
+  "modello": "600",
+  "anno": 2026,
+  "prezzo": 23900,
+  "carrozzeria": "SUV",
+  "alimentazione": "Ibrida",
+  "descrizione": "Il SUV compatto dal family feeling 500, disponibile ibrido o elettrico.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Fiat_600e_Auto_Zuerich_2023_1X7A0959.jpg/1280px-Fiat_600e_Auto_Zuerich_2023_1X7A0959.jpg",
+   "autore": "Alexander-93",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Fiat_600e_Auto_Zuerich_2023_1X7A0959.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Alfa Romeo",
+  "modello": "Junior",
+  "anno": 2026,
+  "prezzo": 31050,
+  "carrozzeria": "SUV",
+  "alimentazione": "Ibrida",
+  "descrizione": "Il SUV compatto del Biscione: coda tronca, scudetto e versione Veloce elettrica da 280 CV.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Alfa_Romeo_Junior_IMG_0474_%28cropped%29.jpg/1280px-Alfa_Romeo_Junior_IMG_0474_%28cropped%29.jpg",
+   "autore": "Alexander-93",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Alfa_Romeo_Junior_IMG_0474_(cropped).jpg"
+  },
+  "modello3d": {
+   "uid": "9a7af50eb8bb4b3eba07b80133616856",
+   "autore": "tonielpro520",
+   "fonte": "https://sketchfab.com/3d-models/none-9a7af50eb8bb4b3eba07b80133616856"
+  }
+ },
+ {
+  "marca": "Alfa Romeo",
+  "modello": "Tonale",
+  "anno": 2026,
+  "prezzo": 40700,
+  "carrozzeria": "SUV",
+  "alimentazione": "Ibrida",
+  "descrizione": "SUV premium dalle linee tese, disponibile anche plug-in con trazione integrale Q4.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Alfa_Romeo_Tonale_2026_Front_1_%28cropped%29.jpg/1280px-Alfa_Romeo_Tonale_2026_Front_1_%28cropped%29.jpg",
+   "autore": "Mihnea Lazăr",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Alfa_Romeo_Tonale_2026_Front_1_(cropped).jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Alfa Romeo",
+  "modello": "Giulia",
+  "anno": 2026,
+  "prezzo": 52750,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Benzina",
+  "descrizione": "Berlina a trazione posteriore dalla guida purissima; la Quadrifoglio ha il V6 biturbo di scuola Ferrari.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/2020_Alfa_Romeo_Giulia_Veloce_TB_Auto.jpg/1280px-2020_Alfa_Romeo_Giulia_Veloce_TB_Auto.jpg",
+   "autore": "Calreyn88",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2020_Alfa_Romeo_Giulia_Veloce_TB_Auto.jpg"
+  },
+  "modello3d": {
+   "uid": "373b333a938e49c7ba596919817e844c",
+   "autore": "MaximePages",
+   "fonte": "https://sketchfab.com/3d-models/none-373b333a938e49c7ba596919817e844c"
+  }
+ },
+ {
+  "marca": "Alfa Romeo",
+  "modello": "Stelvio",
+  "anno": 2026,
+  "prezzo": 57850,
+  "carrozzeria": "SUV",
+  "alimentazione": "Benzina",
+  "descrizione": "Il SUV che guida come una berlina sportiva: sterzo diretto e piattaforma Giorgio.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Alfa_Romeo_Stelvio_QV_1X7A7063.jpg/1280px-Alfa_Romeo_Stelvio_QV_1X7A7063.jpg",
+   "autore": "Alexander-93",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Alfa_Romeo_Stelvio_QV_1X7A7063.jpg"
+  },
+  "modello3d": {
+   "uid": "df99564e71fb449d99f69c0bbf791bf6",
+   "autore": "SQUIR3D",
+   "fonte": "https://sketchfab.com/3d-models/none-df99564e71fb449d99f69c0bbf791bf6"
+  }
+ },
+ {
+  "marca": "Lancia",
+  "modello": "Ypsilon",
+  "anno": 2026,
+  "prezzo": 22200,
+  "carrozzeria": "Citycar",
+  "alimentazione": "Ibrida",
+  "descrizione": "Il rilancio di Lancia: design Pu+Ra, interni curati e versione HF elettrica.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Lancia_Ypsilon_%282024%29_Front_1_%28cropped%29.jpg/1280px-Lancia_Ypsilon_%282024%29_Front_1_%28cropped%29.jpg",
+   "autore": "Mihnea Lazăr",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Lancia_Ypsilon_(2024)_Front_1_(cropped).jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Ferrari",
+  "modello": "Amalfi",
+  "anno": 2026,
+  "prezzo": 240000,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Benzina",
+  "descrizione": "Erede della Roma: gran turismo 2+2 con V8 biturbo anteriore e stile essenziale.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Ferrari_Amalfi_IMG_8179.jpg/1280px-Ferrari_Amalfi_IMG_8179.jpg",
+   "autore": "Alexander Migl",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Ferrari_Amalfi_IMG_8179.jpg"
+  },
+  "modello3d": {
+   "uid": "5d45d570c914440ea37339cd5aad70fa",
+   "autore": "Patricars",
+   "fonte": "https://sketchfab.com/3d-models/none-5d45d570c914440ea37339cd5aad70fa"
+  }
+ },
+ {
+  "marca": "Ferrari",
+  "modello": "296 GTB",
+  "anno": 2026,
+  "prezzo": 275500,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Plug-in",
+  "descrizione": "Berlinetta ibrida plug-in con V6 a 120 gradi ed elettrico: 830 CV complessivi.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Ferrari_296_GTB_1X7A6377.jpg/1280px-Ferrari_296_GTB_1X7A6377.jpg",
+   "autore": "Alexander Migl",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Ferrari_296_GTB_1X7A6377.jpg"
+  },
+  "modello3d": {
+   "uid": "269f4fd01b584dd38f7e512de60c4645",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/none-269f4fd01b584dd38f7e512de60c4645"
+  }
+ },
+ {
+  "marca": "Ferrari",
+  "modello": "296 GTS",
+  "anno": 2026,
+  "prezzo": 320000,
+  "carrozzeria": "Cabrio",
+  "alimentazione": "Plug-in",
+  "descrizione": "La 296 a cielo aperto, con tetto rigido retrattile in 14 secondi.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Ferrari_296_GTS_DSC_7001.jpg/1280px-Ferrari_296_GTS_DSC_7001.jpg",
+   "autore": "Alexander Migl",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Ferrari_296_GTS_DSC_7001.jpg"
+  },
+  "modello3d": {
+   "uid": "9a596b9d09414adfad64fc1f5fd019f9",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/none-9a596b9d09414adfad64fc1f5fd019f9"
+  }
+ },
+ {
+  "marca": "Ferrari",
+  "modello": "Purosangue",
+  "anno": 2026,
+  "prezzo": 390000,
+  "carrozzeria": "SUV",
+  "alimentazione": "Benzina",
+  "descrizione": "La prima Ferrari a quattro porte e quattro posti, con V12 aspirato anteriore.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Ferrari_Purosangue_IMG_9554.jpg/1280px-Ferrari_Purosangue_IMG_9554.jpg",
+   "autore": "Alexander-93",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Ferrari_Purosangue_IMG_9554.jpg"
+  },
+  "modello3d": {
+   "uid": "541dc84c37174356a7b0efd44904593d",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/none-541dc84c37174356a7b0efd44904593d"
+  }
+ },
+ {
+  "marca": "Ferrari",
+  "modello": "12Cilindri",
+  "anno": 2026,
+  "prezzo": 395000,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Benzina",
+  "descrizione": "V12 aspirato da 830 CV davanti, trazione dietro: la tradizione Ferrari più pura.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Ferrari_12Cilindri_Spider_Auto_Zuerich_2024_DSC_6393.jpg/1280px-Ferrari_12Cilindri_Spider_Auto_Zuerich_2024_DSC_6393.jpg",
+   "autore": "Alexander-93",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Ferrari_12Cilindri_Spider_Auto_Zuerich_2024_DSC_6393.jpg"
+  },
+  "modello3d": {
+   "uid": "cb0b42a5bda844bd8ccd62451f1db427",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/none-cb0b42a5bda844bd8ccd62451f1db427"
+  }
+ },
+ {
+  "marca": "Lamborghini",
+  "modello": "Urus",
+  "anno": 2026,
+  "prezzo": 245327,
+  "carrozzeria": "SUV",
+  "alimentazione": "Plug-in",
+  "descrizione": "Il Super SUV di Sant'Agata, oggi anche ibrido plug-in nella versione SE.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Lamborghini_Urus_front_view_dllu.jpg/1280px-Lamborghini_Urus_front_view_dllu.jpg",
+   "autore": "Dllu",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Lamborghini_Urus_front_view_dllu.jpg"
+  },
+  "modello3d": {
+   "uid": "914bbca2f7f54783a00062a695bae0ea",
+   "autore": "SDC PERFORMANCE™️",
+   "fonte": "https://sketchfab.com/3d-models/none-914bbca2f7f54783a00062a695bae0ea"
+  }
+ },
+ {
+  "marca": "Lamborghini",
+  "modello": "Temerario",
+  "anno": 2026,
+  "prezzo": 317222,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Plug-in",
+  "descrizione": "L'erede della Huracán: V8 biturbo che gira fino a 10.000 giri e tre motori elettrici.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Lamborghini_Temerario_IMG_5367.jpg/1280px-Lamborghini_Temerario_IMG_5367.jpg",
+   "autore": "Alexander Migl",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Lamborghini_Temerario_IMG_5367.jpg"
+  },
+  "modello3d": {
+   "uid": "223504eacee54eaf9169cc60db1c0a70",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/none-223504eacee54eaf9169cc60db1c0a70"
+  }
+ },
+ {
+  "marca": "Lamborghini",
+  "modello": "Revuelto",
+  "anno": 2026,
+  "prezzo": 517255,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Plug-in",
+  "descrizione": "Ammiraglia ibrida con V12 aspirato, oltre 1.000 CV e porte a forbice.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Lamborghini_Revuelto_DSC_6987.jpg/1280px-Lamborghini_Revuelto_DSC_6987.jpg",
+   "autore": "Alexander Migl",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Lamborghini_Revuelto_DSC_6987.jpg"
+  },
+  "modello3d": {
+   "uid": "4258ff5b559c45f2a470344f0e04c8cd",
+   "autore": "Outlaw Games™",
+   "fonte": "https://sketchfab.com/3d-models/none-4258ff5b559c45f2a470344f0e04c8cd"
+  }
+ },
+ {
+  "marca": "Maserati",
+  "modello": "Grecale",
+  "anno": 2026,
+  "prezzo": 79900,
+  "carrozzeria": "SUV",
+  "alimentazione": "Ibrida",
+  "descrizione": "Il SUV medio del Tridente, dal mild hybrid al V6 Nettuno della Trofeo.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Maserati_Grecale_GT_Blu_Intenso_front_right.jpg/1280px-Maserati_Grecale_GT_Blu_Intenso_front_right.jpg",
+   "autore": "Ethan Llamas",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Maserati_Grecale_GT_Blu_Intenso_front_right.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Maserati",
+  "modello": "GranTurismo",
+  "anno": 2026,
+  "prezzo": 163800,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Benzina",
+  "descrizione": "Gran turismo a quattro posti con V6 Nettuno o versione Folgore elettrica.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Maserati_GranTurismo_Modena_2023_Front_View.jpg/1280px-Maserati_GranTurismo_Modena_2023_Front_View.jpg",
+   "autore": "Stefan Oberreuter",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Maserati_GranTurismo_Modena_2023_Front_View.jpg"
+  },
+  "modello3d": {
+   "uid": "8762e6e838d34b5da8bdae7899f9342f",
+   "autore": "Bee Buzziness",
+   "fonte": "https://sketchfab.com/3d-models/none-8762e6e838d34b5da8bdae7899f9342f"
+  }
+ },
+ {
+  "marca": "Maserati",
+  "modello": "GranCabrio",
+  "anno": 2026,
+  "prezzo": 174100,
+  "carrozzeria": "Cabrio",
+  "alimentazione": "Benzina",
+  "descrizione": "La GranTurismo con capote in tela: quattro posti veri sotto il cielo.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Maserati_GranCabrio_Trofeo%2C_Motortreff_Bella_Italia_2024%2C_Munich_%28P1190427%29.jpg/1280px-Maserati_GranCabrio_Trofeo%2C_Motortreff_Bella_Italia_2024%2C_Munich_%28P1190427%29.jpg",
+   "autore": "Matti Blume",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Maserati_GranCabrio_Trofeo,_Motortreff_Bella_Italia_2024,_Munich_(P1190427).jpg"
+  },
+  "modello3d": {
+   "uid": "1c13884484804852a1e9c83672a9960b",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/none-1c13884484804852a1e9c83672a9960b"
+  }
+ },
+ {
+  "marca": "Maserati",
+  "modello": "MCPura",
+  "anno": 2026,
+  "prezzo": 224296,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Benzina",
+  "descrizione": "Evoluzione della MC20: telaio in carbonio, motore Nettuno centrale e porte a farfalla.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Maserati_MC20_IAA_2021_1X7A0087.jpg/1280px-Maserati_MC20_IAA_2021_1X7A0087.jpg",
+   "autore": "Alexander Migl",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Maserati_MC20_IAA_2021_1X7A0087.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Porsche",
+  "modello": "Macan Electric",
+  "anno": 2026,
+  "prezzo": 88420,
+  "carrozzeria": "SUV",
+  "alimentazione": "Elettrica",
+  "descrizione": "La Macan diventa elettrica: piattaforma PPE a 800 volt e ricarica rapidissima.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Porsche_Macan_Turbo_Electric_001.jpg/1280px-Porsche_Macan_Turbo_Electric_001.jpg",
+   "autore": "JustAnotherCarDesigner",
+   "licenza": "CC0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Porsche_Macan_Turbo_Electric_001.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Porsche",
+  "modello": "Taycan",
+  "anno": 2026,
+  "prezzo": 110111,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Elettrica",
+  "descrizione": "La sportiva elettrica di Stoccarda, con cambio a due marce e prestazioni da supercar.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/2024_Porsche_Taycan_GTS_IAA_2025_DSC_1988.jpg/1280px-2024_Porsche_Taycan_GTS_IAA_2025_DSC_1988.jpg",
+   "autore": "Alexander-93",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2024_Porsche_Taycan_GTS_IAA_2025_DSC_1988.jpg"
+  },
+  "modello3d": {
+   "uid": "4e1abafe7cf5413587a421377624ba08",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/none-4e1abafe7cf5413587a421377624ba08"
+  }
+ },
+ {
+  "marca": "Porsche",
+  "modello": "Cayenne",
+  "anno": 2026,
+  "prezzo": 111443,
+  "carrozzeria": "SUV",
+  "alimentazione": "Benzina",
+  "descrizione": "Il SUV che ha cambiato la storia Porsche, oggi anche E-Hybrid e Turbo GT.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/2023_Porsche_Cayenne_S_IMG_0521.jpg/1280px-2023_Porsche_Cayenne_S_IMG_0521.jpg",
+   "autore": "Alexander-93",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2023_Porsche_Cayenne_S_IMG_0521.jpg"
+  },
+  "modello3d": {
+   "uid": "74fbea5a4dfc4197839fdd2bf654369a",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/none-74fbea5a4dfc4197839fdd2bf654369a"
+  }
+ },
+ {
+  "marca": "Porsche",
+  "modello": "Panamera",
+  "anno": 2026,
+  "prezzo": 125930,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Plug-in",
+  "descrizione": "Ammiraglia sportiva a quattro porte, con sospensioni attive e versioni ibride.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Porsche_Panamera_%2821717%29.jpg/1280px-Porsche_Panamera_%2821717%29.jpg",
+   "autore": "Calreyn88",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Porsche_Panamera_(21717).jpg"
+  },
+  "modello3d": {
+   "uid": "25ea23ea43474813add58bd3933961b5",
+   "autore": "The Economist",
+   "fonte": "https://sketchfab.com/3d-models/none-25ea23ea43474813add58bd3933961b5"
+  }
+ },
+ {
+  "marca": "Porsche",
+  "modello": "911 Carrera",
+  "anno": 2026,
+  "prezzo": 145376,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Benzina",
+  "descrizione": "L'icona dal 1963: motore boxer posteriore, forma inconfondibile, guida di riferimento.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Porsche_911_%28992%29_Carrera_GTS.jpg/1280px-Porsche_911_%28992%29_Carrera_GTS.jpg",
+   "autore": "MrWalkr",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Porsche_911_(992)_Carrera_GTS.jpg"
+  },
+  "modello3d": {
+   "uid": "5c5f8627e7d443fbbf2288429d5afad6",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/2018-porsche-911-carrera-gts-5c5f8627e7d443fbbf2288429d5afad6"
+  }
+ },
+ {
+  "marca": "Porsche",
+  "modello": "911 GT3",
+  "anno": 2026,
+  "prezzo": 221350,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Benzina",
+  "descrizione": "Boxer aspirato che gira a 9.000 giri e aerodinamica da pista, anche con cambio manuale.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Porsche_911_GT3_4.0_%28992%29_1X7A7256.jpg/1280px-Porsche_911_GT3_4.0_%28992%29_1X7A7256.jpg",
+   "autore": "Alexander-93",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Porsche_911_GT3_4.0_(992)_1X7A7256.jpg"
+  },
+  "modello3d": {
+   "uid": "ba01afbaf32846e598db315be3507db3",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/2022-porsche-911-gt3-992-ba01afbaf32846e598db315be3507db3"
+  }
+ },
+ {
+  "marca": "BMW",
+  "modello": "Serie 1",
+  "anno": 2026,
+  "prezzo": 35400,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Benzina",
+  "descrizione": "La compatta premium di Monaco, fino alla M135 xDrive.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/BMW_1_Series_F70_%282025%29_Front_1.jpg/1280px-BMW_1_Series_F70_%282025%29_Front_1.jpg",
+   "autore": "All names i want are taken",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:BMW_1_Series_F70_(2025)_Front_1.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "BMW",
+  "modello": "X1",
+  "anno": 2026,
+  "prezzo": 42500,
+  "carrozzeria": "SUV",
+  "alimentazione": "Ibrida",
+  "descrizione": "SUV compatto versatile, anche nella versione elettrica iX1.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/BMW_U11_X1_M35i_DSC_9809.jpg/1280px-BMW_U11_X1_M35i_DSC_9809.jpg",
+   "autore": "Alexander Migl",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:BMW_U11_X1_M35i_DSC_9809.jpg"
+  },
+  "modello3d": {
+   "uid": "4ca3a2247af44e51919074565ed93486",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/none-4ca3a2247af44e51919074565ed93486"
+  }
+ },
+ {
+  "marca": "BMW",
+  "modello": "Serie 2 Coupé",
+  "anno": 2026,
+  "prezzo": 46200,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Benzina",
+  "descrizione": "L'ultima BMW coupé compatta a trazione posteriore, fino alla M240i a sei cilindri.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/BMW_2_SERIES_COUPE_%28G42%29_China.jpg/1280px-BMW_2_SERIES_COUPE_%28G42%29_China.jpg",
+   "autore": "Dinkun Chen",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:BMW_2_SERIES_COUPE_(G42)_China.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "BMW",
+  "modello": "Serie 3",
+  "anno": 2026,
+  "prezzo": 49000,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Benzina",
+  "descrizione": "La berlina sportiva per antonomasia: equilibrio tra comfort e piacere di guida.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/BMW_3_SERIES_SEDAN_%28G20%29_China_%282%29.jpg/1280px-BMW_3_SERIES_SEDAN_%28G20%29_China_%282%29.jpg",
+   "autore": "Dinkun Chen",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:BMW_3_SERIES_SEDAN_(G20)_China_(2).jpg"
+  },
+  "modello3d": {
+   "uid": "82534fdddd7e46e4bdb202d6c1d3c0e7",
+   "autore": "solid3DDD",
+   "fonte": "https://sketchfab.com/3d-models/none-82534fdddd7e46e4bdb202d6c1d3c0e7"
+  }
+ },
+ {
+  "marca": "BMW",
+  "modello": "M4 Competition",
+  "anno": 2026,
+  "prezzo": 112200,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Benzina",
+  "descrizione": "Sei cilindri in linea biturbo da oltre 500 CV, trazione posteriore o xDrive.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/2021_BMW_M4_Competition_Automatic_3.0_Front.jpg/1280px-2021_BMW_M4_Competition_Automatic_3.0_Front.jpg",
+   "autore": "Vauxford",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2021_BMW_M4_Competition_Automatic_3.0_Front.jpg"
+  },
+  "modello3d": {
+   "uid": "d3f07b471d9f4a2c9a2acf79d88a3645",
+   "autore": "Ricy",
+   "fonte": "https://sketchfab.com/3d-models/none-d3f07b471d9f4a2c9a2acf79d88a3645"
+  }
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modello": "Classe A",
+  "anno": 2026,
+  "prezzo": 36328,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Ibrida",
+  "descrizione": "La porta d'ingresso al mondo Mercedes, con interni digitali MBUX.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/MERCEDES-BENZ_A-CLASS_%28W177%29_China_%282%29.jpg/1280px-MERCEDES-BENZ_A-CLASS_%28W177%29_China_%282%29.jpg",
+   "autore": "Dinkun Chen",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:MERCEDES-BENZ_A-CLASS_(W177)_China_(2).jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modello": "CLA",
+  "anno": 2026,
+  "prezzo": 47296,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Elettrica",
+  "descrizione": "La nuova CLA a quattro porte, elettrica a 800 volt o ibrida.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/MERCEDES-BENZ_CLA_LWB_C174_China.jpg/1280px-MERCEDES-BENZ_CLA_LWB_C174_China.jpg",
+   "autore": "Dinkun Chen",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:MERCEDES-BENZ_CLA_LWB_C174_China.jpg"
+  },
+  "modello3d": {
+   "uid": "52c4a3cc5536425782e13bd8282f9d99",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/none-52c4a3cc5536425782e13bd8282f9d99"
+  }
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modello": "Classe C",
+  "anno": 2026,
+  "prezzo": 51277,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Ibrida",
+  "descrizione": "La berlina media della Stella, con gamma interamente elettrificata.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/2022_Mercedes-Benz_C-Class_C220d_Avantgarde.jpg/1280px-2022_Mercedes-Benz_C-Class_C220d_Avantgarde.jpg",
+   "autore": "Chanokchon",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2022_Mercedes-Benz_C-Class_C220d_Avantgarde.jpg"
+  },
+  "modello3d": {
+   "uid": "87c0823b829d484cbd6e91bb72c901c8",
+   "autore": "SQUIR3D",
+   "fonte": "https://sketchfab.com/3d-models/none-87c0823b829d484cbd6e91bb72c901c8"
+  }
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modello": "AMG G 63",
+  "anno": 2026,
+  "prezzo": 169510,
+  "carrozzeria": "SUV",
+  "alimentazione": "Benzina",
+  "descrizione": "Il fuoristrada leggendario con V8 biturbo AMG: 0-100 in 4,4 secondi.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/2025_Mercedes-Benz_G_63_AMG_front.jpg/1280px-2025_Mercedes-Benz_G_63_AMG_front.jpg",
+   "autore": "LuvsMG481",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2025_Mercedes-Benz_G_63_AMG_front.jpg"
+  },
+  "modello3d": {
+   "uid": "e5e2a1d2238048a1a494b3df983c16bb",
+   "autore": "Black Snow",
+   "fonte": "https://sketchfab.com/3d-models/none-e5e2a1d2238048a1a494b3df983c16bb"
+  }
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modello": "AMG GT 63",
+  "anno": 2026,
+  "prezzo": 198561,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Benzina",
+  "descrizione": "Gran turismo 2+2 con V8 biturbo da 585 CV e trazione integrale 4MATIC+.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Mercedes-AMG_GT_63_4MATIC%2B_Coup%C3%A9_%28C192%29_front.jpg/1280px-Mercedes-AMG_GT_63_4MATIC%2B_Coup%C3%A9_%28C192%29_front.jpg",
+   "autore": "Tokumeigakarinoaoshima",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Mercedes-AMG_GT_63_4MATIC%2B_Coup%C3%A9_(C192)_front.jpg"
+  },
+  "modello3d": {
+   "uid": "fdca0306571b47adaf440f08a9b98231",
+   "autore": "mohamed ouartassi",
+   "fonte": "https://sketchfab.com/3d-models/none-fdca0306571b47adaf440f08a9b98231"
+  }
+ },
+ {
+  "marca": "Audi",
+  "modello": "A1",
+  "anno": 2026,
+  "prezzo": 27800,
+  "carrozzeria": "Citycar",
+  "alimentazione": "Benzina",
+  "descrizione": "La piccola premium di Ingolstadt, agile e ben rifinita.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/2018_Audi_A1_S_Line_30_TFSi_S-A_1.0.jpg/1280px-2018_Audi_A1_S_Line_30_TFSi_S-A_1.0.jpg",
+   "autore": "Vauxford",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2018_Audi_A1_S_Line_30_TFSi_S-A_1.0.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Audi",
+  "modello": "A3 Sportback",
+  "anno": 2026,
+  "prezzo": 33100,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Ibrida",
+  "descrizione": "Compatta premium con versioni ibride e la sportivissima RS 3.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Audi_A3_silver_Drammen_9.9.2022.jpg/1280px-Audi_A3_silver_Drammen_9.9.2022.jpg",
+   "autore": "Peulle",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Audi_A3_silver_Drammen_9.9.2022.jpg"
+  },
+  "modello3d": {
+   "uid": "3b897714838b45fb9e8d6d67c4d4b2db",
+   "autore": "Nieve5677",
+   "fonte": "https://sketchfab.com/3d-models/none-3b897714838b45fb9e8d6d67c4d4b2db"
+  }
+ },
+ {
+  "marca": "Audi",
+  "modello": "Q3",
+  "anno": 2026,
+  "prezzo": 44200,
+  "carrozzeria": "SUV",
+  "alimentazione": "Ibrida",
+  "descrizione": "Il SUV compatto Audi, pratico e tecnologico.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Audi_Q3_F3_DSC_7494.jpg/1280px-Audi_Q3_F3_DSC_7494.jpg",
+   "autore": "Alexander Migl",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Audi_Q3_F3_DSC_7494.jpg"
+  },
+  "modello3d": {
+   "uid": "97dccbc18cfb4f1e973fc75e278c6f66",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/none-97dccbc18cfb4f1e973fc75e278c6f66"
+  }
+ },
+ {
+  "marca": "Audi",
+  "modello": "RS 6 Avant",
+  "anno": 2026,
+  "prezzo": 134700,
+  "carrozzeria": "Station wagon",
+  "alimentazione": "Benzina",
+  "descrizione": "La station wagon più cattiva: V8 biturbo e prestazioni da supercar, con bagagliaio.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Audi_RS6_Avant_C8_1X7A0305.jpg/1280px-Audi_RS6_Avant_C8_1X7A0305.jpg",
+   "autore": "Alexander Migl",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Audi_RS6_Avant_C8_1X7A0305.jpg"
+  },
+  "modello3d": {
+   "uid": "980dbda2cbbb4bae8decaed2fa80aa0c",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/none-980dbda2cbbb4bae8decaed2fa80aa0c"
+  }
+ },
+ {
+  "marca": "Audi",
+  "modello": "RS e-tron GT",
+  "anno": 2026,
+  "prezzo": 159400,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Elettrica",
+  "descrizione": "Gran turismo elettrica a 800 volt, oltre 850 CV nella versione RS.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Audi_RS_e-tron_GT_quattro_%28front_view%29.jpg/1280px-Audi_RS_e-tron_GT_quattro_%28front_view%29.jpg",
+   "autore": "Nimda01",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Audi_RS_e-tron_GT_quattro_(front_view).jpg"
+  },
+  "modello3d": {
+   "uid": "e5b032ec99bc44be9f31761c574fe4c2",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/none-e5b032ec99bc44be9f31761c574fe4c2"
+  }
+ },
+ {
+  "marca": "Volkswagen",
+  "modello": "Polo",
+  "anno": 2026,
+  "prezzo": 22250,
+  "carrozzeria": "Citycar",
+  "alimentazione": "Benzina",
+  "descrizione": "La piccola tedesca di riferimento, solida e parca nei consumi.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/2018_Volkswagen_Polo_SE_1.0_Front.jpg/1280px-2018_Volkswagen_Polo_SE_1.0_Front.jpg",
+   "autore": "Vauxford",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2018_Volkswagen_Polo_SE_1.0_Front.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Volkswagen",
+  "modello": "Golf",
+  "anno": 2026,
+  "prezzo": 31350,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Ibrida",
+  "descrizione": "L'auto che ha dato il nome a un segmento, oggi all'ottava generazione.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/2020_Volkswagen_Golf_Style_1.5_Front.jpg/1280px-2020_Volkswagen_Golf_Style_1.5_Front.jpg",
+   "autore": "Vauxford",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2020_Volkswagen_Golf_Style_1.5_Front.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Volkswagen",
+  "modello": "T-Roc",
+  "anno": 2026,
+  "prezzo": 34300,
+  "carrozzeria": "SUV",
+  "alimentazione": "Benzina",
+  "descrizione": "Il crossover compatto di successo, ora alla seconda generazione.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/2018_Volkswagen_T-Roc_Front_%282%29.jpg/1280px-2018_Volkswagen_T-Roc_Front_%282%29.jpg",
+   "autore": "Vauxford",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2018_Volkswagen_T-Roc_Front_(2).jpg"
+  },
+  "modello3d": {
+   "uid": "0fed7f4435ed4eec80a544b0f2a1c9d8",
+   "autore": "SQUIR3D",
+   "fonte": "https://sketchfab.com/3d-models/none-0fed7f4435ed4eec80a544b0f2a1c9d8"
+  }
+ },
+ {
+  "marca": "Volkswagen",
+  "modello": "ID.3",
+  "anno": 2026,
+  "prezzo": 36490,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Elettrica",
+  "descrizione": "La compatta elettrica nativa di Volkswagen.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/2020_Volkswagen_ID.3_1st_Front.jpg/1280px-2020_Volkswagen_ID.3_1st_Front.jpg",
+   "autore": "Vauxford",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2020_Volkswagen_ID.3_1st_Front.jpg"
+  },
+  "modello3d": {
+   "uid": "cae9c426df874fa4b7f47ea2611f3824",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/2021-volkwagen-id3-cae9c426df874fa4b7f47ea2611f3824"
+  }
+ },
+ {
+  "marca": "Volkswagen",
+  "modello": "Golf GTI",
+  "anno": 2026,
+  "prezzo": 46350,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Benzina",
+  "descrizione": "La hot hatch originale dal 1976: tre lettere, quadretti scozzesi e 265 CV.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Volkswagen_Golf_GTI_Mk8_Dolphin_Gray_Metallic_%2810%29.jpg/1280px-Volkswagen_Golf_GTI_Mk8_Dolphin_Gray_Metallic_%2810%29.jpg",
+   "autore": "Damian B Oh",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Volkswagen_Golf_GTI_Mk8_Dolphin_Gray_Metallic_(10).jpg"
+  },
+  "modello3d": {
+   "uid": "e87d7c0f8937481db236529beb5ecab7",
+   "autore": "Mona x Supercars",
+   "fonte": "https://sketchfab.com/3d-models/none-e87d7c0f8937481db236529beb5ecab7"
+  }
+ },
+ {
+  "marca": "Toyota",
+  "modello": "Aygo X",
+  "anno": 2026,
+  "prezzo": 20850,
+  "carrozzeria": "Citycar",
+  "alimentazione": "Ibrida",
+  "descrizione": "Citycar rialzata, ora anche full hybrid.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Toyota_Aygo_X_1X7A0063.jpg/1280px-Toyota_Aygo_X_1X7A0063.jpg",
+   "autore": "Alexander Migl",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Toyota_Aygo_X_1X7A0063.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Toyota",
+  "modello": "Yaris",
+  "anno": 2026,
+  "prezzo": 24550,
+  "carrozzeria": "Citycar",
+  "alimentazione": "Ibrida",
+  "descrizione": "Utilitaria full hybrid dai consumi bassissimi in città.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Toyota_Yaris_Hybrid_%282020%29_%2852173649085%29.jpg/1280px-Toyota_Yaris_Hybrid_%282020%29_%2852173649085%29.jpg",
+   "autore": "Charles from Port Chester, New York",
+   "licenza": "CC BY 2.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Toyota_Yaris_Hybrid_(2020)_(52173649085).jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Toyota",
+  "modello": "Yaris Cross",
+  "anno": 2026,
+  "prezzo": 28750,
+  "carrozzeria": "SUV",
+  "alimentazione": "Ibrida",
+  "descrizione": "Il piccolo SUV ibrido, disponibile anche a trazione integrale.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/2024_Toyota_Yaris_Cross_GR_Sport_front.jpg/1280px-2024_Toyota_Yaris_Cross_GR_Sport_front.jpg",
+   "autore": "LuvsMG481",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2024_Toyota_Yaris_Cross_GR_Sport_front.jpg"
+  },
+  "modello3d": {
+   "uid": "1b6dd834e8184851887ddeab1e83bc28",
+   "autore": "tonielpro520",
+   "fonte": "https://sketchfab.com/3d-models/2020-toyota-yaris-cross-1b6dd834e8184851887ddeab1e83bc28"
+  }
+ },
+ {
+  "marca": "Toyota",
+  "modello": "C-HR",
+  "anno": 2026,
+  "prezzo": 36250,
+  "carrozzeria": "SUV",
+  "alimentazione": "Ibrida",
+  "descrizione": "Crossover dal design da concept car, ibrido o plug-in.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Toyota_C-HR_Hybrid_%28AX20%29_DSC_7239.jpg/1280px-Toyota_C-HR_Hybrid_%28AX20%29_DSC_7239.jpg",
+   "autore": "Alexander Migl",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Toyota_C-HR_Hybrid_(AX20)_DSC_7239.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Toyota",
+  "modello": "GR Yaris",
+  "anno": 2026,
+  "prezzo": 53000,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Benzina",
+  "descrizione": "Nata dai rally: tre cilindri turbo, trazione integrale GR-Four e carrozzeria dedicata.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/2024_Toyota_GR_Yaris_Hayakawa.jpg/1280px-2024_Toyota_GR_Yaris_Hayakawa.jpg",
+   "autore": "TTTNIS",
+   "licenza": "CC0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2024_Toyota_GR_Yaris_Hayakawa.jpg"
+  },
+  "modello3d": {
+   "uid": "98e6611ad034451982b6a9908c63fc47",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/2021-toyota-gr-yaris-98e6611ad034451982b6a9908c63fc47"
+  }
+ },
+ {
+  "marca": "Renault",
+  "modello": "Clio",
+  "anno": 2026,
+  "prezzo": 18900,
+  "carrozzeria": "Citycar",
+  "alimentazione": "Ibrida",
+  "descrizione": "Una delle piccole più amate d'Europa, anche full hybrid E-Tech.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Renault_Clio_V_1X7A0392.jpg/1280px-Renault_Clio_V_1X7A0392.jpg",
+   "autore": "Alexander Migl",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Renault_Clio_V_1X7A0392.jpg"
+  },
+  "modello3d": {
+   "uid": "6e8fb3f12cf34c1095cdd89cfd77580c",
+   "autore": "SQUIR3D",
+   "fonte": "https://sketchfab.com/3d-models/none-6e8fb3f12cf34c1095cdd89cfd77580c"
+  }
+ },
+ {
+  "marca": "Renault",
+  "modello": "Captur",
+  "anno": 2026,
+  "prezzo": 24200,
+  "carrozzeria": "SUV",
+  "alimentazione": "Ibrida",
+  "descrizione": "SUV compatto versatile con divano posteriore scorrevole.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Renault_Captur_II_%28front%29.jpg/1280px-Renault_Captur_II_%28front%29.jpg",
+   "autore": "Guillaume Vachey",
+   "licenza": "CC0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Renault_Captur_II_(front).jpg"
+  },
+  "modello3d": {
+   "uid": "2d166ebc096d4cc5bdeef76fb2eb1798",
+   "autore": "Gerda",
+   "fonte": "https://sketchfab.com/3d-models/none-2d166ebc096d4cc5bdeef76fb2eb1798"
+  }
+ },
+ {
+  "marca": "Renault",
+  "modello": "5 E-Tech",
+  "anno": 2026,
+  "prezzo": 27950,
+  "carrozzeria": "Citycar",
+  "alimentazione": "Elettrica",
+  "descrizione": "La R5 rinasce elettrica, con stile rétro e tecnologia moderna.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Renault_5_E-Tech_GIMS_2024_1X7A2227.jpg/1280px-Renault_5_E-Tech_GIMS_2024_1X7A2227.jpg",
+   "autore": "Alexander-93",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Renault_5_E-Tech_GIMS_2024_1X7A2227.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Alpine",
+  "modello": "A290",
+  "anno": 2026,
+  "prezzo": 39000,
+  "carrozzeria": "Citycar",
+  "alimentazione": "Elettrica",
+  "descrizione": "La hot hatch elettrica di Alpine, nata dalla Renault 5.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Alpine_A290_GTS_DSC_9346.jpg/1280px-Alpine_A290_GTS_DSC_9346.jpg",
+   "autore": "Alexander Migl",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Alpine_A290_GTS_DSC_9346.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Alpine",
+  "modello": "A110",
+  "anno": 2026,
+  "prezzo": 68200,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Benzina",
+  "descrizione": "Berlinetta leggera a motore centrale: poco peso, tanto divertimento.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/2018_Alpine_A110_Premiere_Edition_1.8_Front.jpg/1280px-2018_Alpine_A110_Premiere_Edition_1.8_Front.jpg",
+   "autore": "Vauxford",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2018_Alpine_A110_Premiere_Edition_1.8_Front.jpg"
+  },
+  "modello3d": {
+   "uid": "00fc322c91f04f23acae09910620937f",
+   "autore": "Ddiaz Design",
+   "fonte": "https://sketchfab.com/3d-models/2022-alpine-a110-00fc322c91f04f23acae09910620937f"
+  }
+ },
+ {
+  "marca": "Peugeot",
+  "modello": "208",
+  "anno": 2026,
+  "prezzo": 22600,
+  "carrozzeria": "Citycar",
+  "alimentazione": "Ibrida",
+  "descrizione": "La piccola del Leone con i-Cockpit e versione elettrica e-208.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Peugeot_208_II_GT_Line_rouge_%28avant%29.jpg/1280px-Peugeot_208_II_GT_Line_rouge_%28avant%29.jpg",
+   "autore": "Futurhit12",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Peugeot_208_II_GT_Line_rouge_(avant).jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Peugeot",
+  "modello": "2008",
+  "anno": 2026,
+  "prezzo": 28350,
+  "carrozzeria": "SUV",
+  "alimentazione": "Ibrida",
+  "descrizione": "SUV compatto dal design affilato, ibrido o elettrico.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/2020_Peugeot_2008_Allure_Front.jpg/1280px-2020_Peugeot_2008_Allure_Front.jpg",
+   "autore": "Vauxford",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2020_Peugeot_2008_Allure_Front.jpg"
+  },
+  "modello3d": {
+   "uid": "1094ee784f7d4b63a9c43efefdbacca5",
+   "autore": "Gerda",
+   "fonte": "https://sketchfab.com/3d-models/none-1094ee784f7d4b63a9c43efefdbacca5"
+  }
+ },
+ {
+  "marca": "Peugeot",
+  "modello": "308",
+  "anno": 2026,
+  "prezzo": 33650,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Ibrida",
+  "descrizione": "Compatta elegante con motori ibridi, plug-in ed elettrici.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/2022_-_Peugeot_308_III_%28C%29_-_196.jpg/1280px-2022_-_Peugeot_308_III_%28C%29_-_196.jpg",
+   "autore": "A.BourgeoisP",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2022_-_Peugeot_308_III_(C)_-_196.jpg"
+  },
+  "modello3d": {
+   "uid": "0d9c9c265bec42678bfc269c1a8cebc3",
+   "autore": "kevin (ケビン)",
+   "fonte": "https://sketchfab.com/3d-models/none-0d9c9c265bec42678bfc269c1a8cebc3"
+  }
+ },
+ {
+  "marca": "Dacia",
+  "modello": "Sandero",
+  "anno": 2026,
+  "prezzo": 15800,
+  "carrozzeria": "Citycar",
+  "alimentazione": "Benzina",
+  "descrizione": "L'auto nuova più accessibile, anche a GPL.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/2021_Dacia_Sandero_Stepway_Prestige_TCE_1.0_Front.jpg/1280px-2021_Dacia_Sandero_Stepway_Prestige_TCE_1.0_Front.jpg",
+   "autore": "Vauxford",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2021_Dacia_Sandero_Stepway_Prestige_TCE_1.0_Front.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Dacia",
+  "modello": "Spring",
+  "anno": 2026,
+  "prezzo": 17900,
+  "carrozzeria": "Citycar",
+  "alimentazione": "Elettrica",
+  "descrizione": "La citycar elettrica più economica del mercato.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Dacia_Spring_IAA_2021_1X7A0215.jpg/1280px-Dacia_Spring_IAA_2021_1X7A0215.jpg",
+   "autore": "Alexander Migl",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Dacia_Spring_IAA_2021_1X7A0215.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Dacia",
+  "modello": "Duster",
+  "anno": 2026,
+  "prezzo": 19900,
+  "carrozzeria": "SUV",
+  "alimentazione": "Ibrida",
+  "descrizione": "SUV robusto e concreto, anche 4x4 e ibrido.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/2024_Dacia_Duster_front.jpg/1280px-2024_Dacia_Duster_front.jpg",
+   "autore": "Corvettec6r",
+   "licenza": "CC BY 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2024_Dacia_Duster_front.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Tesla",
+  "modello": "Model 3",
+  "anno": 2026,
+  "prezzo": 37970,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Elettrica",
+  "descrizione": "Berlina elettrica con grande autonomia e rete Supercharger.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Tesla_Model_3_%282023%29_Autofr%C3%BChling_Ulm_IMG_9282.jpg/1280px-Tesla_Model_3_%282023%29_Autofr%C3%BChling_Ulm_IMG_9282.jpg",
+   "autore": "Alexander-93",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Tesla_Model_3_(2023)_Autofr%C3%BChling_Ulm_IMG_9282.jpg"
+  },
+  "modello3d": {
+   "uid": "5ef9b845aaf44203b6d04e2c677e444f",
+   "autore": "Ameer Studio",
+   "fonte": "https://sketchfab.com/3d-models/none-5ef9b845aaf44203b6d04e2c677e444f"
+  }
+ },
+ {
+  "marca": "Tesla",
+  "modello": "Model Y",
+  "anno": 2026,
+  "prezzo": 41970,
+  "carrozzeria": "SUV",
+  "alimentazione": "Elettrica",
+  "descrizione": "Il SUV elettrico più venduto al mondo.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Model_Y_Standard_front_view_dllu.jpg/1280px-Tesla_Model_Y_Standard_front_view_dllu.jpg",
+   "autore": "Dllu",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Tesla_Model_Y_Standard_front_view_dllu.jpg"
+  },
+  "modello3d": {
+   "uid": "e0f703b823e74746b40634d1876f6a13",
+   "autore": "SQUIR3D",
+   "fonte": "https://sketchfab.com/3d-models/none-e0f703b823e74746b40634d1876f6a13"
+  }
+ },
+ {
+  "marca": "Tesla",
+  "modello": "Model S",
+  "anno": 2026,
+  "prezzo": 110970,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Elettrica",
+  "descrizione": "L'ammiraglia elettrica che ha cambiato il mercato; la Plaid supera i 1.000 CV.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/20180630_Tesla_Model_S_70D_2015_midnight_blue_left_front.jpg/1280px-20180630_Tesla_Model_S_70D_2015_midnight_blue_left_front.jpg",
+   "autore": "Granada",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:20180630_Tesla_Model_S_70D_2015_midnight_blue_left_front.jpg"
+  },
+  "modello3d": {
+   "uid": "1360e3cf7323487eaba8ce94279229b6",
+   "autore": "iSteven",
+   "fonte": "https://sketchfab.com/3d-models/none-1360e3cf7323487eaba8ce94279229b6"
+  }
+ },
+ {
+  "marca": "Mazda",
+  "modello": "MX-5",
+  "anno": 2026,
+  "prezzo": 33000,
+  "carrozzeria": "Cabrio",
+  "alimentazione": "Benzina",
+  "descrizione": "La roadster più venduta di sempre: leggera, a trazione posteriore, con cambio manuale.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Mazda_MX-5_ND_Wien_26_July_2020_JM_%281%29.jpg/1280px-Mazda_MX-5_ND_Wien_26_July_2020_JM_%281%29.jpg",
+   "autore": "Johannes Maximilian",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Mazda_MX-5_ND_Wien_26_July_2020_JM_(1).jpg"
+  },
+  "modello3d": {
+   "uid": "35bd007e1bc549d580ccc208a6038ec1",
+   "autore": "Res1n",
+   "fonte": "https://sketchfab.com/3d-models/2014-mazda-mx-5-nd-35bd007e1bc549d580ccc208a6038ec1"
+  }
+ },
+ {
+  "marca": "Honda",
+  "modello": "Civic Type R",
+  "anno": 2026,
+  "prezzo": 63900,
+  "carrozzeria": "Berlina",
+  "alimentazione": "Benzina",
+  "descrizione": "Due litri turbo, cambio manuale e record al Nürburgring tra le trazioni anteriori.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/2024_Honda_Civic_Type_R_FL5_in_Championship_White%2C_front_left%2C_06-30-2024.jpg/1280px-2024_Honda_Civic_Type_R_FL5_in_Championship_White%2C_front_left%2C_06-30-2024.jpg",
+   "autore": "Ethan Llamas",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:2024_Honda_Civic_Type_R_FL5_in_Championship_White,_front_left,_06-30-2024.jpg"
+  },
+  "modello3d": {
+   "uid": "407a8981be2d45a388d7280d9b931663",
+   "autore": "blakebella",
+   "fonte": "https://sketchfab.com/3d-models/none-407a8981be2d45a388d7280d9b931663"
+  }
+ },
+ {
+  "marca": "Ford",
+  "modello": "Mustang GT",
+  "anno": 2026,
+  "prezzo": 58000,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Benzina",
+  "descrizione": "La pony car per eccellenza con V8 5.0 Coyote e cambio manuale.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Ford_Mustang_S650_5.0_GT_Shadow_Black_02.jpg/1280px-Ford_Mustang_S650_5.0_GT_Shadow_Black_02.jpg",
+   "autore": "Ethan Llamas",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Ford_Mustang_S650_5.0_GT_Shadow_Black_02.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "McLaren",
+  "modello": "Artura",
+  "anno": 2026,
+  "prezzo": 256557,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Plug-in",
+  "descrizione": "Supercar ibrida con V6 biturbo e monoscocca in carbonio.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/McLaren_Artura_IMG_0527.jpg/1280px-McLaren_Artura_IMG_0527.jpg",
+   "autore": "Alexander-93",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:McLaren_Artura_IMG_0527.jpg"
+  },
+  "modello3d": {
+   "uid": "d3a8925ab63f4c73a275c4058e847061",
+   "autore": "carmodifier",
+   "fonte": "https://sketchfab.com/3d-models/none-d3a8925ab63f4c73a275c4058e847061"
+  }
+ },
+ {
+  "marca": "McLaren",
+  "modello": "750S",
+  "anno": 2026,
+  "prezzo": 317000,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Benzina",
+  "descrizione": "V8 biturbo da 750 CV e appena 1.389 kg: pura adrenalina di Woking.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/McLaren_750S_JC96_%28front_three-quarter_view2%29_at_Japan_Mobility_Show_Kansai_2025.jpg/1280px-McLaren_750S_JC96_%28front_three-quarter_view2%29_at_Japan_Mobility_Show_Kansai_2025.jpg",
+   "autore": "Aos.1905",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:McLaren_750S_JC96_(front_three-quarter_view2)_at_Japan_Mobility_Show_Kansai_2025.jpg"
+  },
+  "modello3d": {
+   "uid": "d9c90e0bb53c450f88544559640143e0",
+   "autore": "geyges",
+   "fonte": "https://sketchfab.com/3d-models/none-d9c90e0bb53c450f88544559640143e0"
+  }
+ },
+ {
+  "marca": "Aston Martin",
+  "modello": "Vantage",
+  "anno": 2026,
+  "prezzo": 212991,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Benzina",
+  "descrizione": "Sportiva britannica con V8 biturbo da 665 CV e trazione posteriore.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Aston_Martin_Vantage_%282024%29_IMG_0002.jpg/1280px-Aston_Martin_Vantage_%282024%29_IMG_0002.jpg",
+   "autore": "Alexander-93",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Aston_Martin_Vantage_(2024)_IMG_0002.jpg"
+  },
+  "modello3d": {
+   "uid": "dbdd5aadc1d64df289f65fc0f6da3c07",
+   "autore": "vecarz",
+   "fonte": "https://sketchfab.com/3d-models/none-dbdd5aadc1d64df289f65fc0f6da3c07"
+  }
+ },
+ {
+  "marca": "Aston Martin",
+  "modello": "DB12",
+  "anno": 2026,
+  "prezzo": 249899,
+  "carrozzeria": "Coupé",
+  "alimentazione": "Benzina",
+  "descrizione": "Super tourer con V8 biturbo, erede di una dinastia iniziata negli anni '50.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Aston_Martin_DB12_1X7A1921.jpg/1280px-Aston_Martin_DB12_1X7A1921.jpg",
+   "autore": "Alexander-93",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Aston_Martin_DB12_1X7A1921.jpg"
+  },
+  "modello3d": {
+   "uid": "18e282919eb9474ebf0644348d66329b",
+   "autore": "OUTPISTON",
+   "fonte": "https://sketchfab.com/3d-models/none-18e282919eb9474ebf0644348d66329b"
+  }
+ },
+ {
+  "marca": "Hyundai",
+  "modello": "i20",
+  "anno": 2026,
+  "prezzo": 19900,
+  "carrozzeria": "Citycar",
+  "alimentazione": "Benzina",
+  "descrizione": "Utilitaria ben equipaggiata, disponibile con cambio doppia frizione.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Hyundai_i20_%28BC3%29_1X7A6488.jpg/1280px-Hyundai_i20_%28BC3%29_1X7A6488.jpg",
+   "autore": "Alexander Migl",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Hyundai_i20_(BC3)_1X7A6488.jpg"
+  },
+  "modello3d": null
+ },
+ {
+  "marca": "Hyundai",
+  "modello": "Kona",
+  "anno": 2026,
+  "prezzo": 27350,
+  "carrozzeria": "SUV",
+  "alimentazione": "Ibrida",
+  "descrizione": "SUV compatto ibrido o elettrico dal design futuristico.",
+  "foto": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Hyundai_Kona_%28SX2%29_1X7A1646.jpg/1280px-Hyundai_Kona_%28SX2%29_1X7A1646.jpg",
+   "autore": "Alexander-93",
+   "licenza": "CC BY-SA 4.0",
+   "fonte": "https://commons.wikimedia.org/wiki/File:Hyundai_Kona_(SX2)_1X7A1646.jpg"
+  },
+  "modello3d": {
+   "uid": "343a128d7284471b91e7c4575910722e",
+   "autore": "Mona x Supercars",
+   "fonte": "https://sketchfab.com/3d-models/none-343a128d7284471b91e7c4575910722e"
+  }
+ }
+]

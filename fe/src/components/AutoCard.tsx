@@ -1,23 +1,23 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react'
-import { useState, type MouseEvent } from 'react'
+import type { MouseEvent } from 'react'
 import { Link } from 'react-router'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Box, Fuel } from 'lucide-react'
 import SpotlightCard from '@/components/bits/SpotlightCard'
-import Sagoma from '@/components/Sagoma'
-import { euro, sagomaDi, verniceDi } from '@/lib/formato'
+import { FotoAuto } from '@/components/FotoAuto'
+import { euro } from '@/lib/formato'
 import type { Auto } from '@/lib/api'
 
 /**
- * Card del catalogo: si inclina seguendo il mouse, l'auto "parte" e le ruote
- * girano. La descrizione e' testo React normale: mai HTML interpretato.
+ * Card del catalogo con la foto vera: si inclina seguendo il mouse e la foto
+ * scorre in parallasse. La descrizione e' testo React normale, mai HTML.
  */
 export default function AutoCard({ auto, indice = 0 }: { auto: Auto; indice?: number }) {
-  const vernice = verniceDi(auto.id)
-  const [sopra, setSopra] = useState(false)
   const mx = useMotionValue(0)
   const my = useMotionValue(0)
-  const rx = useSpring(useTransform(my, [-0.5, 0.5], [8, -8]), { stiffness: 200, damping: 18 })
-  const ry = useSpring(useTransform(mx, [-0.5, 0.5], [-10, 10]), { stiffness: 200, damping: 18 })
+  const rx = useSpring(useTransform(my, [-0.5, 0.5], [7, -7]), { stiffness: 200, damping: 18 })
+  const ry = useSpring(useTransform(mx, [-0.5, 0.5], [-9, 9]), { stiffness: 200, damping: 18 })
+  const fx = useSpring(useTransform(mx, [-0.5, 0.5], [10, -10]), { stiffness: 150, damping: 20 })
+  const fy = useSpring(useTransform(my, [-0.5, 0.5], [8, -8]), { stiffness: 150, damping: 20 })
 
   const muovi = (e: MouseEvent<HTMLDivElement>) => {
     const r = e.currentTarget.getBoundingClientRect()
@@ -36,33 +36,29 @@ export default function AutoCard({ auto, indice = 0 }: { auto: Auto; indice?: nu
       <motion.div
         style={{ rotateX: rx, rotateY: ry, transformStyle: 'preserve-3d' }}
         onMouseMove={muovi}
-        onMouseEnter={() => setSopra(true)}
         onMouseLeave={() => {
-          setSopra(false)
           mx.set(0)
           my.set(0)
         }}
       >
         <Link to={`/auto/${auto.id}`} className="group block rounded-3xl focus-visible:outline-2 focus-visible:outline-ember">
           <SpotlightCard className="h-full" spotlightColor="rgba(255, 106, 26, 0.18)">
-            <div className="relative h-44 overflow-hidden">
-              <div
-                className="absolute inset-0 opacity-60 transition-opacity duration-500 group-hover:opacity-100"
-                style={{ background: `radial-gradient(ellipse at 50% 90%, ${vernice.colore}55, transparent 65%)` }}
-              />
-              <div className="griglia absolute inset-0 opacity-50" />
-              <motion.div
-                className="absolute inset-x-4 bottom-2"
-                animate={{ x: sopra ? 14 : 0 }}
-                transition={{ type: 'spring', stiffness: 120, damping: 12 }}
-                style={{ translateZ: 40 }}
-              >
-                <Sagoma colore={vernice.colore} tipo={sagomaDi(auto.id)} corre={sopra} className="w-full drop-shadow-2xl" />
+            <div className="relative h-52 overflow-hidden">
+              <motion.div className="absolute -inset-4" style={{ x: fx, y: fy }}>
+                <FotoAuto auto={auto} className="size-full transition-transform duration-700 ease-out group-hover:scale-110" />
               </motion.div>
-              <span className="absolute left-4 top-4 rounded-full border border-white/10 bg-black/40 px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-fog backdrop-blur">
-                {auto.anno}
-              </span>
-              <ArrowUpRight className="absolute right-4 top-4 size-5 text-fog transition-all duration-300 group-hover:rotate-45 group-hover:text-ember" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-2 via-ink-2/10 to-transparent" />
+              <div className="absolute left-4 top-4 flex gap-1.5">
+                <span className="rounded-full border border-white/10 bg-black/50 px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-paper backdrop-blur">
+                  {auto.anno}
+                </span>
+                {auto.media?.modello3dUid && (
+                  <span className="flex items-center gap-1 rounded-full bg-ember/90 px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-ink">
+                    <Box className="size-3" /> 3D
+                  </span>
+                )}
+              </div>
+              <ArrowUpRight className="absolute right-4 top-4 size-5 text-paper/80 transition-all duration-300 group-hover:rotate-45 group-hover:text-ember" />
             </div>
 
             <div className="space-y-3 p-5" style={{ transform: 'translateZ(30px)' }}>
@@ -71,9 +67,15 @@ export default function AutoCard({ auto, indice = 0 }: { auto: Auto; indice?: nu
                 <h3 className="mt-1 truncate font-display text-xl font-semibold">{auto.modello}</h3>
               </div>
               {auto.descrizione && <p className="line-clamp-2 text-sm text-fog">{auto.descrizione}</p>}
-              <div className="flex items-end justify-between border-t border-line pt-3">
-                <span className="text-xs text-fog">{vernice.nome}</span>
-                <span className="font-display text-lg font-bold tabular-nums">{euro(auto.prezzo)}</span>
+              <div className="flex items-end justify-between gap-3 border-t border-line pt-3">
+                <span className="flex items-center gap-1.5 text-xs text-fog">
+                  {auto.alimentazione && <Fuel className="size-3.5" />}
+                  {[auto.carrozzeria, auto.alimentazione].filter(Boolean).join(' · ')}
+                </span>
+                <span className="text-right">
+                  <span className="block font-mono text-[9px] uppercase tracking-widest text-fog">da</span>
+                  <span className="font-display text-lg font-bold tabular-nums">{euro(auto.prezzo)}</span>
+                </span>
               </div>
             </div>
           </SpotlightCard>

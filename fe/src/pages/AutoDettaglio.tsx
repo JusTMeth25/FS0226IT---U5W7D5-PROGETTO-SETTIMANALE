@@ -1,16 +1,16 @@
 import { AnimatePresence, motion } from 'motion/react'
-import { lazy, Suspense, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router'
-import { ArrowLeft, BellRing, CalendarDays, CarFront, Heart, LogIn, Palette, Trash2 } from 'lucide-react'
+import { ArrowLeft, BellRing, Box, CalendarDays, CarFront, Fuel, Heart, Image, LogIn, Trash2 } from 'lucide-react'
 import CountUp from '@/components/bits/CountUp'
+import { CreditoFoto, FotoAuto } from '@/components/FotoAuto'
 import SogliaForm from '@/components/SogliaForm'
+import Viewer3D from '@/components/Viewer3D'
 import { Errore, Pulsante, Scheletro, Vuoto } from '@/components/ui'
 import { api, ApiError, type Auto, type Avviso, type Preferito } from '@/lib/api'
 import { useAuth } from '@/lib/auth'
-import { euro, VERNICI, verniceDi } from '@/lib/formato'
+import { euro } from '@/lib/formato'
 import { useToast } from '@/lib/toast'
-
-const Showroom = lazy(() => import('@/components/three/Showroom'))
 
 export default function AutoDettaglio() {
   const { id } = useParams()
@@ -20,7 +20,7 @@ export default function AutoDettaglio() {
 
   const [auto, setAuto] = useState<Auto | null>(null)
   const [errore, setErrore] = useState<ApiError | null>(null)
-  const [vernice, setVernice] = useState(verniceDi(idAuto))
+  const [vista, setVista] = useState<'foto' | '3d'>('foto')
   const [preferito, setPreferito] = useState<Preferito | null>(null)
   const [avviso, setAvviso] = useState<Avviso | null>(null)
   const [cuore, setCuore] = useState(false)
@@ -28,7 +28,7 @@ export default function AutoDettaglio() {
   useEffect(() => {
     setAuto(null)
     setErrore(null)
-    setVernice(verniceDi(idAuto))
+    setVista('foto')
     if (!Number.isInteger(idAuto) || idAuto <= 0) {
       setErrore(new ApiError(404, 'Auto non trovata'))
       return
@@ -109,34 +109,65 @@ export default function AutoDettaglio() {
 
   return (
     <div className="relative">
-      {/* scena 3D a tutta larghezza */}
-      <section className="relative h-[62vh] min-h-[420px] md:h-[78vh]">
-        <Suspense fallback={<Scheletro className="h-full rounded-none" />}>
-          <Showroom colore={vernice.colore} compatto />
-        </Suspense>
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent" />
+      {/* foto reale a tutto schermo, oppure il modello 3D */}
+      <section className="relative h-[62vh] min-h-[420px] overflow-hidden md:h-[80vh]">
+        {!auto && <Scheletro className="h-full rounded-none" />}
+        {auto && (
+          <AnimatePresence mode="wait">
+            {vista === 'foto' ? (
+              <motion.div
+                key="foto"
+                className="absolute inset-0"
+                initial={{ opacity: 0, scale: 1.12 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+              >
+                {/* lento zoom "ken burns" */}
+                <motion.div
+                  className="size-full"
+                  animate={{ scale: [1, 1.06, 1] }}
+                  transition={{ duration: 24, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                  <FotoAuto auto={auto} grande className="size-full" />
+                </motion.div>
+              </motion.div>
+            ) : (
+              <motion.div key="3d" className="absolute inset-x-0 bottom-0 top-36" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                <div className="griglia absolute inset-0 opacity-40" />
+                <Viewer3D auto={auto} className="size-full" />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        )}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-ink/80 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-ink via-ink/60 to-transparent" />
         <Link
           to="/catalogo"
           className="vetro absolute left-5 top-24 flex items-center gap-2 rounded-full px-4 py-2 text-sm text-fog hover:text-paper"
         >
           <ArrowLeft className="size-4" /> Catalogo
         </Link>
-        <div className="absolute bottom-6 right-5 flex flex-col items-end gap-2">
-          <span className="vetro flex items-center gap-2 rounded-full px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest text-fog">
-            <Palette className="size-3" /> {vernice.nome}
-          </span>
-          <div className="vetro flex gap-1.5 rounded-full p-2">
-            {VERNICI.map((v) => (
+        {auto?.media?.modello3dUid && (
+          <div className="vetro absolute right-5 top-24 flex rounded-full p-1" role="tablist" aria-label="Vista">
+            {(['foto', '3d'] as const).map((v) => (
               <button
-                key={v.nome}
-                onClick={() => setVernice(v)}
-                aria-label={`Prova vernice ${v.nome}`}
-                className={`size-5 rounded-full transition-transform hover:scale-125 ${v.nome === vernice.nome ? 'ring-2 ring-paper ring-offset-2 ring-offset-ink' : ''}`}
-                style={{ background: v.colore }}
-              />
+                key={v}
+                role="tab"
+                aria-selected={vista === v}
+                onClick={() => setVista(v)}
+                className="relative flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold"
+              >
+                {vista === v && <motion.span layoutId="vista" className="absolute inset-0 rounded-full bg-ember" />}
+                <span className={`relative flex items-center gap-2 ${vista === v ? 'text-ink' : 'text-fog'}`}>
+                  {v === 'foto' ? <Image className="size-4" /> : <Box className="size-4" />}
+                  {v === 'foto' ? 'Foto' : '3D'}
+                </span>
+              </button>
             ))}
           </div>
-        </div>
+        )}
+        {auto && vista === 'foto' && <CreditoFoto auto={auto} className="absolute bottom-20 right-5 max-w-[60%] text-right" />}
       </section>
 
       <div className="relative mx-auto -mt-16 grid max-w-6xl gap-8 px-5 lg:grid-cols-[1.4fr_1fr]">
@@ -150,9 +181,16 @@ export default function AutoDettaglio() {
                 <span className="vetro flex items-center gap-2 rounded-full px-4 py-2 text-sm">
                   <CalendarDays className="size-4 text-ember" /> {auto.anno}
                 </span>
-                <span className="vetro flex items-center gap-2 rounded-full px-4 py-2 text-sm">
-                  <Palette className="size-4 text-ember" /> {verniceDi(auto.id).nome}
-                </span>
+                {auto.carrozzeria && (
+                  <span className="vetro flex items-center gap-2 rounded-full px-4 py-2 text-sm">
+                    <CarFront className="size-4 text-ember" /> {auto.carrozzeria}
+                  </span>
+                )}
+                {auto.alimentazione && (
+                  <span className="vetro flex items-center gap-2 rounded-full px-4 py-2 text-sm">
+                    <Fuel className="size-4 text-ember" /> {auto.alimentazione}
+                  </span>
+                )}
               </div>
               {/* testo semplice: React fa l'escape, niente HTML interpretato */}
               <p className="mt-8 whitespace-pre-line text-lg leading-relaxed text-fog">
@@ -177,7 +215,7 @@ export default function AutoDettaglio() {
         >
           <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-fog">Prezzo</p>
+              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-fog">Prezzo di listino da</p>
               <p className="font-display text-4xl font-black tabular-nums">
                 {auto ? (
                   <>
