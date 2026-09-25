@@ -1,7 +1,8 @@
 import { AnimatePresence, motion } from 'motion/react'
-import { useState, type FormEvent } from 'react'
+import { useRef, useState, type FormEvent } from 'react'
 import { Link, Navigate, useNavigate, useSearchParams } from 'react-router'
 import { Eye, EyeOff, KeyRound, UserPlus } from 'lucide-react'
+import RuotaFiammante from '@/components/RuotaFiammante'
 import Sagoma from '@/components/Sagoma'
 import SplitText from '@/components/bits/SplitText'
 import { Campo, Errore, Pulsante } from '@/components/ui'
@@ -31,8 +32,25 @@ export default function Accedi() {
   const [carica, setCarica] = useState(false)
   const [errore, setErrore] = useState<string | null>(null)
   const [campi, setCampi] = useState<Record<string, string>>({})
+  // Partenza dopo l'accesso: turbo -> l'auto scappa -> ruota in fiamme -> catalogo.
+  const [partenza, setPartenza] = useState<'no' | 'turbo' | 'via' | 'ruota'>('no')
+  // Il ref si alza PRIMA del login: appena l'utente e' impostato la pagina
+  // non deve rimandare subito al catalogo, o l'animazione non si vede.
+  const inPartenza = useRef(false)
+  const timer = useRef<number[]>([])
 
-  if (utente) return <Navigate to={destinazione} replace />
+  if (utente && !inPartenza.current) return <Navigate to={destinazione} replace />
+
+  function avviaPartenza() {
+    const ridotto = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    if (ridotto) {
+      naviga(destinazione, { replace: true })
+      return
+    }
+    setPartenza('turbo')
+    timer.current.push(window.setTimeout(() => setPartenza('via'), 650))
+    timer.current.push(window.setTimeout(() => setPartenza('ruota'), 1150))
+  }
 
   function cambiaModo(m: Modo) {
     const p = new URLSearchParams(parametri)
@@ -48,11 +66,13 @@ export default function Accedi() {
     setErrore(null)
     setCampi({})
     setCarica(true)
+    inPartenza.current = true
     try {
       const u = modo === 'accedi' ? await accedi(email, password) : await registrati(email, nome, password)
       toast(modo === 'accedi' ? `Bentornato, ${u.nome}` : `Benvenuto in salone, ${u.nome}`)
-      naviga(destinazione, { replace: true })
+      avviaPartenza()
     } catch (err) {
+      inPartenza.current = false
       if (err instanceof ApiError) {
         setErrore(err.message)
         setCampi(err.campi)
@@ -63,7 +83,8 @@ export default function Accedi() {
   }
 
   return (
-    <div className="mx-auto grid min-h-dvh max-w-6xl items-center gap-12 px-5 pb-10 pt-32 lg:grid-cols-2">
+    <div className="mx-auto grid min-h-dvh max-w-6xl items-center gap-12 overflow-x-clip px-5 pb-10 pt-32 lg:grid-cols-2">
+      {partenza === 'ruota' && <RuotaFiammante onFine={() => naviga(destinazione, { replace: true })} />}
       <div className="hidden lg:block">
         <SplitText
           key={modo}
@@ -78,12 +99,62 @@ export default function Accedi() {
           Preferiti, soglie di prezzo e una mail quando e' il momento giusto. Niente spam: una mail per avviso, mai due.
         </p>
         <motion.div
-          className="relative mt-12"
-          animate={{ x: [0, 12, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+          className="relative mt-12 max-w-md"
+          animate={
+            partenza === 'no'
+              ? { x: [0, 12, 0], y: 0 }
+              : partenza === 'turbo'
+                ? { x: [0, -6, 4, -5, 3, -2], y: [0, -2, 1, -1, 2, 0] }
+                : { x: '140vw', y: 0 }
+          }
+          transition={
+            partenza === 'no'
+              ? { duration: 4, repeat: Infinity, ease: 'easeInOut' }
+              : partenza === 'turbo'
+                ? { duration: 0.12, repeat: Infinity }
+                : { duration: 0.55, ease: [0.55, 0, 1, 0.45] }
+          }
         >
           <div className="absolute inset-x-10 bottom-0 h-16 rounded-full bg-ember/30 blur-3xl" />
-          <Sagoma colore={modo === 'accedi' ? '#ff6a1a' : '#16c4dc'} tipo="coupe" corre className="relative w-full max-w-md" />
+          {/* fiamme del turbo dallo scarico (a sinistra: l'auto guarda a destra) */}
+          <AnimatePresence>
+            {partenza !== 'no' && (
+              <motion.div
+                className="absolute left-[-18%] top-[52%] flex -translate-y-1/2 flex-col gap-1"
+                initial={{ opacity: 0, scaleX: 0.2 }}
+                animate={{ opacity: 1, scaleX: 1 }}
+                exit={{ opacity: 0 }}
+                style={{ originX: 1 }}
+              >
+                {[0, 1].map((i) => (
+                  <motion.span
+                    key={i}
+                    className="block h-3 w-24 rounded-full"
+                    style={{
+                      background: 'linear-gradient(to left, #ffffff, #22d3ee 25%, #ff6a1a 60%, transparent)',
+                      filter: 'blur(1px) drop-shadow(0 0 10px #22d3ee)',
+                      originX: 1,
+                    }}
+                    animate={{ scaleX: [0.7, 1.25, 0.85, 1.15] }}
+                    transition={{ duration: 0.12, repeat: Infinity, repeatType: 'mirror', delay: i * 0.05 }}
+                  />
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+          {/* scie di velocita' quando parte */}
+          {partenza === 'via' &&
+            [20, 45, 70].map((top, i) => (
+              <motion.span
+                key={top}
+                className="absolute right-full block h-0.5 rounded-full bg-gradient-to-l from-paper to-transparent"
+                style={{ top: `${top}%` }}
+                initial={{ width: 0, opacity: 0 }}
+                animate={{ width: 260, opacity: [0, 1, 0.6] }}
+                transition={{ duration: 0.35, delay: i * 0.05 }}
+              />
+            ))}
+          <Sagoma colore={modo === 'accedi' ? '#ff6a1a' : '#16c4dc'} tipo="coupe" corre className="relative w-full" />
         </motion.div>
       </div>
 

@@ -121,7 +121,7 @@ public class AutoService {
 		if (auto.isPubblicata() && nuovo.compareTo(vecchio) < 0) {
 			List<Long> scattati = avvisoRepository.attraversati(id, vecchio, nuovo);
 			if (!scattati.isEmpty()) {
-				eventi.publishEvent(new PrezzoScesoEvent(id, scattati));
+				eventi.publishEvent(new PrezzoScesoEvent(id, vecchio, scattati));
 			}
 		}
 		return AutoAdminDto.da(auto);

@@ -7,7 +7,7 @@ Se il nuovo prezzo scende sotto la soglia di un utente, a quell'utente parte una
 
 | Parte | Tecnologia | In locale | Su Render |
 |---|---|---|---|
-| Backend | Spring Boot 4.1.1, Java 25, Spring Security + JWT, Mail | `be` sulla 8080 | Web Service (Docker) |
+| Backend | Spring Boot 4.1.1, Java 25, Spring Security + JWT, Mail, Thymeleaf | `be` sulla 8080 | Web Service (Docker) |
 | Frontend | React 19, Vite, TypeScript, Tailwind 4, Three.js (R3F + drei + postprocessing), Motion, GSAP, React Bits, Lenis | `fe` sulla 5173 | Static Site |
 | Database | PostgreSQL | `U5W7D5-PROGETTO-SETTIMANALE` sulla 5432 | Render PostgreSQL |
 
@@ -21,7 +21,7 @@ Se il nuovo prezzo scende sotto la soglia di un utente, a quell'utente parte una
 | pubblico | GET | `/api/auto/{id}` | dettaglio (404 se l'auto è una bozza) |
 | pubblico | POST | `/api/avvisi/disattiva` | `{token}` dal link della mail: cancella l'avviso |
 | pubblico | GET | `/api/gara/classifica?autoId=` | classifica della drag race (per auto o generale) |
-| pubblico | GET | `/actuator/health`, `/api/stato` | health check, stato del DB |
+| pubblico | GET | `/actuator/health`, `/api/stato` | health check; stato del DB e data della build (per verificare i deploy) |
 | utente | GET / PUT / DELETE | `/api/profilo` | legge il profilo, cambia il nome, elimina l'account |
 | utente | GET / POST | `/api/preferiti` | elenco, aggiunta `{autoId}` |
 | utente | DELETE | `/api/preferiti/{id}` | rimozione |
@@ -117,7 +117,7 @@ Per creare la password per le app di Gmail:
 - L'utente arriva sempre dal JWT.
 - Il testo di ricerca è un parametro legato. I caratteri `%` e `_` scritti dall'utente sono neutralizzati.
 - Il campo di ordinamento si confronta con un elenco chiuso (`OrdinamentoAuto`). Un valore fuori elenco dà 400.
-- Il template della mail fa l'escape HTML di nome, marca, modello e link.
+- La mail usa un template Thymeleaf (`templates/mail/prezzo-sceso.html`, grafica del sito, foto dell'auto, prezzo barrato e sconto): `th:text`/`th:href` fanno l'escape di nome, marca, modello e link.
 
 **Autorizzazioni.**
 - `/api/admin/**` richiede ADMIN in `SecurityConfig` e con `@PreAuthorize`. Un utente normale riceve 403.

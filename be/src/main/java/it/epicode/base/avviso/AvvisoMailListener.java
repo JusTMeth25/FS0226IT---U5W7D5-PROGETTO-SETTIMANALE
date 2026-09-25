@@ -46,7 +46,7 @@ public class AvvisoMailListener {
 			if (!avvisoService.prendiSegno(avvisoId)) {
 				continue; // gia' inviato da un altro thread, o avviso cancellato
 			}
-			avvisoService.datiMail(avvisoId).ifPresent(this::invia);
+			avvisoService.datiMail(avvisoId, evento.prezzoPrecedente()).ifPresent(this::invia);
 		}
 	}
 

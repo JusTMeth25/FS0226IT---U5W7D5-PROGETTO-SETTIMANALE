@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--
+  Mail "prezzo sceso". HTML per client di posta: tabelle e stili inline (Gmail,
+  Yahoo e Outlook ignorano CSS esterni, flexbox e font web). Ogni valore passa
+  da th:text / th:href / th:src, che fanno l'escape: niente HTML iniettabile.
+-->
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title th:text="|Prezzo sceso: ${marca} ${modello}|">Prezzo sceso</title>
+</head>
+<body style="margin:0; padding:0; background:#07070b; -webkit-text-size-adjust:100%;">
+<!-- anteprima nella lista della posta -->
+<div style="display:none; max-height:0; overflow:hidden; opacity:0;"
+     th:text="|${marca} ${modello} ora a ${prezzo}: sotto la tua soglia di ${soglia}.|"></div>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#07070b;">
+  <tr>
+    <td align="center" style="padding:28px 12px;">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0"
+             style="width:100%; max-width:600px; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; color:#f4f4f8;">
+
+        <!-- logo -->
+        <tr>
+          <td style="padding:0 4px 20px;">
+            <table role="presentation" cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="background:#ff6a1a; border-radius:10px; width:36px; height:36px; text-align:center; font:900 20px/36px Arial,sans-serif; color:#07070b;">V</td>
+                <td style="padding-left:10px; font:800 18px/36px Arial,sans-serif; letter-spacing:1px; color:#f4f4f8;">VETRINA<span style="color:#ff6a1a;">.</span></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- scheda principale -->
+        <tr>
+          <td style="background:#0d0d14; border:1px solid #23232f; border-radius:22px; overflow:hidden;">
+
+            <!-- barra luminosa -->
+            <div style="height:4px; background:#ff6a1a; background-image:linear-gradient(90deg,#ff6a1a,#ffb347 50%,#22d3ee);"></div>
+
+            <!-- foto dell'auto con badge dello sconto -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" th:if="${foto != null}">
+              <tr>
+                <td style="position:relative;">
+                  <img th:src="${foto}" th:alt="|${marca} ${modello}|" width="600"
+                       style="display:block; width:100%; max-width:600px; height:auto; border:0;">
+                </td>
+              </tr>
+            </table>
+
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="padding:30px 32px 8px;">
+                  <p style="margin:0 0 6px; font:700 11px/1 'Courier New',monospace; letter-spacing:4px; color:#ff6a1a; text-transform:uppercase;">
+                    Avviso di prezzo
+                  </p>
+                  <p style="margin:0 0 18px; font-size:15px; color:#8a8aa0;" th:text="|Ciao ${nome},|">Ciao,</p>
+                  <p style="margin:0; font:700 12px/1.4 'Courier New',monospace; letter-spacing:3px; color:#ff6a1a; text-transform:uppercase;"
+                     th:text="${marca}">Marca</p>
+                  <h1 style="margin:4px 0 0; font:900 34px/1.05 'Arial Black','Helvetica Neue',Arial,sans-serif; color:#f4f4f8;"
+                      th:text="${modello}">Modello</h1>
+                </td>
+              </tr>
+
+              <!-- prezzi -->
+              <tr>
+                <td style="padding:22px 32px 6px;">
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
+                         style="background:#07070b; border:1px solid #23232f; border-radius:16px;">
+                    <tr>
+                      <td style="padding:18px 20px;">
+                        <p style="margin:0 0 4px; font:700 10px/1 'Courier New',monospace; letter-spacing:2px; color:#8a8aa0; text-transform:uppercase;">
+                          Nuovo prezzo
+                        </p>
+                        <p style="margin:0; font:900 36px/1.1 'Arial Black',Arial,sans-serif; color:#f4f4f8;" th:text="${prezzo}">€</p>
+                        <p style="margin:6px 0 0; font-size:14px; color:#8a8aa0;" th:if="${prezzoPrecedente != null}">
+                          prima <span style="text-decoration:line-through;" th:text="${prezzoPrecedente}">€</span>
+                          <span th:if="${risparmio != null}"> · risparmi <strong style="color:#a3ff12;" th:text="${risparmio}">€</strong></span>
+                        </p>
+                      </td>
+                      <td align="right" valign="middle" style="padding:18px 20px;" th:if="${sconto != null and sconto > 0}">
+                        <span style="display:inline-block; background:#ff6a1a; color:#07070b; border-radius:999px; padding:10px 16px; font:900 22px/1 'Arial Black',Arial,sans-serif;"
+                              th:text="|-${sconto}%|">-%</span>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:14px 32px 0; font-size:15px; line-height:1.6; color:#c9ccd4;">
+                  Il prezzo è sceso <strong style="color:#f4f4f8;">sotto la soglia di <span th:text="${soglia}">€</span></strong>
+                  che avevi impostato. È il momento che aspettavi.
+                </td>
+              </tr>
+
+              <!-- prestazioni -->
+              <tr th:if="${cv != null or zeroCento != null}">
+                <td style="padding:18px 32px 0;">
+                  <table role="presentation" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td th:if="${cv != null}" style="padding-right:8px;">
+                        <span style="display:inline-block; border:1px solid #23232f; border-radius:999px; padding:7px 14px; font:700 12px/1 'Courier New',monospace; color:#22d3ee;"
+                              th:text="|${cv} CV|">CV</span>
+                      </td>
+                      <td th:if="${zeroCento != null}">
+                        <span style="display:inline-block; border:1px solid #23232f; border-radius:999px; padding:7px 14px; font:700 12px/1 'Courier New',monospace; color:#22d3ee;"
+                              th:text="|0-100 in ${zeroCento} s|">0-100</span>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <!-- pulsante -->
+              <tr>
+                <td style="padding:28px 32px 10px;">
+                  <table role="presentation" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td style="background:#ff6a1a; border-radius:999px; box-shadow:0 0 24px rgba(255,106,26,0.6);">
+                        <a th:href="${linkAuto}" href="#"
+                           style="display:inline-block; padding:15px 30px; font:800 15px/1 Arial,sans-serif; color:#07070b; text-decoration:none;">
+                          Vedi l'auto in vetrina &rarr;
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:14px 32px 30px; font-size:13px; line-height:1.6; color:#8a8aa0;">
+                  Questo avviso ha fatto il suo lavoro: non ti scriverà più per questa auto.
+                  Gestisci le tue soglie dalla pagina <a th:href="${linkAvvisi}" href="#" style="color:#22d3ee;">Avvisi</a>.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- piè di pagina -->
+        <tr>
+          <td style="padding:22px 8px 0; font-size:12px; line-height:1.6; color:#5b6270; text-align:center;">
+            Ricevi questa mail perché hai impostato un avviso di prezzo su Vetrina.<br>
+            Non vuoi più avvisi per questa auto?
+            <a th:href="${linkDisattiva}" href="#" style="color:#8a8aa0;">Disattiva l'avviso</a>.
+            <br><br>
+            Vetrina · progetto didattico Epicode
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

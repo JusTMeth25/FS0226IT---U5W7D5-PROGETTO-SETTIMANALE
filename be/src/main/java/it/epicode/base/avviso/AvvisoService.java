@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -79,13 +80,18 @@ public class AvvisoService {
 
 	/** Vuoto se nel frattempo l'avviso o l'utente sono stati cancellati. */
 	@Transactional(readOnly = true)
-	public Optional<DatiMail> datiMail(Long avvisoId) {
+	public Optional<DatiMail> datiMail(Long avvisoId, BigDecimal prezzoPrecedente) {
 		return avvisoRepository.findById(avvisoId).map(a -> new DatiMail(
 				a.getId(),
 				a.getUtente().getEmail(),
 				a.getUtente().getNome(),
+				a.getAuto().getId(),
 				a.getAuto().getMarca(),
 				a.getAuto().getModello(),
+				a.getAuto().getMedia().getFotoUrl(),
+				a.getAuto().getPrestazioni().getCv(),
+				a.getAuto().getPrestazioni().getZeroCento(),
+				prezzoPrecedente,
 				a.getAuto().getPrezzo(),
 				a.getSoglia(),
 				a.getToken()));
