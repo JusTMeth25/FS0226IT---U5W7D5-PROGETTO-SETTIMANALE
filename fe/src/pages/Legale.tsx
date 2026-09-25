@@ -77,6 +77,11 @@ export function Privacy() {
               'Mandarti una mail quando il prezzo scende sotto la soglia',
               'Finche\' non li elimini, li disattivi dal link nella mail o elimini l\'account',
             ],
+            [
+              'Tempi della drag race (auto, miglior tempo, data)',
+              'Classifica del minigioco: accanto al tempo compare il tuo nome, visibile a tutti. L\'email mai.',
+              'Finche\' non elimini l\'account',
+            ],
           ]}
         />
         <p>
@@ -124,7 +129,7 @@ export function Privacy() {
             <strong>Rettifica</strong>: cambi il nome dal <Link to="/profilo" className="text-ember hover:underline">profilo</Link>.
           </li>
           <li>
-            <strong>Cancellazione</strong>: dal profilo, «Elimina il mio account» cancella subito profilo, preferiti e avvisi. Da quel momento
+            <strong>Cancellazione</strong>: dal profilo, «Elimina il mio account» cancella subito profilo, preferiti, avvisi e tempi in classifica. Da quel momento
             non parte piu' nessuna mail verso di te.
           </li>
           <li>

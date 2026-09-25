@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 import { Check, Eye, EyeOff, Pencil, Plus, Search, Tag, Trash2, TrendingDown, TrendingUp, X } from 'lucide-react'
 import CountUp from '@/components/bits/CountUp'
 import { Campo, Errore, Intestazione, Modale, Pulsante, Scheletro } from '@/components/ui'
-import { api, ApiError, type AutoAdmin, type DatiAuto, type Media, type Pagina } from '@/lib/api'
+import { api, ApiError, type AutoAdmin, type DatiAuto, type Media, type Pagina, type Prestazioni } from '@/lib/api'
 import { euro } from '@/lib/formato'
 import { FotoAuto } from '@/components/FotoAuto'
 import { useToast } from '@/lib/toast'
@@ -22,7 +22,10 @@ type Bozza = {
   carrozzeria: string
   alimentazione: string
   media: Media
+  prestazioni: Record<keyof Prestazioni, string>
 }
+
+const PRESTAZIONI_VUOTE = { versione: '', cv: '', zeroCento: '', velocitaMax: '', pesoKg: '' }
 
 const CARROZZERIE = ['Citycar', 'Berlina', 'SUV', 'Coupé', 'Cabrio', 'Station wagon']
 const ALIMENTAZIONI = ['Benzina', 'Diesel', 'Ibrida', 'Plug-in', 'Elettrica', 'GPL']
@@ -47,6 +50,7 @@ const VUOTA: Bozza = {
   carrozzeria: '',
   alimentazione: '',
   media: MEDIA_VUOTI,
+  prestazioni: PRESTAZIONI_VUOTE,
 }
 
 function daAuto(a: AutoAdmin): Bozza {
@@ -61,6 +65,13 @@ function daAuto(a: AutoAdmin): Bozza {
     carrozzeria: a.carrozzeria ?? '',
     alimentazione: a.alimentazione ?? '',
     media: a.media ?? MEDIA_VUOTI,
+    prestazioni: {
+      versione: a.prestazioni?.versione ?? '',
+      cv: a.prestazioni?.cv?.toString() ?? '',
+      zeroCento: a.prestazioni?.zeroCento?.toString() ?? '',
+      velocitaMax: a.prestazioni?.velocitaMax?.toString() ?? '',
+      pesoKg: a.prestazioni?.pesoKg?.toString() ?? '',
+    },
   }
 }
 
@@ -70,6 +81,8 @@ function FormAuto({ auto, fatto }: { auto: AutoAdmin | null; fatto: (a: AutoAdmi
   const [errore, setErrore] = useState<string | null>(null)
   const [campi, setCampi] = useState<Record<string, string>>({})
   const imposta = (k: keyof Bozza) => (v: string | boolean) => setB((x) => ({ ...x, [k]: v }))
+  const impostaPrest = (k: keyof Prestazioni) => (v: string) => setB((x) => ({ ...x, prestazioni: { ...x.prestazioni, [k]: v } }))
+  const numero = (v: string) => (v.trim() === '' ? null : Number(v))
   const impostaMedia = (k: keyof Media) => (v: string) => setB((x) => ({ ...x, media: { ...x.media, [k]: v || null } }))
 
   async function invia(e: FormEvent) {
@@ -87,6 +100,13 @@ function FormAuto({ auto, fatto }: { auto: AutoAdmin | null; fatto: (a: AutoAdmi
       carrozzeria: b.carrozzeria || null,
       alimentazione: b.alimentazione || null,
       media: b.media,
+      prestazioni: {
+        versione: b.prestazioni.versione.trim() || null,
+        cv: numero(b.prestazioni.cv),
+        zeroCento: numero(b.prestazioni.zeroCento),
+        velocitaMax: numero(b.prestazioni.velocitaMax),
+        pesoKg: numero(b.prestazioni.pesoKg),
+      },
     }
     try {
       // In modifica il prezzo di vendita non si manda: cambia solo dal suo pulsante.
@@ -178,6 +198,17 @@ function FormAuto({ auto, fatto }: { auto: AutoAdmin | null; fatto: (a: AutoAdmi
           <motion.span layout className={`absolute top-1 size-4 rounded-full bg-ink ${b.pubblicata ? 'right-1' : 'left-1'}`} />
         </span>
       </button>
+
+      <details className="group rounded-2xl border border-line p-4">
+        <summary className="cursor-pointer text-sm font-semibold">Prestazioni (servono per la drag race)</summary>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <Campo etichetta="Versione di riferimento" value={b.prestazioni.versione} onChange={(e) => impostaPrest('versione')(e.target.value)} maxLength={80} className="sm:col-span-2" />
+          <Campo etichetta="Potenza (CV)" type="number" min={30} max={2000} value={b.prestazioni.cv} onChange={(e) => impostaPrest('cv')(e.target.value)} errore={campi['prestazioni.cv']} />
+          <Campo etichetta="0-100 km/h (s)" type="number" min={1.5} max={30} step="0.1" value={b.prestazioni.zeroCento} onChange={(e) => impostaPrest('zeroCento')(e.target.value)} errore={campi['prestazioni.zeroCento']} />
+          <Campo etichetta="Velocità max (km/h)" type="number" min={80} max={500} value={b.prestazioni.velocitaMax} onChange={(e) => impostaPrest('velocitaMax')(e.target.value)} errore={campi['prestazioni.velocitaMax']} />
+          <Campo etichetta="Peso (kg)" type="number" min={500} max={4000} value={b.prestazioni.pesoKg} onChange={(e) => impostaPrest('pesoKg')(e.target.value)} errore={campi['prestazioni.pesoKg']} />
+        </div>
+      </details>
 
       <details className="group rounded-2xl border border-line p-4">
         <summary className="cursor-pointer text-sm font-semibold">Foto e modello 3D</summary>

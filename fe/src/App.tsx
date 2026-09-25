@@ -8,6 +8,7 @@ import AutoDettaglio from '@/pages/AutoDettaglio'
 import Avvisi from '@/pages/Avvisi'
 import Catalogo from '@/pages/Catalogo'
 import Disattiva from '@/pages/Disattiva'
+import Gara from '@/pages/Gara'
 import Home from '@/pages/Home'
 import { Cookie, Privacy } from '@/pages/Legale'
 import NonTrovata from '@/pages/NonTrovata'
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
       { path: '/', element: <Home /> },
       { path: '/catalogo', element: <Catalogo /> },
       { path: '/auto/:id', element: <AutoDettaglio /> },
+      { path: '/gara', element: <Gara /> },
       { path: '/accedi', element: <Accedi /> },
       { path: '/avvisi/disattiva', element: <Disattiva /> },
       { path: '/privacy', element: <Privacy /> },

@@ -55,6 +55,9 @@ public class Auto {
 	@Embedded
 	private Media media = new Media();
 
+	@Embedded
+	private Prestazioni prestazioni = new Prestazioni();
+
 	@Column(name = "creata_il", nullable = false, updatable = false)
 	private Instant creataIl;
 
@@ -80,6 +83,10 @@ public class Auto {
 		this.carrozzeria = carrozzeria;
 		this.alimentazione = alimentazione;
 		this.media = media == null ? new Media() : media;
+	}
+
+	public void aggiornaPrestazioni(Prestazioni prestazioni) {
+		this.prestazioni = prestazioni == null ? new Prestazioni() : prestazioni;
 	}
 
 	@PrePersist
@@ -150,6 +157,10 @@ public class Auto {
 
 	public Media getMedia() {
 		return media == null ? new Media() : media;
+	}
+
+	public Prestazioni getPrestazioni() {
+		return prestazioni == null ? new Prestazioni() : prestazioni;
 	}
 
 	public Instant getCreataIl() {

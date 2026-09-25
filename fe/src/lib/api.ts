@@ -25,6 +25,14 @@ export type Media = {
   modello3dFonte: string | null
 }
 
+export type Prestazioni = {
+  versione: string | null
+  cv: number | null
+  zeroCento: number | null
+  velocitaMax: number | null
+  pesoKg: number | null
+}
+
 export type Auto = {
   id: number
   marca: string
@@ -35,6 +43,7 @@ export type Auto = {
   carrozzeria: string | null
   alimentazione: string | null
   media: Media
+  prestazioni: Prestazioni
 }
 
 export type AutoAdmin = Auto & {
@@ -52,6 +61,9 @@ export type Pagina<T> = {
   pagineTotali: number
 }
 
+export type RigaClassifica = { posizione: number; nome: string; autoId: number; auto: string; millis: number; data: string }
+export type EsitoGara = { millis: number; record: number; nuovoRecord: boolean; posizione: number }
+
 export type Preferito = { id: number; auto: Auto; creatoIl: string }
 
 export type Avviso = { id: number; auto: Auto; soglia: number; inviato: boolean; creatoIl: string }
@@ -66,6 +78,7 @@ export type DatiAuto = {
   carrozzeria: string | null
   alimentazione: string | null
   media: Media
+  prestazioni: Prestazioni
 }
 
 export type Ordinamento = 'recenti' | 'prezzo' | 'anno' | 'marca' | 'modello'
@@ -203,6 +216,15 @@ export const api = {
   eliminaAvviso: (id: number) => chiama<void>(`/api/avvisi/${id}`, { method: 'DELETE' }),
   disattivaAvviso: (tokenMail: string) =>
     chiama<void>('/api/avvisi/disattiva', { method: 'POST', body: json({ token: tokenMail }) }),
+
+  // drag race
+  gara: {
+    classifica: (autoId?: number) =>
+      chiama<RigaClassifica[]>(`/api/gara/classifica${autoId ? `?autoId=${autoId}` : ''}`),
+    miei: () => chiama<RigaClassifica[]>('/api/gara/miei'),
+    registra: (autoId: number, millis: number) =>
+      chiama<EsitoGara>('/api/gara/tempi', { method: 'POST', body: json({ autoId, millis }) }),
+  },
 
   // amministrazione
   admin: {

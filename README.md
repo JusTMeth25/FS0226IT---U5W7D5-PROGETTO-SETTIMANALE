@@ -20,12 +20,15 @@ Se il nuovo prezzo scende sotto la soglia di un utente, a quell'utente parte una
 | pubblico | GET | `/api/auto?q=&carrozzeria=&sort=&dir=&page=&size=` | catalogo delle auto pubblicate |
 | pubblico | GET | `/api/auto/{id}` | dettaglio (404 se l'auto è una bozza) |
 | pubblico | POST | `/api/avvisi/disattiva` | `{token}` dal link della mail: cancella l'avviso |
+| pubblico | GET | `/api/gara/classifica?autoId=` | classifica della drag race (per auto o generale) |
 | pubblico | GET | `/actuator/health`, `/api/stato` | health check, stato del DB |
 | utente | GET / PUT / DELETE | `/api/profilo` | legge il profilo, cambia il nome, elimina l'account |
 | utente | GET / POST | `/api/preferiti` | elenco, aggiunta `{autoId}` |
 | utente | DELETE | `/api/preferiti/{id}` | rimozione |
 | utente | GET / POST | `/api/avvisi` | elenco, creazione `{autoId, soglia}` |
 | utente | DELETE | `/api/avvisi/{id}` | rimozione |
+| utente | POST | `/api/gara/tempi` | `{autoId, millis}`: registra un tempo (tiene il record personale) |
+| utente | GET | `/api/gara/miei` | i miei record |
 | admin | GET / POST | `/api/admin/auto` | elenco (bozze e prezzo d'acquisto compresi), creazione |
 | admin | GET / PUT / DELETE | `/api/admin/auto/{id}` | dettaglio, modifica (senza prezzo), eliminazione |
 | admin | PATCH | `/api/admin/auto/{id}/prezzo` | `{prezzo}`: unico punto dove cambia il prezzo di vendita |
@@ -136,6 +139,7 @@ Per creare la password per le app di Gmail:
 | Accedi / Registrati | `/accedi` | ospiti |
 | Preferiti con soglia per ogni auto | `/preferiti` | utente |
 | Avvisi con stato "in attesa / mail inviata" | `/avvisi` | utente |
+| Drag race 3D sui 402 m con classifica | `/gara` | tutti (salvataggio da utente) |
 | Profilo, cambio nome, eliminazione account | `/profilo` | utente |
 | Officina: bozze, prezzo d'acquisto, cambio prezzo | `/admin` | admin |
 | Disattivazione dal link della mail | `/avvisi/disattiva?token=` | tutti |
@@ -154,6 +158,18 @@ Per creare la password per le app di Gmail:
 - Il token si salva nel localStorage con la chiave `vetrina.token`, come dichiarato nella Cookie Policy.
 - Nessun `dangerouslySetInnerHTML`: descrizioni e nomi si mostrano sempre come testo.
 
+## Drag race
+
+- Si sceglie un'auto del catalogo e si corre contro 3 avversari guidati dal computer, "alla pari" (0-100 simile) o a caso.
+- Ogni auto ha CV, 0-100, velocita' massima e peso reali della versione indicata, verificati sul web (settembre 2026).
+- Comandi: Spazio o ↑ per partire al verde e cambiare marcia, N o Shift per il nitro, Esc per uscire. Su mobile ci sono i pulsanti.
+- La fisica e' in `fe/src/lib/gara.ts` ed e' copiata identica in `be/.../gara/Simulatore.java`:
+  - accelerazione ricavata dallo 0-100 e dalla velocita' massima dichiarate;
+  - 6 marce con limitatore (1 marcia per le elettriche), 0,15 s per cambiata;
+  - nitro +30% per 2 s, passo fisso 1/120 s.
+- **Antitruffa**: il server ricalcola il tempo con guida perfetta (reazione zero, cambiate al limitatore, nitro nel momento migliore). Un tempo piu' basso di quel minimo (tolleranza 30 ms) viene rifiutato con 400.
+- In classifica compare solo il nome dell'utente, mai l'email. Eliminando l'account si cancellano anche i tempi.
+
 ## Struttura
 
 ```
@@ -167,8 +183,9 @@ be/src/main/java/it/epicode/base/
   auto/       catalogo pubblico e gestione admin, OrdinamentoAuto
   preferito/  preferiti dell'utente
   avviso/     avvisi, PrezzoScesoEvent, AvvisoMailListener, MailAvvisi
+  gara/       Simulatore (fisica), Tempo, classifica e controllo antitruffa
 fe/src/
-  lib/          api.ts (tutte le fetch), auth.tsx, toast.tsx, formato.ts
+  lib/          api.ts (tutte le fetch), auth.tsx, toast.tsx, formato.ts, gara.ts (fisica), audioMotore.ts
   components/   Layout, AutoCard, FotoAuto, Viewer3D, Sagoma (SVG di riserva), SogliaForm, ui, three/Tunnel, bits/ (React Bits)
   pages/        Home, Catalogo, AutoDettaglio, Accedi, Preferiti, Avvisi, Profilo, Admin, Disattiva, Legale, NonTrovata
 ```

@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'motion/react'
 import { forwardRef, type ButtonHTMLAttributes, type InputHTMLAttributes, type ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 import { LoaderCircle, X } from 'lucide-react'
 import SplitText from '@/components/bits/SplitText'
 
@@ -166,7 +167,7 @@ export function Modale({
   titolo: string
   children: ReactNode
 }) {
-  return (
+  return createPortal(
     <AnimatePresence>
       {aperta && (
         <motion.div
@@ -198,6 +199,7 @@ export function Modale({
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   )
 }

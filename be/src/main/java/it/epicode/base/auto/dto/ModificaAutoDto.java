@@ -24,5 +24,6 @@ public record ModificaAutoDto(
 		boolean pubblicata,
 		@Size(max = 30) String carrozzeria,
 		@Size(max = 20) String alimentazione,
-		@Valid MediaDto media) {
+		@Valid MediaDto media,
+		@Valid PrestazioniDto prestazioni) {
 }

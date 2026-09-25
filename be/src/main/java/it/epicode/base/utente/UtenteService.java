@@ -3,6 +3,7 @@ package it.epicode.base.utente;
 import it.epicode.base.avviso.AvvisoRepository;
 import it.epicode.base.errore.ConflittoException;
 import it.epicode.base.errore.NonTrovatoException;
+import it.epicode.base.gara.TempoRepository;
 import it.epicode.base.preferito.PreferitoRepository;
 import it.epicode.base.security.JwtService;
 import it.epicode.base.utente.dto.AccessoDto;
@@ -24,16 +25,19 @@ public class UtenteService {
 	private final UtenteRepository utenteRepository;
 	private final AvvisoRepository avvisoRepository;
 	private final PreferitoRepository preferitoRepository;
+	private final TempoRepository tempoRepository;
 	private final PasswordEncoder passwordEncoder;
 	private final AuthenticationManager authenticationManager;
 	private final JwtService jwtService;
 
 	public UtenteService(UtenteRepository utenteRepository, AvvisoRepository avvisoRepository,
-						 PreferitoRepository preferitoRepository, PasswordEncoder passwordEncoder,
+						 PreferitoRepository preferitoRepository, TempoRepository tempoRepository,
+						 PasswordEncoder passwordEncoder,
 						 AuthenticationManager authenticationManager, JwtService jwtService) {
 		this.utenteRepository = utenteRepository;
 		this.avvisoRepository = avvisoRepository;
 		this.preferitoRepository = preferitoRepository;
+		this.tempoRepository = tempoRepository;
 		this.passwordEncoder = passwordEncoder;
 		this.authenticationManager = authenticationManager;
 		this.jwtService = jwtService;
@@ -74,7 +78,7 @@ public class UtenteService {
 	}
 
 	/**
-	 * "Elimina il mio account": prima avvisi e preferiti, poi l'utente. Senza
+	 * "Elimina il mio account": prima avvisi, preferiti e tempi di gara, poi l'utente. Senza
 	 * avvisi, da questo account non puo' partire piu' nessuna mail; se una mail
 	 * era in coda, prendiSegno trova 0 righe e non spedisce.
 	 */
@@ -83,6 +87,7 @@ public class UtenteService {
 		Utente utente = trova(id);
 		avvisoRepository.eliminaDiUtente(id);
 		preferitoRepository.eliminaDiUtente(id);
+		tempoRepository.eliminaDiUtente(id);
 		utenteRepository.delete(utente);
 	}
 

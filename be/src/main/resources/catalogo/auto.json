@@ -13,7 +13,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:2024_Fiat_Pandina_IMG_0743.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "1.0 Hybrid 70 CV",
+   "cv": 70,
+   "zeroCento": 13.2,
+   "velocitaMax": 164,
+   "pesoKg": 1055
+  }
  },
  {
   "marca": "Fiat",
@@ -29,7 +36,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:Fiat_Grande_Panda_Hybrid_2025_Front_1_(cropped).jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "1.2 Hybrid 110 CV",
+   "cv": 110,
+   "zeroCento": 10.5,
+   "velocitaMax": 160,
+   "pesoKg": 1280
+  }
  },
  {
   "marca": "Fiat",
@@ -49,6 +63,13 @@
    "uid": "f591ec941c2f471c92a7dbe9a3c0c2bd",
    "autore": "SQUIR3D",
    "fonte": "https://sketchfab.com/3d-models/none-f591ec941c2f471c92a7dbe9a3c0c2bd"
+  },
+  "prestazioni": {
+   "versione": "1.5 Hybrid 130 CV DCT",
+   "cv": 130,
+   "zeroCento": 9.7,
+   "velocitaMax": 200,
+   "pesoKg": 1400
   }
  },
  {
@@ -69,6 +90,13 @@
    "uid": "94dd3a8ce4ad45c8819541a33cb400b2",
    "autore": "tonielpro520",
    "fonte": "https://sketchfab.com/3d-models/2021-fiat-e500-94dd3a8ce4ad45c8819541a33cb400b2"
+  },
+  "prestazioni": {
+   "versione": "118 CV 42 kWh",
+   "cv": 118,
+   "zeroCento": 9.0,
+   "velocitaMax": 150,
+   "pesoKg": 1365
   }
  },
  {
@@ -85,7 +113,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:Fiat_600e_Auto_Zuerich_2023_1X7A0959.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "1.2 Hybrid 100 CV",
+   "cv": 100,
+   "zeroCento": 10.9,
+   "velocitaMax": 181,
+   "pesoKg": 1320
+  }
  },
  {
   "marca": "Alfa Romeo",
@@ -105,6 +140,13 @@
    "uid": "9a7af50eb8bb4b3eba07b80133616856",
    "autore": "tonielpro520",
    "fonte": "https://sketchfab.com/3d-models/none-9a7af50eb8bb4b3eba07b80133616856"
+  },
+  "prestazioni": {
+   "versione": "Ibrida 136 CV",
+   "cv": 136,
+   "zeroCento": 8.9,
+   "velocitaMax": 206,
+   "pesoKg": 1380
   }
  },
  {
@@ -121,7 +163,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:Alfa_Romeo_Tonale_2026_Front_1_(cropped).jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "1.5 Hybrid 160 CV",
+   "cv": 160,
+   "zeroCento": 8.8,
+   "velocitaMax": 210,
+   "pesoKg": 1525
+  }
  },
  {
   "marca": "Alfa Romeo",
@@ -141,6 +190,13 @@
    "uid": "373b333a938e49c7ba596919817e844c",
    "autore": "MaximePages",
    "fonte": "https://sketchfab.com/3d-models/none-373b333a938e49c7ba596919817e844c"
+  },
+  "prestazioni": {
+   "versione": "2.0 Turbo 280 CV Q4",
+   "cv": 280,
+   "zeroCento": 5.2,
+   "velocitaMax": 240,
+   "pesoKg": 1600
   }
  },
  {
@@ -161,6 +217,13 @@
    "uid": "df99564e71fb449d99f69c0bbf791bf6",
    "autore": "SQUIR3D",
    "fonte": "https://sketchfab.com/3d-models/none-df99564e71fb449d99f69c0bbf791bf6"
+  },
+  "prestazioni": {
+   "versione": "2.0 Turbo 280 CV Q4",
+   "cv": 280,
+   "zeroCento": 5.7,
+   "velocitaMax": 230,
+   "pesoKg": 1660
   }
  },
  {
@@ -177,7 +240,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:Lancia_Ypsilon_(2024)_Front_1_(cropped).jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "1.2 Hybrid 110 CV",
+   "cv": 110,
+   "zeroCento": 10.0,
+   "velocitaMax": 190,
+   "pesoKg": 1210
+  }
  },
  {
   "marca": "Ferrari",
@@ -197,6 +267,13 @@
    "uid": "5d45d570c914440ea37339cd5aad70fa",
    "autore": "Patricars",
    "fonte": "https://sketchfab.com/3d-models/none-5d45d570c914440ea37339cd5aad70fa"
+  },
+  "prestazioni": {
+   "versione": "V8 3.9 biturbo 640 CV",
+   "cv": 640,
+   "zeroCento": 3.3,
+   "velocitaMax": 320,
+   "pesoKg": 1470
   }
  },
  {
@@ -217,6 +294,13 @@
    "uid": "269f4fd01b584dd38f7e512de60c4645",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/none-269f4fd01b584dd38f7e512de60c4645"
+  },
+  "prestazioni": {
+   "versione": "V6 ibrido 830 CV",
+   "cv": 830,
+   "zeroCento": 2.9,
+   "velocitaMax": 330,
+   "pesoKg": 1470
   }
  },
  {
@@ -237,6 +321,13 @@
    "uid": "9a596b9d09414adfad64fc1f5fd019f9",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/none-9a596b9d09414adfad64fc1f5fd019f9"
+  },
+  "prestazioni": {
+   "versione": "V6 ibrido 830 CV",
+   "cv": 830,
+   "zeroCento": 2.9,
+   "velocitaMax": 330,
+   "pesoKg": 1540
   }
  },
  {
@@ -257,6 +348,13 @@
    "uid": "541dc84c37174356a7b0efd44904593d",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/none-541dc84c37174356a7b0efd44904593d"
+  },
+  "prestazioni": {
+   "versione": "V12 6.5 725 CV",
+   "cv": 725,
+   "zeroCento": 3.3,
+   "velocitaMax": 310,
+   "pesoKg": 2033
   }
  },
  {
@@ -277,6 +375,13 @@
    "uid": "cb0b42a5bda844bd8ccd62451f1db427",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/none-cb0b42a5bda844bd8ccd62451f1db427"
+  },
+  "prestazioni": {
+   "versione": "V12 6.5 830 CV",
+   "cv": 830,
+   "zeroCento": 2.9,
+   "velocitaMax": 340,
+   "pesoKg": 1560
   }
  },
  {
@@ -297,6 +402,13 @@
    "uid": "914bbca2f7f54783a00062a695bae0ea",
    "autore": "SDC PERFORMANCE™️",
    "fonte": "https://sketchfab.com/3d-models/none-914bbca2f7f54783a00062a695bae0ea"
+  },
+  "prestazioni": {
+   "versione": "SE V8 ibrido 800 CV",
+   "cv": 800,
+   "zeroCento": 3.4,
+   "velocitaMax": 312,
+   "pesoKg": 2505
   }
  },
  {
@@ -317,6 +429,13 @@
    "uid": "223504eacee54eaf9169cc60db1c0a70",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/none-223504eacee54eaf9169cc60db1c0a70"
+  },
+  "prestazioni": {
+   "versione": "V8 ibrido 920 CV",
+   "cv": 920,
+   "zeroCento": 2.7,
+   "velocitaMax": 343,
+   "pesoKg": 1690
   }
  },
  {
@@ -337,6 +456,13 @@
    "uid": "4258ff5b559c45f2a470344f0e04c8cd",
    "autore": "Outlaw Games™",
    "fonte": "https://sketchfab.com/3d-models/none-4258ff5b559c45f2a470344f0e04c8cd"
+  },
+  "prestazioni": {
+   "versione": "V12 ibrido 1015 CV",
+   "cv": 1015,
+   "zeroCento": 2.5,
+   "velocitaMax": 350,
+   "pesoKg": 1772
   }
  },
  {
@@ -353,7 +479,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:Maserati_Grecale_GT_Blu_Intenso_front_right.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "GT 2.0 mild hybrid 300 CV",
+   "cv": 300,
+   "zeroCento": 5.6,
+   "velocitaMax": 240,
+   "pesoKg": 1870
+  }
  },
  {
   "marca": "Maserati",
@@ -373,6 +506,13 @@
    "uid": "8762e6e838d34b5da8bdae7899f9342f",
    "autore": "Bee Buzziness",
    "fonte": "https://sketchfab.com/3d-models/none-8762e6e838d34b5da8bdae7899f9342f"
+  },
+  "prestazioni": {
+   "versione": "Modena V6 490 CV",
+   "cv": 490,
+   "zeroCento": 3.9,
+   "velocitaMax": 302,
+   "pesoKg": 1795
   }
  },
  {
@@ -393,6 +533,13 @@
    "uid": "1c13884484804852a1e9c83672a9960b",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/none-1c13884484804852a1e9c83672a9960b"
+  },
+  "prestazioni": {
+   "versione": "Trofeo V6 550 CV",
+   "cv": 550,
+   "zeroCento": 3.6,
+   "velocitaMax": 316,
+   "pesoKg": 1895
   }
  },
  {
@@ -409,7 +556,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:Maserati_MC20_IAA_2021_1X7A0087.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "V6 Nettuno 630 CV",
+   "cv": 630,
+   "zeroCento": 2.9,
+   "velocitaMax": 325,
+   "pesoKg": 1475
+  }
  },
  {
   "marca": "Porsche",
@@ -425,7 +579,14 @@
    "licenza": "CC0",
    "fonte": "https://commons.wikimedia.org/wiki/File:Porsche_Macan_Turbo_Electric_001.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "Macan Electric 360 CV",
+   "cv": 360,
+   "zeroCento": 5.7,
+   "velocitaMax": 220,
+   "pesoKg": 2220
+  }
  },
  {
   "marca": "Porsche",
@@ -445,6 +606,13 @@
    "uid": "4e1abafe7cf5413587a421377624ba08",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/none-4e1abafe7cf5413587a421377624ba08"
+  },
+  "prestazioni": {
+   "versione": "Taycan 408 CV",
+   "cv": 408,
+   "zeroCento": 4.8,
+   "velocitaMax": 230,
+   "pesoKg": 2140
   }
  },
  {
@@ -465,6 +633,13 @@
    "uid": "74fbea5a4dfc4197839fdd2bf654369a",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/none-74fbea5a4dfc4197839fdd2bf654369a"
+  },
+  "prestazioni": {
+   "versione": "V6 353 CV",
+   "cv": 353,
+   "zeroCento": 6.0,
+   "velocitaMax": 248,
+   "pesoKg": 2055
   }
  },
  {
@@ -485,6 +660,13 @@
    "uid": "25ea23ea43474813add58bd3933961b5",
    "autore": "The Economist",
    "fonte": "https://sketchfab.com/3d-models/none-25ea23ea43474813add58bd3933961b5"
+  },
+  "prestazioni": {
+   "versione": "V6 353 CV",
+   "cv": 353,
+   "zeroCento": 5.3,
+   "velocitaMax": 272,
+   "pesoKg": 1995
   }
  },
  {
@@ -505,6 +687,13 @@
    "uid": "5c5f8627e7d443fbbf2288429d5afad6",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/2018-porsche-911-carrera-gts-5c5f8627e7d443fbbf2288429d5afad6"
+  },
+  "prestazioni": {
+   "versione": "Carrera 992.2 394 CV",
+   "cv": 394,
+   "zeroCento": 4.1,
+   "velocitaMax": 294,
+   "pesoKg": 1595
   }
  },
  {
@@ -525,6 +714,13 @@
    "uid": "ba01afbaf32846e598db315be3507db3",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/2022-porsche-911-gt3-992-ba01afbaf32846e598db315be3507db3"
+  },
+  "prestazioni": {
+   "versione": "GT3 992.2 PDK 510 CV",
+   "cv": 510,
+   "zeroCento": 3.3,
+   "velocitaMax": 311,
+   "pesoKg": 1435
   }
  },
  {
@@ -541,7 +737,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:BMW_1_Series_F70_(2025)_Front_1.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "118 156 CV",
+   "cv": 156,
+   "zeroCento": 8.5,
+   "velocitaMax": 218,
+   "pesoKg": 1450
+  }
  },
  {
   "marca": "BMW",
@@ -561,6 +764,13 @@
    "uid": "4ca3a2247af44e51919074565ed93486",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/none-4ca3a2247af44e51919074565ed93486"
+  },
+  "prestazioni": {
+   "versione": "sDrive18i 136 CV",
+   "cv": 136,
+   "zeroCento": 9.2,
+   "velocitaMax": 205,
+   "pesoKg": 1575
   }
  },
  {
@@ -577,7 +787,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:BMW_2_SERIES_COUPE_(G42)_China.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "220i 184 CV",
+   "cv": 184,
+   "zeroCento": 7.5,
+   "velocitaMax": 236,
+   "pesoKg": 1470
+  }
  },
  {
   "marca": "BMW",
@@ -597,6 +814,13 @@
    "uid": "82534fdddd7e46e4bdb202d6c1d3c0e7",
    "autore": "solid3DDD",
    "fonte": "https://sketchfab.com/3d-models/none-82534fdddd7e46e4bdb202d6c1d3c0e7"
+  },
+  "prestazioni": {
+   "versione": "318i 156 CV",
+   "cv": 156,
+   "zeroCento": 8.4,
+   "velocitaMax": 223,
+   "pesoKg": 1520
   }
  },
  {
@@ -617,6 +841,13 @@
    "uid": "d3f07b471d9f4a2c9a2acf79d88a3645",
    "autore": "Ricy",
    "fonte": "https://sketchfab.com/3d-models/none-d3f07b471d9f4a2c9a2acf79d88a3645"
+  },
+  "prestazioni": {
+   "versione": "M4 Competition M xDrive 530 CV",
+   "cv": 530,
+   "zeroCento": 3.5,
+   "velocitaMax": 250,
+   "pesoKg": 1775
   }
  },
  {
@@ -633,7 +864,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:MERCEDES-BENZ_A-CLASS_(W177)_China_(2).jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "A 180 136 CV",
+   "cv": 136,
+   "zeroCento": 9.2,
+   "velocitaMax": 215,
+   "pesoKg": 1395
+  }
  },
  {
   "marca": "Mercedes-Benz",
@@ -653,6 +891,13 @@
    "uid": "52c4a3cc5536425782e13bd8282f9d99",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/none-52c4a3cc5536425782e13bd8282f9d99"
+  },
+  "prestazioni": {
+   "versione": "CLA 250+ EQ 272 CV",
+   "cv": 272,
+   "zeroCento": 6.7,
+   "velocitaMax": 210,
+   "pesoKg": 2055
   }
  },
  {
@@ -673,6 +918,13 @@
    "uid": "87c0823b829d484cbd6e91bb72c901c8",
    "autore": "SQUIR3D",
    "fonte": "https://sketchfab.com/3d-models/none-87c0823b829d484cbd6e91bb72c901c8"
+  },
+  "prestazioni": {
+   "versione": "C 200 204 CV",
+   "cv": 204,
+   "zeroCento": 7.3,
+   "velocitaMax": 246,
+   "pesoKg": 1660
   }
  },
  {
@@ -693,6 +945,13 @@
    "uid": "e5e2a1d2238048a1a494b3df983c16bb",
    "autore": "Black Snow",
    "fonte": "https://sketchfab.com/3d-models/none-e5e2a1d2238048a1a494b3df983c16bb"
+  },
+  "prestazioni": {
+   "versione": "G 63 V8 585 CV",
+   "cv": 585,
+   "zeroCento": 4.4,
+   "velocitaMax": 220,
+   "pesoKg": 2640
   }
  },
  {
@@ -713,6 +972,13 @@
    "uid": "fdca0306571b47adaf440f08a9b98231",
    "autore": "mohamed ouartassi",
    "fonte": "https://sketchfab.com/3d-models/none-fdca0306571b47adaf440f08a9b98231"
+  },
+  "prestazioni": {
+   "versione": "GT 63 4MATIC+ 585 CV",
+   "cv": 585,
+   "zeroCento": 3.2,
+   "velocitaMax": 315,
+   "pesoKg": 1970
   }
  },
  {
@@ -729,7 +995,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:2018_Audi_A1_S_Line_30_TFSi_S-A_1.0.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "25 TFSI 95 CV",
+   "cv": 95,
+   "zeroCento": 10.8,
+   "velocitaMax": 193,
+   "pesoKg": 1150
+  }
  },
  {
   "marca": "Audi",
@@ -749,6 +1022,13 @@
    "uid": "3b897714838b45fb9e8d6d67c4d4b2db",
    "autore": "Nieve5677",
    "fonte": "https://sketchfab.com/3d-models/none-3b897714838b45fb9e8d6d67c4d4b2db"
+  },
+  "prestazioni": {
+   "versione": "30 TFSI 116 CV",
+   "cv": 116,
+   "zeroCento": 10.1,
+   "velocitaMax": 206,
+   "pesoKg": 1305
   }
  },
  {
@@ -769,6 +1049,13 @@
    "uid": "97dccbc18cfb4f1e973fc75e278c6f66",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/none-97dccbc18cfb4f1e973fc75e278c6f66"
+  },
+  "prestazioni": {
+   "versione": "35 TFSI 150 CV",
+   "cv": 150,
+   "zeroCento": 9.2,
+   "velocitaMax": 212,
+   "pesoKg": 1600
   }
  },
  {
@@ -789,6 +1076,13 @@
    "uid": "980dbda2cbbb4bae8decaed2fa80aa0c",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/none-980dbda2cbbb4bae8decaed2fa80aa0c"
+  },
+  "prestazioni": {
+   "versione": "RS 6 Avant performance 630 CV",
+   "cv": 630,
+   "zeroCento": 3.4,
+   "velocitaMax": 250,
+   "pesoKg": 2075
   }
  },
  {
@@ -809,6 +1103,13 @@
    "uid": "e5b032ec99bc44be9f31761c574fe4c2",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/none-e5b032ec99bc44be9f31761c574fe4c2"
+  },
+  "prestazioni": {
+   "versione": "RS e-tron GT 856 CV",
+   "cv": 856,
+   "zeroCento": 2.8,
+   "velocitaMax": 250,
+   "pesoKg": 2320
   }
  },
  {
@@ -825,7 +1126,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:2018_Volkswagen_Polo_SE_1.0_Front.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "1.0 80 CV",
+   "cv": 80,
+   "zeroCento": 14.9,
+   "velocitaMax": 174,
+   "pesoKg": 1100
+  }
  },
  {
   "marca": "Volkswagen",
@@ -841,7 +1149,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:2020_Volkswagen_Golf_Style_1.5_Front.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "1.5 eTSI 116 CV",
+   "cv": 116,
+   "zeroCento": 10.2,
+   "velocitaMax": 203,
+   "pesoKg": 1360
+  }
  },
  {
   "marca": "Volkswagen",
@@ -861,6 +1176,13 @@
    "uid": "0fed7f4435ed4eec80a544b0f2a1c9d8",
    "autore": "SQUIR3D",
    "fonte": "https://sketchfab.com/3d-models/none-0fed7f4435ed4eec80a544b0f2a1c9d8"
+  },
+  "prestazioni": {
+   "versione": "1.5 eTSI 116 CV",
+   "cv": 116,
+   "zeroCento": 8.9,
+   "velocitaMax": 200,
+   "pesoKg": 1450
   }
  },
  {
@@ -881,6 +1203,13 @@
    "uid": "cae9c426df874fa4b7f47ea2611f3824",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/2021-volkwagen-id3-cae9c426df874fa4b7f47ea2611f3824"
+  },
+  "prestazioni": {
+   "versione": "Pure 170 CV",
+   "cv": 170,
+   "zeroCento": 8.2,
+   "velocitaMax": 160,
+   "pesoKg": 1750
   }
  },
  {
@@ -901,6 +1230,13 @@
    "uid": "e87d7c0f8937481db236529beb5ecab7",
    "autore": "Mona x Supercars",
    "fonte": "https://sketchfab.com/3d-models/none-e87d7c0f8937481db236529beb5ecab7"
+  },
+  "prestazioni": {
+   "versione": "GTI 265 CV",
+   "cv": 265,
+   "zeroCento": 5.9,
+   "velocitaMax": 250,
+   "pesoKg": 1450
   }
  },
  {
@@ -917,7 +1253,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:Toyota_Aygo_X_1X7A0063.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "1.5 Hybrid 116 CV",
+   "cv": 116,
+   "zeroCento": 9.6,
+   "velocitaMax": 160,
+   "pesoKg": 1100
+  }
  },
  {
   "marca": "Toyota",
@@ -933,7 +1276,14 @@
    "licenza": "CC BY 2.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:Toyota_Yaris_Hybrid_(2020)_(52173649085).jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "1.5 Hybrid 116 CV",
+   "cv": 116,
+   "zeroCento": 9.7,
+   "velocitaMax": 175,
+   "pesoKg": 1150
+  }
  },
  {
   "marca": "Toyota",
@@ -953,6 +1303,13 @@
    "uid": "1b6dd834e8184851887ddeab1e83bc28",
    "autore": "tonielpro520",
    "fonte": "https://sketchfab.com/3d-models/2020-toyota-yaris-cross-1b6dd834e8184851887ddeab1e83bc28"
+  },
+  "prestazioni": {
+   "versione": "1.5 Hybrid 132 CV",
+   "cv": 132,
+   "zeroCento": 10.7,
+   "velocitaMax": 170,
+   "pesoKg": 1250
   }
  },
  {
@@ -969,7 +1326,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:Toyota_C-HR_Hybrid_(AX20)_DSC_7239.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "1.8 Hybrid 140 CV",
+   "cv": 140,
+   "zeroCento": 9.9,
+   "velocitaMax": 175,
+   "pesoKg": 1450
+  }
  },
  {
   "marca": "Toyota",
@@ -989,6 +1353,13 @@
    "uid": "98e6611ad034451982b6a9908c63fc47",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/2021-toyota-gr-yaris-98e6611ad034451982b6a9908c63fc47"
+  },
+  "prestazioni": {
+   "versione": "GR-Four 280 CV",
+   "cv": 280,
+   "zeroCento": 5.2,
+   "velocitaMax": 230,
+   "pesoKg": 1280
   }
  },
  {
@@ -1009,6 +1380,13 @@
    "uid": "6e8fb3f12cf34c1095cdd89cfd77580c",
    "autore": "SQUIR3D",
    "fonte": "https://sketchfab.com/3d-models/none-6e8fb3f12cf34c1095cdd89cfd77580c"
+  },
+  "prestazioni": {
+   "versione": "TCe 90",
+   "cv": 91,
+   "zeroCento": 11.3,
+   "velocitaMax": 180,
+   "pesoKg": 1100
   }
  },
  {
@@ -1029,6 +1407,13 @@
    "uid": "2d166ebc096d4cc5bdeef76fb2eb1798",
    "autore": "Gerda",
    "fonte": "https://sketchfab.com/3d-models/none-2d166ebc096d4cc5bdeef76fb2eb1798"
+  },
+  "prestazioni": {
+   "versione": "TCe 90",
+   "cv": 91,
+   "zeroCento": 12.1,
+   "velocitaMax": 172,
+   "pesoKg": 1280
   }
  },
  {
@@ -1045,7 +1430,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:Renault_5_E-Tech_GIMS_2024_1X7A2227.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "E-Tech 120 CV",
+   "cv": 122,
+   "zeroCento": 9.4,
+   "velocitaMax": 150,
+   "pesoKg": 1350
+  }
  },
  {
   "marca": "Alpine",
@@ -1061,7 +1453,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:Alpine_A290_GTS_DSC_9346.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "GT 180 CV",
+   "cv": 180,
+   "zeroCento": 7.4,
+   "velocitaMax": 160,
+   "pesoKg": 1480
+  }
  },
  {
   "marca": "Alpine",
@@ -1081,6 +1480,13 @@
    "uid": "00fc322c91f04f23acae09910620937f",
    "autore": "Ddiaz Design",
    "fonte": "https://sketchfab.com/3d-models/2022-alpine-a110-00fc322c91f04f23acae09910620937f"
+  },
+  "prestazioni": {
+   "versione": "A110 252 CV",
+   "cv": 252,
+   "zeroCento": 4.8,
+   "velocitaMax": 250,
+   "pesoKg": 1102
   }
  },
  {
@@ -1097,7 +1503,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:Peugeot_208_II_GT_Line_rouge_(avant).jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "1.2 PureTech 100",
+   "cv": 100,
+   "zeroCento": 10.0,
+   "velocitaMax": 188,
+   "pesoKg": 1150
+  }
  },
  {
   "marca": "Peugeot",
@@ -1117,6 +1530,13 @@
    "uid": "1094ee784f7d4b63a9c43efefdbacca5",
    "autore": "Gerda",
    "fonte": "https://sketchfab.com/3d-models/none-1094ee784f7d4b63a9c43efefdbacca5"
+  },
+  "prestazioni": {
+   "versione": "1.2 PureTech 100",
+   "cv": 100,
+   "zeroCento": 12.0,
+   "velocitaMax": 182,
+   "pesoKg": 1250
   }
  },
  {
@@ -1137,6 +1557,13 @@
    "uid": "0d9c9c265bec42678bfc269c1a8cebc3",
    "autore": "kevin (ケビン)",
    "fonte": "https://sketchfab.com/3d-models/none-0d9c9c265bec42678bfc269c1a8cebc3"
+  },
+  "prestazioni": {
+   "versione": "Hybrid 145",
+   "cv": 145,
+   "zeroCento": 9.0,
+   "velocitaMax": 212,
+   "pesoKg": 1420
   }
  },
  {
@@ -1153,7 +1580,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:2021_Dacia_Sandero_Stepway_Prestige_TCE_1.0_Front.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "TCe 90",
+   "cv": 91,
+   "zeroCento": 10.8,
+   "velocitaMax": 172,
+   "pesoKg": 1050
+  }
  },
  {
   "marca": "Dacia",
@@ -1169,7 +1603,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:Dacia_Spring_IAA_2021_1X7A0215.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "Electric 45",
+   "cv": 45,
+   "zeroCento": 21.4,
+   "velocitaMax": 125,
+   "pesoKg": 975
+  }
  },
  {
   "marca": "Dacia",
@@ -1185,7 +1626,14 @@
    "licenza": "CC BY 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:2024_Dacia_Duster_front.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "TCe 100 GPL",
+   "cv": 100,
+   "zeroCento": 13.8,
+   "velocitaMax": 168,
+   "pesoKg": 1300
+  }
  },
  {
   "marca": "Tesla",
@@ -1205,6 +1653,13 @@
    "uid": "5ef9b845aaf44203b6d04e2c677e444f",
    "autore": "Ameer Studio",
    "fonte": "https://sketchfab.com/3d-models/none-5ef9b845aaf44203b6d04e2c677e444f"
+  },
+  "prestazioni": {
+   "versione": "RWD 283 CV",
+   "cv": 283,
+   "zeroCento": 6.1,
+   "velocitaMax": 201,
+   "pesoKg": 1760
   }
  },
  {
@@ -1225,6 +1680,13 @@
    "uid": "e0f703b823e74746b40634d1876f6a13",
    "autore": "SQUIR3D",
    "fonte": "https://sketchfab.com/3d-models/none-e0f703b823e74746b40634d1876f6a13"
+  },
+  "prestazioni": {
+   "versione": "RWD 299 CV",
+   "cv": 299,
+   "zeroCento": 5.9,
+   "velocitaMax": 201,
+   "pesoKg": 1928
   }
  },
  {
@@ -1245,6 +1707,13 @@
    "uid": "1360e3cf7323487eaba8ce94279229b6",
    "autore": "iSteven",
    "fonte": "https://sketchfab.com/3d-models/none-1360e3cf7323487eaba8ce94279229b6"
+  },
+  "prestazioni": {
+   "versione": "Dual Motor 670 CV",
+   "cv": 670,
+   "zeroCento": 3.2,
+   "velocitaMax": 250,
+   "pesoKg": 2070
   }
  },
  {
@@ -1265,6 +1734,13 @@
    "uid": "35bd007e1bc549d580ccc208a6038ec1",
    "autore": "Res1n",
    "fonte": "https://sketchfab.com/3d-models/2014-mazda-mx-5-nd-35bd007e1bc549d580ccc208a6038ec1"
+  },
+  "prestazioni": {
+   "versione": "1.5 Skyactiv-G 132 CV",
+   "cv": 132,
+   "zeroCento": 8.2,
+   "velocitaMax": 204,
+   "pesoKg": 1050
   }
  },
  {
@@ -1285,6 +1761,13 @@
    "uid": "407a8981be2d45a388d7280d9b931663",
    "autore": "blakebella",
    "fonte": "https://sketchfab.com/3d-models/none-407a8981be2d45a388d7280d9b931663"
+  },
+  "prestazioni": {
+   "versione": "2.0 VTEC Turbo 329 CV",
+   "cv": 329,
+   "zeroCento": 5.4,
+   "velocitaMax": 275,
+   "pesoKg": 1430
   }
  },
  {
@@ -1301,7 +1784,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:Ford_Mustang_S650_5.0_GT_Shadow_Black_02.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "5.0 V8 446 CV automatico",
+   "cv": 446,
+   "zeroCento": 4.9,
+   "velocitaMax": 250,
+   "pesoKg": 1800
+  }
  },
  {
   "marca": "McLaren",
@@ -1321,6 +1811,13 @@
    "uid": "d3a8925ab63f4c73a275c4058e847061",
    "autore": "carmodifier",
    "fonte": "https://sketchfab.com/3d-models/none-d3a8925ab63f4c73a275c4058e847061"
+  },
+  "prestazioni": {
+   "versione": "V6 ibrido 700 CV",
+   "cv": 700,
+   "zeroCento": 3.0,
+   "velocitaMax": 330,
+   "pesoKg": 1498
   }
  },
  {
@@ -1341,6 +1838,13 @@
    "uid": "d9c90e0bb53c450f88544559640143e0",
    "autore": "geyges",
    "fonte": "https://sketchfab.com/3d-models/none-d9c90e0bb53c450f88544559640143e0"
+  },
+  "prestazioni": {
+   "versione": "V8 4.0 750 CV",
+   "cv": 750,
+   "zeroCento": 2.8,
+   "velocitaMax": 332,
+   "pesoKg": 1389
   }
  },
  {
@@ -1361,6 +1865,13 @@
    "uid": "dbdd5aadc1d64df289f65fc0f6da3c07",
    "autore": "vecarz",
    "fonte": "https://sketchfab.com/3d-models/none-dbdd5aadc1d64df289f65fc0f6da3c07"
+  },
+  "prestazioni": {
+   "versione": "V8 4.0 665 CV",
+   "cv": 665,
+   "zeroCento": 3.4,
+   "velocitaMax": 325,
+   "pesoKg": 1605
   }
  },
  {
@@ -1381,6 +1892,13 @@
    "uid": "18e282919eb9474ebf0644348d66329b",
    "autore": "OUTPISTON",
    "fonte": "https://sketchfab.com/3d-models/none-18e282919eb9474ebf0644348d66329b"
+  },
+  "prestazioni": {
+   "versione": "V8 4.0 680 CV",
+   "cv": 680,
+   "zeroCento": 3.6,
+   "velocitaMax": 325,
+   "pesoKg": 1685
   }
  },
  {
@@ -1397,7 +1915,14 @@
    "licenza": "CC BY-SA 4.0",
    "fonte": "https://commons.wikimedia.org/wiki/File:Hyundai_i20_(BC3)_1X7A6488.jpg"
   },
-  "modello3d": null
+  "modello3d": null,
+  "prestazioni": {
+   "versione": "1.0 T-GDi 100 CV",
+   "cv": 100,
+   "zeroCento": 10.5,
+   "velocitaMax": 188,
+   "pesoKg": 1100
+  }
  },
  {
   "marca": "Hyundai",
@@ -1417,6 +1942,13 @@
    "uid": "343a128d7284471b91e7c4575910722e",
    "autore": "Mona x Supercars",
    "fonte": "https://sketchfab.com/3d-models/none-343a128d7284471b91e7c4575910722e"
+  },
+  "prestazioni": {
+   "versione": "1.6 Hybrid 141 CV",
+   "cv": 141,
+   "zeroCento": 10.9,
+   "velocitaMax": 165,
+   "pesoKg": 1400
   }
  }
 ]

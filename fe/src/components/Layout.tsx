@@ -2,7 +2,7 @@ import { AnimatePresence, motion, useScroll, useSpring } from 'motion/react'
 import { ReactLenis } from 'lenis/react'
 import { useEffect, useState, type ReactNode } from 'react'
 import { Link, NavLink, useLocation, useNavigate, useOutlet } from 'react-router'
-import { Bell, CarFront, Heart, LogOut, Menu, ShieldCheck, UserRound, X } from 'lucide-react'
+import { Bell, CarFront, Flag, Heart, LogOut, Menu, ShieldCheck, UserRound, X } from 'lucide-react'
 import Aurora from '@/components/bits/Aurora'
 import ClickSpark from '@/components/bits/ClickSpark'
 import Magnet from '@/components/bits/Magnet'
@@ -42,7 +42,10 @@ function Navbar() {
     return () => window.removeEventListener('scroll', f)
   }, [])
 
-  const voci: Voce[] = [{ a: '/catalogo', testo: 'Catalogo', icona: <CarFront className="size-4" /> }]
+  const voci: Voce[] = [
+    { a: '/catalogo', testo: 'Catalogo', icona: <CarFront className="size-4" /> },
+    { a: '/gara', testo: 'Gara', icona: <Flag className="size-4" /> },
+  ]
   if (utente) {
     voci.push({ a: '/preferiti', testo: 'Preferiti', icona: <Heart className="size-4" /> })
     voci.push({ a: '/avvisi', testo: 'Avvisi', icona: <Bell className="size-4" /> })
@@ -192,6 +195,7 @@ function Footer() {
         </div>
         <nav aria-label="Link del sito" className="grid grid-cols-2 gap-2 text-sm">
           <Link to="/catalogo" className="text-fog hover:text-ember">Catalogo</Link>
+          <Link to="/gara" className="text-fog hover:text-ember">Drag race</Link>
           <Link to="/accedi" className="text-fog hover:text-ember">Accedi</Link>
           <Link to="/privacy" className="text-fog hover:text-ember">Privacy Policy</Link>
           <Link to="/cookie" className="text-fog hover:text-ember">Cookie Policy</Link>
@@ -245,7 +249,9 @@ export default function Layout() {
             <motion.main
               key={pathname}
               initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              // a fine animazione niente filter/transform: altrimenti i position:fixed
+              // dentro la pagina (modali, gara) si ancorerebbero al main e non allo schermo
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)', transitionEnd: { filter: 'none', transform: 'none' } }}
               exit={{ opacity: 0, y: -16, filter: 'blur(6px)' }}
               transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               className="relative"

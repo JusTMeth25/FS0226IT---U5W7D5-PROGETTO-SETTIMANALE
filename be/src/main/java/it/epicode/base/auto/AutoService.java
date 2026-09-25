@@ -8,6 +8,7 @@ import it.epicode.base.auto.dto.PaginaDto;
 import it.epicode.base.avviso.AvvisoRepository;
 import it.epicode.base.avviso.PrezzoScesoEvent;
 import it.epicode.base.errore.NonTrovatoException;
+import it.epicode.base.gara.TempoRepository;
 import it.epicode.base.preferito.PreferitoRepository;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.PageRequest;
@@ -28,13 +29,16 @@ public class AutoService {
 	private final AutoRepository autoRepository;
 	private final AvvisoRepository avvisoRepository;
 	private final PreferitoRepository preferitoRepository;
+	private final TempoRepository tempoRepository;
 	private final ApplicationEventPublisher eventi;
 
 	public AutoService(AutoRepository autoRepository, AvvisoRepository avvisoRepository,
-					   PreferitoRepository preferitoRepository, ApplicationEventPublisher eventi) {
+					   PreferitoRepository preferitoRepository, TempoRepository tempoRepository,
+					   ApplicationEventPublisher eventi) {
 		this.autoRepository = autoRepository;
 		this.avvisoRepository = avvisoRepository;
 		this.preferitoRepository = preferitoRepository;
+		this.tempoRepository = tempoRepository;
 		this.eventi = eventi;
 	}
 
@@ -76,6 +80,7 @@ public class AutoService {
 				dto.prezzo(), dto.prezzoAcquisto(), dto.pubblicata());
 		auto.aggiornaScheda(testoOpzionale(dto.carrozzeria()), testoOpzionale(dto.alimentazione()),
 				dto.media() == null ? null : dto.media().versoEntita());
+		auto.aggiornaPrestazioni(dto.prestazioni() == null ? null : dto.prestazioni().versoEntita());
 		return AutoAdminDto.da(autoRepository.save(auto));
 	}
 
@@ -86,6 +91,7 @@ public class AutoService {
 				dto.prezzoAcquisto(), dto.pubblicata());
 		auto.aggiornaScheda(testoOpzionale(dto.carrozzeria()), testoOpzionale(dto.alimentazione()),
 				dto.media() == null ? null : dto.media().versoEntita());
+		auto.aggiornaPrestazioni(dto.prestazioni() == null ? null : dto.prestazioni().versoEntita());
 		return AutoAdminDto.da(auto);
 	}
 
@@ -94,6 +100,7 @@ public class AutoService {
 		Auto auto = trova(id);
 		avvisoRepository.eliminaDiAuto(id);
 		preferitoRepository.eliminaDiAuto(id);
+		tempoRepository.eliminaDiAuto(id);
 		autoRepository.delete(auto);
 	}
 

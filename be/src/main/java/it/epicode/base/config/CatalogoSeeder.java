@@ -3,6 +3,7 @@ package it.epicode.base.config;
 import it.epicode.base.auto.Auto;
 import it.epicode.base.auto.AutoRepository;
 import it.epicode.base.auto.Media;
+import it.epicode.base.auto.Prestazioni;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,7 +28,7 @@ import java.util.List;
  * - Auto nuova: si crea pubblicata, con prezzo di listino e un prezzo
  *   d'acquisto stimato all'82%.
  * - Auto gia' presente (stessa marca e modello): si aggiornano solo scheda,
- *   foto e modello 3D. Il prezzo lo gestisce l'amministratore e non si tocca,
+ *   prestazioni, foto e modello 3D. Il prezzo lo gestisce l'amministratore e non si tocca,
  *   altrimenti ogni riavvio potrebbe far scattare o annullare gli avvisi.
  *
  * Si spegne con app.catalogo.importa=false.
@@ -44,8 +45,16 @@ public class CatalogoSeeder implements ApplicationRunner {
 	record Modello3d(String uid, String autore, String fonte) {
 	}
 
+	record Scheda(String versione, Integer cv, BigDecimal zeroCento, Integer velocitaMax, Integer pesoKg) {
+	}
+
 	record Voce(String marca, String modello, int anno, BigDecimal prezzo, String carrozzeria,
-				String alimentazione, String descrizione, Foto foto, Modello3d modello3d) {
+				String alimentazione, String descrizione, Foto foto, Modello3d modello3d, Scheda prestazioni) {
+
+		Prestazioni scheda() {
+			return prestazioni == null ? null : new Prestazioni(prestazioni.versione(), prestazioni.cv(),
+					prestazioni.zeroCento(), prestazioni.velocitaMax(), prestazioni.pesoKg());
+		}
 
 		Media media() {
 			return new Media(
@@ -93,11 +102,13 @@ public class CatalogoSeeder implements ApplicationRunner {
 			var esistente = autoRepository.findFirstByMarcaIgnoreCaseAndModelloIgnoreCase(v.marca(), v.modello());
 			if (esistente.isPresent()) {
 				esistente.get().aggiornaScheda(v.carrozzeria(), v.alimentazione(), v.media());
+				esistente.get().aggiornaPrestazioni(v.scheda());
 				aggiornate++;
 			} else {
 				BigDecimal acquisto = v.prezzo().multiply(MARGINE_ACQUISTO).setScale(0, RoundingMode.HALF_UP);
 				Auto auto = new Auto(v.marca(), v.modello(), v.anno(), v.descrizione(), v.prezzo(), acquisto, true);
 				auto.aggiornaScheda(v.carrozzeria(), v.alimentazione(), v.media());
+				auto.aggiornaPrestazioni(v.scheda());
 				autoRepository.save(auto);
 				nuove++;
 			}
