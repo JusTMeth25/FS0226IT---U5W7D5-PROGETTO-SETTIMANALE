@@ -75,5 +75,13 @@ app:
     email: ${ADMIN_EMAIL:admin@salone.local}
     password: ${ADMIN_PASSWORD:}
 
+  mail:
+    # Su Render (piano free, SMTP bloccato) le mail passano dall'API di Mailjet.
+    # Vuote = SMTP Gmail. Le chiavi non vanno mai scritte qui.
+    mailjet-api-key: ${MAILJET_API_KEY:}
+    mailjet-secret-key: ${MAILJET_SECRET_KEY:}
+    # Mittente: per Mailjet deve essere un indirizzo verificato nel tuo account.
+    mittente: ${MAIL_MITTENTE:${MAIL_USERNAME:}}
+
   # Indirizzo del FE: serve per il link "disattiva avviso" nella mail.
   frontend-url: ${FRONTEND_URL:http://localhost:5173}

@@ -105,8 +105,8 @@ export function Privacy() {
             <strong>Render</strong> (render.com) ospita il sito, il server e il database, nella regione di Francoforte (UE).
           </li>
           <li>
-            <strong>Google (Gmail)</strong> consegna le mail di avviso: per spedirle riceve il tuo indirizzo, il tuo nome e il contenuto della
-            mail.
+            <strong>Mailjet</strong> (Mailjet SAS, Francia, UE) consegna le mail di avviso del sito pubblicato; in sviluppo lo fa{' '}
+            <strong>Google (Gmail)</strong>. Per spedirle ricevono il tuo indirizzo, il tuo nome e il contenuto della mail.
           </li>
           <li>
             <strong>Wikimedia Foundation</strong> (wikimedia.org) ospita le foto delle auto. Per mostrartele il browser le scarica da

@@ -39,10 +39,13 @@ services:
         sync: false
       - key: ADMIN_PASSWORD
         sync: false
-      # Gmail: indirizzo e "password per le app" di Google. Mai in application.yml.
-      - key: MAIL_USERNAME
+      # Mail: il piano free di Render blocca l'SMTP in uscita, quindi si usa
+      # l'API HTTPS di Mailjet. MAIL_USERNAME = mittente verificato su Mailjet.
+      - key: MAILJET_API_KEY
         sync: false
-      - key: MAIL_PASSWORD
+      - key: MAILJET_SECRET_KEY
+        sync: false
+      - key: MAIL_USERNAME
         sync: false
       # Indirizzo del FE per il link "disattiva avviso" nella mail, senza / finale.
       - key: FRONTEND_URL

@@ -47,8 +47,9 @@ Il token va nell'header `Authorization: Bearer <token>`.
 | `JWT_SECRET` | sì | Almeno 32 caratteri. Senza, il BE non parte. |
 | `ADMIN_PASSWORD` | per avere un admin | Almeno 8 caratteri. L'admin si crea al primo avvio. |
 | `ADMIN_EMAIL` | no | Default `admin@salone.local`. |
-| `MAIL_USERNAME` | per le mail | Indirizzo Gmail mittente. |
-| `MAIL_PASSWORD` | per le mail | Password per le app di Google. Mai in `application.yml`. |
+| `MAIL_USERNAME` | per le mail | Indirizzo mittente (Gmail in locale, verificato su Mailjet in produzione). |
+| `MAIL_PASSWORD` | in locale | Password per le app di Google, per l'SMTP. Mai in `application.yml`. |
+| `MAILJET_API_KEY`, `MAILJET_SECRET_KEY` | su Render | Se presenti, le mail partono dall'API HTTPS di Mailjet invece che via SMTP. |
 | `FRONTEND_URL` | no | Default `http://localhost:5173`. Serve per il link della mail. |
 | `ALLOWED_ORIGIN` | in produzione | Origine del FE per il CORS. |
 | `DB_URL`, `DB_USERNAME`, `DB_PASSWORD` | no | Default: DB locale, `postgres` / `1234`. |
@@ -83,10 +84,12 @@ Per creare la password per le app di Gmail:
    | `salone-be` | `ALLOWED_ORIGIN` | `https://salone-fe.onrender.com` |
    | `salone-be` | `FRONTEND_URL` | `https://salone-fe.onrender.com` |
    | `salone-be` | `ADMIN_EMAIL`, `ADMIN_PASSWORD` | credenziali dell'amministratore |
-   | `salone-be` | `MAIL_USERNAME`, `MAIL_PASSWORD` | Gmail e password per le app |
+   | `salone-be` | `MAILJET_API_KEY`, `MAILJET_SECRET_KEY`, `MAIL_USERNAME` | chiavi API Mailjet e mittente verificato |
    | `salone-fe` | `VITE_API_URL` | `https://salone-be.onrender.com` |
 
 4. Esegui **Manual Deploy** di entrambi i servizi. `VITE_API_URL` viene letta in fase di build.
+
+**Perche' Mailjet su Render:** dal 26/09/2025 i web service gratuiti di Render bloccano le porte SMTP in uscita (25, 465, 587). L'API di Mailjet usa HTTPS sulla porta 443 e il piano gratuito basta (200 mail al giorno). In locale, senza chiavi Mailjet, resta Gmail via SMTP.
 
 ## Scelte
 

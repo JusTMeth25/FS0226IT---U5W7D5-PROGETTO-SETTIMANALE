@@ -1,19 +1,11 @@
 package it.epicode.base.avviso;
 
-import jakarta.mail.MessagingException;
-import jakarta.mail.internet.MimeMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.mail.MailException;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;
-
-import java.nio.charset.StandardCharsets;
 
 /**
  * Manda le mail degli avvisi.
@@ -39,15 +31,12 @@ public class AvvisoMailListener {
 
 	private final AvvisoService avvisoService;
 	private final MailAvvisi template;
-	private final JavaMailSender mailSender;
-	private final String mittente;
+	private final InvioMail invioMail;
 
-	public AvvisoMailListener(AvvisoService avvisoService, MailAvvisi template, JavaMailSender mailSender,
-							  @Value("${spring.mail.username:}") String mittente) {
+	public AvvisoMailListener(AvvisoService avvisoService, MailAvvisi template, InvioMail invioMail) {
 		this.avvisoService = avvisoService;
 		this.template = template;
-		this.mailSender = mailSender;
-		this.mittente = mittente;
+		this.invioMail = invioMail;
 	}
 
 	@Async
@@ -63,17 +52,10 @@ public class AvvisoMailListener {
 
 	private void invia(DatiMail dati) {
 		try {
-			MimeMessage messaggio = mailSender.createMimeMessage();
-			MimeMessageHelper helper = new MimeMessageHelper(messaggio, false, StandardCharsets.UTF_8.name());
-			if (!mittente.isBlank()) {
-				helper.setFrom(mittente);
-			}
-			helper.setTo(dati.email());
-			helper.setSubject(template.oggetto(dati));
-			helper.setText(template.corpoHtml(dati), true);
-			mailSender.send(messaggio);
+			invioMail.invia(dati.email(), dati.nome(), template.oggetto(dati), template.corpoHtml(dati));
 			log.info("Mail inviata per avviso {}", dati.avvisoId());
-		} catch (MailException | MessagingException e) {
+		} catch (RuntimeException e) {
+			// Solo id e tipo di errore: il messaggio potrebbe contenere l'indirizzo.
 			log.warn("Invio fallito per avviso {} ({}): resta segnato come inviato",
 					dati.avvisoId(), e.getClass().getSimpleName());
 		}
