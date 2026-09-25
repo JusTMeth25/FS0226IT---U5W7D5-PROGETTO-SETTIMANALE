@@ -8,6 +8,11 @@ export default defineConfig({
   resolve: {
     alias: { '@': path.resolve(import.meta.dirname, './src') },
   },
+  build: {
+    // Three.js + postprocessing stanno in un chunk a parte (Showroom), caricato
+    // solo su home e dettaglio: la soglia di default da 500 kB e' troppo stretta.
+    chunkSizeWarningLimit: 1200,
+  },
   server: {
     // In sviluppo il browser vede una sola origine: /api lo inoltra Vite al
     // backend sulla 8080, quindi in locale di CORS non ci si accorge nemmeno.

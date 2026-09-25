@@ -1,44 +1,54 @@
-import { useEffect, useState } from 'react'
-import { api, type Stato } from '@/lib/api'
+import { useState, type ReactNode } from 'react'
+import { createBrowserRouter, Navigate, RouterProvider, useLocation } from 'react-router'
+import Layout from '@/components/Layout'
+import { useAuth } from '@/lib/auth'
+import Accedi from '@/pages/Accedi'
+import Admin from '@/pages/Admin'
+import AutoDettaglio from '@/pages/AutoDettaglio'
+import Avvisi from '@/pages/Avvisi'
+import Catalogo from '@/pages/Catalogo'
+import Disattiva from '@/pages/Disattiva'
+import Home from '@/pages/Home'
+import { Cookie, Privacy } from '@/pages/Legale'
+import NonTrovata from '@/pages/NonTrovata'
+import Preferiti from '@/pages/Preferiti'
+import Profilo from '@/pages/Profilo'
+
+/**
+ * Pagine riservate. E' solo comodita' per l'interfaccia: la vera protezione
+ * sta nel backend, che risponde 401/403 a prescindere da cosa mostra il FE.
+ */
+function Riservata({ children, admin = false }: { children: ReactNode; admin?: boolean }) {
+  const { utente, pronto } = useAuth()
+  // Il percorso si fissa al primo render: durante l'animazione di uscita la
+  // pagina viene ridisegnata con il nuovo URL e il ritorno punterebbe a /accedi.
+  const [da] = useState(useLocation().pathname)
+  if (!pronto) return <div className="min-h-dvh" />
+  if (!utente) return <Navigate to={`/accedi?da=${encodeURIComponent(da)}`} replace />
+  if (admin && utente.ruolo !== 'ADMIN') return <Navigate to="/" replace />
+  return children
+}
+
+const router = createBrowserRouter([
+  {
+    element: <Layout />,
+    children: [
+      { path: '/', element: <Home /> },
+      { path: '/catalogo', element: <Catalogo /> },
+      { path: '/auto/:id', element: <AutoDettaglio /> },
+      { path: '/accedi', element: <Accedi /> },
+      { path: '/avvisi/disattiva', element: <Disattiva /> },
+      { path: '/privacy', element: <Privacy /> },
+      { path: '/cookie', element: <Cookie /> },
+      { path: '/preferiti', element: <Riservata><Preferiti /></Riservata> },
+      { path: '/avvisi', element: <Riservata><Avvisi /></Riservata> },
+      { path: '/profilo', element: <Riservata><Profilo /></Riservata> },
+      { path: '/admin', element: <Riservata admin><Admin /></Riservata> },
+      { path: '*', element: <NonTrovata /> },
+    ],
+  },
+])
 
 export default function App() {
-  const [stato, setStato] = useState<Stato | null>(null)
-  const [errore, setErrore] = useState<string | null>(null)
-
-  useEffect(() => {
-    api
-      .stato()
-      .then(setStato)
-      .catch((e) => setErrore(e instanceof Error ? e.message : String(e)))
-  }, [])
-
-  return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
-      <div className="mx-auto max-w-2xl px-4 py-10">
-        <h1 className="text-3xl font-semibold tracking-tight">Progetto base</h1>
-        <p className="mt-1 text-sm text-slate-600">React + TypeScript, Spring Boot, PostgreSQL.</p>
-
-        <section className="mt-8 rounded-lg border border-slate-200 bg-white p-4 text-sm">
-          <div className="flex justify-between gap-4">
-            <span className="text-slate-500">API</span>
-            <code className="truncate font-mono text-xs">{api.indirizzo}</code>
-          </div>
-          <div className="mt-2 flex justify-between gap-4">
-            <span className="text-slate-500">Database</span>
-            <span className="font-mono text-xs">{stato ? stato.database : '...'}</span>
-          </div>
-          <div className="mt-2 flex justify-between gap-4">
-            <span className="text-slate-500">Ora del server</span>
-            <span className="font-mono text-xs">{stato ? stato.ora : '...'}</span>
-          </div>
-        </section>
-
-        {errore && (
-          <p className="mt-6 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
-            {errore}
-          </p>
-        )}
-      </div>
-    </div>
-  )
+  return <RouterProvider router={router} />
 }

@@ -8,7 +8,7 @@ Se il nuovo prezzo scende sotto la soglia di un utente, a quell'utente parte una
 | Parte | Tecnologia | In locale | Su Render |
 |---|---|---|---|
 | Backend | Spring Boot 4.1.1, Java 25, Spring Security + JWT, Mail | `be` sulla 8080 | Web Service (Docker) |
-| Frontend | React 19, Vite, TypeScript, Tailwind 4 | `fe` sulla 5173 | Static Site |
+| Frontend | React 19, Vite, TypeScript, Tailwind 4, Three.js (R3F + drei + postprocessing), Motion, GSAP, React Bits, Lenis | `fe` sulla 5173 | Static Site |
 | Database | PostgreSQL | `U5W7D5-PROGETTO-SETTIMANALE` sulla 5432 | Render PostgreSQL |
 
 ## Endpoint
@@ -126,6 +126,29 @@ Per creare la password per le app di Gmail:
 - `DELETE /api/profilo` cancella avvisi, preferiti e utente.
 - Se una mail era già in coda, l'UPDATE trova 0 righe e non spedisce.
 
+## Frontend "Vetrina"
+
+| Pagina | Percorso | Accesso |
+|---|---|---|
+| Home con showroom 3D (vernice a scelta, trascina per ruotare) | `/` | tutti |
+| Catalogo con ricerca, ordinamento e paginazione nell'URL | `/catalogo` | tutti |
+| Dettaglio con auto 3D, preferito e soglia di prezzo | `/auto/:id` | tutti (azioni da utente) |
+| Accedi / Registrati | `/accedi` | ospiti |
+| Preferiti con soglia per ogni auto | `/preferiti` | utente |
+| Avvisi con stato "in attesa / mail inviata" | `/avvisi` | utente |
+| Profilo, cambio nome, eliminazione account | `/profilo` | utente |
+| Officina: bozze, prezzo d'acquisto, cambio prezzo | `/admin` | admin |
+| Disattivazione dal link della mail | `/avvisi/disattiva?token=` | tutti |
+| Privacy Policy / Cookie Policy (link nel footer di ogni pagina) | `/privacy`, `/cookie` | tutti |
+
+- L'auto 3D è procedurale: il profilo laterale viene estruso e poi scolpito, quindi non c'è nessun modello da scaricare. Le luci sono `Lightformer`, senza HDR esterni. Il bloom illumina i fari.
+- Three.js si carica solo su home e dettaglio (`React.lazy`).
+- I componenti React Bits (SplitText, Aurora, ClickSpark, SpotlightCard, CountUp, ShinyText, Magnet, GradientText) si trovano in `fe/src/components/bits`.
+- I font sono self-hosted con `@fontsource`: il browser non contatta terze parti.
+- Ogni `fetch` passa da `fe/src/lib/api.ts`.
+- Il token si salva nel localStorage con la chiave `vetrina.token`, come dichiarato nella Cookie Policy.
+- Nessun `dangerouslySetInnerHTML`: descrizioni e nomi si mostrano sempre come testo.
+
 ## Struttura
 
 ```
@@ -139,6 +162,8 @@ be/src/main/java/it/epicode/base/
   auto/       catalogo pubblico e gestione admin, OrdinamentoAuto
   preferito/  preferiti dell'utente
   avviso/     avvisi, PrezzoScesoEvent, AvvisoMailListener, MailAvvisi
-fe/
-  src/lib/api.ts            base delle fetch, da VITE_API_URL
+fe/src/
+  lib/          api.ts (tutte le fetch), auth.tsx, toast.tsx, formato.ts
+  components/   Layout, AutoCard, Sagoma (SVG), SogliaForm, ui, three/ (Showroom, Auto3D), bits/ (React Bits)
+  pages/        Home, Catalogo, AutoDettaglio, Accedi, Preferiti, Avvisi, Profilo, Admin, Disattiva, Legale, NonTrovata
 ```
