@@ -12,6 +12,10 @@ if errorlevel 1 (
   echo [postgres] in ascolto sulla 5432.
 )
 
+rem ---------- Variabili del backend: senza JWT_SECRET il BE non parte ----------
+if not defined JWT_SECRET echo [BE] JWT_SECRET non impostata: il backend non partira'.
+if not defined ADMIN_PASSWORD echo [BE] ADMIN_PASSWORD non impostata: nessun amministratore verra' creato.
+
 if not exist "fe\node_modules" (
   echo [FE] npm install...
   pushd fe

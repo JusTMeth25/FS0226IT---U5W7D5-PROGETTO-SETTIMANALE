@@ -1,18 +1,17 @@
 # Blueprint Render: database + backend + frontend.
 # Su Render: New > Blueprint > repository > Apply.
-# Rinominare app-db / app-be / app-fe con il nome del progetto.
 
 databases:
-  - name: app-db
-    databaseName: app
-    user: app
+  - name: salone-db
+    databaseName: salone
+    user: salone
     plan: free
     region: frankfurt
 
 services:
   # ---------- Backend: Spring Boot via Docker ----------
   - type: web
-    name: app-be
+    name: salone-be
     runtime: docker
     plan: free
     region: frankfurt
@@ -27,15 +26,31 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: app-db
+          name: salone-db
           property: connectionString
-      # Origine del FE per il CORS, es. https://app-fe.onrender.com
+      # Origine del FE per il CORS, es. https://salone-fe.onrender.com
       - key: ALLOWED_ORIGIN
+        sync: false
+      # Firma dei JWT: Render genera un valore casuale al primo deploy.
+      - key: JWT_SECRET
+        generateValue: true
+      # Amministratore creato al primo avvio (password di almeno 8 caratteri).
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      # Gmail: indirizzo e "password per le app" di Google. Mai in application.yml.
+      - key: MAIL_USERNAME
+        sync: false
+      - key: MAIL_PASSWORD
+        sync: false
+      # Indirizzo del FE per il link "disattiva avviso" nella mail, senza / finale.
+      - key: FRONTEND_URL
         sync: false
 
   # ---------- Frontend: build Vite statica ----------
   - type: web
-    name: app-fe
+    name: salone-fe
     runtime: static
     rootDir: fe
     buildCommand: npm ci && npm run build
@@ -45,7 +60,7 @@ services:
         - fe/**
         - render.yaml
     envVars:
-      # Indirizzo del BE, es. https://app-be.onrender.com (senza / finale)
+      # Indirizzo del BE, es. https://salone-be.onrender.com (senza / finale)
       - key: VITE_API_URL
         sync: false
     routes:

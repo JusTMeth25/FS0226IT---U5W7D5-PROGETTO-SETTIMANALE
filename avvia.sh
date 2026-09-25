@@ -11,6 +11,10 @@ else
   echo "           createdb -U postgres U5W7D5-PROGETTO-SETTIMANALE"
 fi
 
+# Variabili del backend: senza JWT_SECRET il BE non parte
+[ -z "$JWT_SECRET" ] && echo "[BE] JWT_SECRET non impostata: il backend non partira'."
+[ -z "$ADMIN_PASSWORD" ] && echo "[BE] ADMIN_PASSWORD non impostata: nessun amministratore verra' creato."
+
 # Dipendenze FE solo al primo avvio
 if [ ! -d fe/node_modules ]; then
   echo "[FE] npm install..."

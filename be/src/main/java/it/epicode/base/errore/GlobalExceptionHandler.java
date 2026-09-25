@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.authorization.AuthorizationDeniedException;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -60,6 +61,12 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<Errore> integrita(DataIntegrityViolationException e) {
 		// Tipicamente due richieste parallele sullo stesso vincolo unique.
 		return risposta(HttpStatus.CONFLICT, "Operazione in conflitto con dati esistenti");
+	}
+
+	@ExceptionHandler(AuthenticationException.class)
+	public ResponseEntity<Errore> autenticazione(AuthenticationException e) {
+		// Stesso messaggio per email inesistente e password sbagliata.
+		return risposta(HttpStatus.UNAUTHORIZED, "Credenziali non valide");
 	}
 
 	@ExceptionHandler({AccessDeniedException.class, AuthorizationDeniedException.class})
