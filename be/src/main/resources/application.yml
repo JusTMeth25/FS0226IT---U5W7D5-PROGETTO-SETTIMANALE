@@ -1,0 +1,79 @@
+spring:
+  application:
+    name: salone-auto
+
+  datasource:
+    # In locale valgono i valori dopo i due punti. Su Render DatabaseUrl legge
+    # DATABASE_URL e sovrascrive queste tre proprieta'.
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/U5W7D5-PROGETTO-SETTIMANALE}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:1234}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+
+  # Gmail via SMTP. La password e' una "password per le app" di Google e arriva
+  # solo da MAIL_PASSWORD: qui non si scrive, neanche come valore di ripiego.
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
+server:
+  # Render assegna la porta in PORT.
+  port: ${PORT:8080}
+  shutdown: graceful
+  error:
+    include-message: never
+    include-stacktrace: never
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    # Senza questo, /actuator/health risponde DOWN finche' Gmail non e' configurato
+    # e Render riavvia il servizio all'infinito.
+    mail:
+      enabled: false
+
+app:
+  cors:
+    # In produzione: ALLOWED_ORIGIN=https://<fe>.onrender.com (piu' valori separati da virgola).
+    allowed-origins: ${ALLOWED_ORIGIN:http://localhost:5173,http://localhost:4173}
+
+  jwt:
+    # Obbligatorio, almeno 32 caratteri. Nessun valore di ripiego: senza, il BE non parte.
+    secret: ${JWT_SECRET}
+    scadenza-ore: 24
+
+  admin:
+    # All'avvio si crea l'amministratore se non esiste. Senza ADMIN_PASSWORD non si crea.
+    email: ${ADMIN_EMAIL:admin@salone.local}
+    password: ${ADMIN_PASSWORD:}
+
+  # Indirizzo del FE: serve per il link "disattiva avviso" nella mail.
+  frontend-url: ${FRONTEND_URL:http://localhost:5173}
